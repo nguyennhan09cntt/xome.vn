@@ -1,0 +1,371 @@
+<div id="page-content" class="page-content">
+
+    <div class="container">
+        <div class="row">
+            <div class="micro-main-menu mt-md">
+                <div class="foody-toolbar fd-clearbox mic-navigation" ng-class="{'loading':IsLoading}">
+                    <div class="fd-clearbox" style="top: 824px;">
+                        <ul class="list-tool">
+                            <li data-item-id="0" class="list-group-item active" style="line-height:18px;">
+                                <a data-item-type="home" itemprop="url" href="">
+                                    Thông tin chi tiết <span class="fa fa-angle-right"
+                                                    style="float: right; font-size: 14px;"></span>
+                                </a>
+                            </li>
+                            <?php if ($this->dataInfo[DbTable_Product::COL_FK_PRODUCT_OWNER]) { ?>
+                                <li class="list-group-item" style="line-height:18px;">
+                                    <a href="/thong-tin-nguoi-dang/<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PHONE] . '-' . $this->productOwnerEncode($this->dataInfo[DbTable_Product::COL_FK_PRODUCT_OWNER]) . '.html'; ?>">
+                                        Thông tin người đăng<span class="fa fa-angle-right"
+                                                                  style="float: right; font-size: 14px;"></span>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                            <li data-item-id="5" data-item-name="album" class="list-group-item"
+                                style="line-height:18px;">
+                                <a href="/phong-cho-thue/xung-quanh-<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]); ?>">
+                                    Phòng trọ quanh đây
+                                    <span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="micro-right1000 mt-md">
+                <section class="microsite" style="position: static; ">
+                    <div class="micro-container">
+                        <div class="micro-content">
+                            <div class="user-history-delivery" style="margin-top: -20px;">
+                            </div>
+                            <div class="microsite-basic-info">
+                                <!--Start microsite header-->
+                                <div>
+                                    <div class="micro-inforbox">
+                                        <div class="social-share-icons">
+                                            <div class="total-views"
+                                                 title="<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PAGEVIEW] >= 1000 ? ($this->dataInfo[DbTable_Product::COL_PRODUCT_PAGEVIEW] / 1000) . 'K' : $this->dataInfo[DbTable_Product::COL_PRODUCT_PAGEVIEW]; ?> lượt xem">
+                                                <span><?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PAGEVIEW] >= 1000 ? round($this->dataInfo[DbTable_Product::COL_PRODUCT_PAGEVIEW] / 1000, 1) . 'K' : $this->dataInfo[DbTable_Product::COL_PRODUCT_PAGEVIEW]; ?></span>
+
+                                                <div>lượt xem</div>
+                                            </div>
+
+                                            <div class="fb-like"
+                                                 data-href="http://xome.vn/<?php echo $this->productCategoryIdentify($this->dataInfo[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]) . '/' . $this->dataInfo[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]); ?>"
+                                                 data-layout="box_count" data-action="like" data-size="small"
+                                                 data-show-faces="true" data-share="true"></div>
+                                        </div>
+                                        <div class="micro-header">
+                                            <div class="micro-status-label"></div>
+                                            <div class="main-image">
+                                                <div class="img">
+                                                    <a href="<?php echo $this->showImageUrl($this->dataInfo[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$this->dataInfo[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>"
+                                                       class="fancybox" data-fancybox-group="gallery">
+                                                        <img itemprop="image" class="pic-place"
+                                                             src="<?php echo $this->showImageUrl($this->dataInfo[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$this->dataInfo[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>"
+                                                             alt="<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_NAME]; ?>">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="main-information disableSection">
+                                                <div class="res-common" style="position: relative;">
+                                                    <div class="res-common-info" style="">
+                                                        <div class="main-info-bg"></div>
+                                                        <div class="breadcrum"
+                                                             style="margin-top:15px;margin-bottom:0; clear:both;width:100%;">
+                                                            <div class="breadcrum-microsite">
+<span itemscope="" itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope=""
+                                                                     itemtype="http://schema.org/ListItem">
+<meta itemprop="position" content="1">
+<a itemprop="item" href="/thue-tro/ho-chi-minh">
+    <span itemprop="name">Hồ Chí Minh</span> »</a></span>
+<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+<meta itemprop="position" content="2">
+<a itemprop="item"
+   href="/thue-tro/ho-chi-minh/<?php echo $this->districtIdentify($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]) ?>">
+    <span itemprop="name"><?php echo $this->districtLabel($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]) ?></span> »</a></span>
+<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+<meta itemprop="position" content="3">
+<!--<a itemprop="item" href="/ha-noi/khu-vuc-hang-bai" style="background:none!important;">
+    <span itemprop="name">Khu vực Hàng Bài </span>
+</a>-->
+</span></span>
+                                                            </div>
+                                                            <!--<div class="report-microsite btn-report-microsite"
+                                                                 data-item-id="169399">
+                                                                <a href="javascript:void(0)">
+                                                                    <span><i
+                                                                            class="fa fa-exclamation-triangle"></i></span>
+                                                                    <span>Báo lỗi</span>
+                                                                </a>
+                                                            </div>-->
+                                                        </div>
+                                                        <div class="main-info-title">
+<span class="main-info-title-contracted">
+<span class="fa fa-check-circle"></span>
+</span>
+
+                                                            <h1 itemprop="name"><?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_NAME]; ?></h1>
+
+                                                            <div class="category">
+                                                                <div class="category-items">
+                                                                    <a href="/nha-cho-thue.html"
+                                                                       title="Nhà cho thuê">Nhà
+                                                                        trọ</a>
+                                                                </div>
+                                                                <div class="category-cuisines">
+                                                                    <div class="cuisines-separator"> -</div>
+                                                                    <div class="cuisines-list">
+                                                                        <ul itemprop="servesCuisine">
+                                                                            <li class="cuisines-list-items">
+                                                                                <a class="microsite-cuisine"
+                                                                                   style="color: #888;"
+                                                                                   href="/phong-cho-thue.html">
+                                                                                    Phòng trọ</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div id="basicinfo-sticker"></div>
+                                                        </div>
+                                                        <div id="res-summary-point">
+                                                            <div class="microsite-points-summary">
+                                                                <!--<div class="microsite-top-points">
+                                                                    <div>
+                                                                        <span class="avg-txt-highlight">7.7</span>
+                                                                    </div>
+                                                                    <div class="label">Độ tin cậy</div>
+                                                                </div>-->
+
+                                                                <?php
+                                                                $facility = $this->dataInfo['product_facility'];
+
+                                                                $arrFacility = explode(', ', $facility);
+                                                                ?>
+                                                                <div class="microsite-top-points">
+                                                                    <div>
+                                                                        <span
+                                                                            class="avg-txt-highlight <?php echo in_array(3, $arrFacility) ? '' : 'error' ?>"><span
+                                                                                class="fa <?php echo in_array(3, $arrFacility) ? 'fa-check-circle' : 'fa-times' ?>"></span></span>
+                                                                    </div>
+                                                                    <div class="label">Gác/lầu</div>
+                                                                </div>
+
+                                                                <div class="microsite-top-points">
+                                                                    <div>
+                                                                        <span
+                                                                            class="avg-txt-highlight <?php echo in_array(9, $arrFacility) ? '' : 'error' ?>"><span
+                                                                                class="fa <?php echo in_array(9, $arrFacility) ? 'fa-check-circle' : 'fa-times' ?>"></span></span>
+                                                                    </div>
+                                                                    <div class="label">Ko chung chủ</div>
+                                                                </div>
+                                                                <div class="microsite-top-points">
+                                                                    <div>
+                                                                        <span
+                                                                            class="avg-txt-highlight <?php echo in_array(4, $arrFacility) ? '' : 'error' ?>"><span
+                                                                                class="fa <?php echo in_array(4, $arrFacility) ? 'fa-check-circle' : 'fa-times' ?>"></span></span>
+                                                                    </div>
+                                                                    <div class="label">Toilet riêng</div>
+                                                                </div>
+                                                                <div class="microsite-top-points">
+                                                                    <div>
+                                                                        <span
+                                                                            class="avg-txt-highlight <?php echo in_array(11, $arrFacility) ? '' : 'error' ?>"><span
+                                                                                class="fa <?php echo in_array(11, $arrFacility) ? 'fa-check-circle' : 'fa-times' ?>"></span></span>
+                                                                    </div>
+                                                                    <div class="label">Giờ giấc tự do</div>
+                                                                </div>
+                                                                <div itemprop="aggregateRating" itemscope=""
+                                                                     itemtype="http://schema.org/AggregateRating"
+                                                                     class="microsite-top-points-block"
+                                                                     style="font-size:20px; margin-top:12px;padding-left:25px;">
+                                                                    <meta itemprop="worstRating" content="1">
+                                                                    <meta itemprop="bestRating" content="10">
+                                                                    <span
+                                                                        itemprop="ratingValue"><?php echo floor($this->dataInfo[DbTable_Product::COL_PRODUCT_AREA]); ?>m<sup>2</sup></span>
+                                                                    <br>
+                                                                <span
+                                                                    style="font-size:12px;color:#777;">Diện tích</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="disableSection">
+                                                            <div itemprop="address" itemscope=""
+                                                                 itemtype="http://schema.org/PostalAddress"
+                                                                 class="res-common-add">
+                                                                    <span
+                                                                        class="fa fa-location-arrow locationicon"></span>
+                                                            <span>
+
+                                                                    <span
+                                                                        itemprop="streetAddress"><?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_ADDRESS]; ?></span>
+                                                            </div>
+                                                            <div class="res-common-price">
+                                                                <div class="micro-timesopen">
+                                                                    <span class="fa fa-clock-o houricon"></span>
+                                                                <span class="itsclosed"
+                                                                      title="<?php echo $this->formatTime($this->dataInfo[DbTable_Product::COL_PRODUCT_CREATED_AT], 'd-m-Y'); ?>">Ngày đăng:</span>
+                                                                    <span><?php echo $this->formatTime($this->dataInfo[DbTable_Product::COL_PRODUCT_CREATED_AT], 'd-m-Y h:i'); ?></span>
+                                                                </div>
+                                                                <div class="res-common-minmaxprice">
+                                                                    <span class="fa fa-tag minmaxpriceicon"></span>
+                                                                    <span class=""
+                                                                          title="Giá phòng">Giá phòng:</span>
+                                                                    <span itemprop="priceRange"
+                                                                          class="detail-price">
+                                                                            <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PAID_PRICE] > 100000 ? number_format($this->dataInfo[DbTable_Product::COL_PRODUCT_PAID_PRICE]) . 'đ/tháng' : 'Thỏa thuận'; ?>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="res-common-minmaxprice">
+                                                                    <span class="fa fa-phone minmaxpriceicon"></span>
+                                                                    <span class=""
+                                                                          title="Số điện thoại">Phone:
+                                                                    </span>
+                                                                     <span itemprop="priceRange">
+                                                                            <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PHONE]; ?></span>
+                                                                    <?php if ($this->productImport($this->dataInfo[DbTable_Product::COL_PRODUCT_REFER_LINK])) { ?>
+                                                                        - <span><a
+                                                                                href="<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_REFER_LINK]; ?>" style="    background-color: #0088cc;color: white;    padding: 5px;">
+                                                                                Nguồn tin</a></span>
+                                                                    <?php } ?>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+<span itemprop="geo" itemscope="" itemtype="http://schema.org/GeoCoordinates">
+<meta itemprop="latitude" content="21.0223900000000">
+<meta itemprop="longitude" content="105.8473810000000"></span>
+                                </div>
+
+                            </div>
+                            <div class="tabbable-custom mt-md ">
+                                <ul class="nav nav-tabs ">
+                                    <li>
+                                        <a href="#tab_5_0" data-toggle="tab">
+                                            Thông tin </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_5_1" data-toggle="tab">
+                                            Hình ảnh </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#tab_5_2" data-toggle="tab">
+                                            Bản đồ </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_5_3" data-toggle="tab">
+                                            Bình luận </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="tab_5_1">
+                                        <section id="property-gallery" class="mt-md center">
+
+
+                                            <?php if (count($this->productImageData) > 0) { ?>
+                                                <ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+                                                    <?php if ($this->productImageData) { ?>
+                                                        <?php foreach ($this->productImageData as $key => $data) { ?>
+
+
+                                                            <li class="col-md-3 col-sm-6 col-xs-12 isotope-item websites">
+                                                                <div class="portfolio-item">
+                                                                    <a href="<?php echo $this->showImageUrl($data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME], $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_IMPORT], 400); ?>"
+                                                                       class="fancybox" data-fancybox-group="gallery">
+                                                                <span class="thumb-info">
+                                                                    <span class="thumb-info-wrapper">
+                                                                        <img
+                                                                            src="<?php echo $this->showImageUrl($data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME], $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_IMPORT], 400); ?>"
+                                                                            class="img-responsive"
+                                                                            alt="<?php echo $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NOTE]; ?>">
+
+                                                                    </span>
+                                                                </span>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        <?php }
+                                                    } ?>
+
+
+                                                </ul>
+
+
+                                            <?php } else { ?>
+                                                <img alt=""
+                                                     src="<?php echo $this->showImageUrl($this->dataInfo[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$this->dataInfo[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>">
+                                            <?php } ?>
+
+                                        </section>
+                                    </div>
+                                    <div class="tab-pane active" id="tab_5_2">
+                                        <div id="googlemaps" class="google-map mt-md"></div>
+                                    </div>
+                                    <div class="tab-pane " id="tab_5_0">
+
+                                        <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_DESCRIPTION]; ?>
+
+                                        <?php echo $this->formHidden(
+                                            'title',
+                                            $this->dataInfo ? $this->dataInfo[DbTable_Product::COL_PRODUCT_NAME] : null
+                                        ); ?>
+
+                                        <?php echo $this->formHidden(
+                                            'address',
+                                            $this->dataInfo ? $this->dataInfo[DbTable_Product::COL_PRODUCT_ADDRESS] : null
+                                        ); ?>
+                                        <?php echo $this->formHidden(
+                                            'lat',
+                                            $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LAT} : null
+                                        ); ?>
+                                        <?php echo $this->formHidden(
+                                            'lng',
+                                            $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LONG} : null
+                                        ); ?>
+                                    </div>
+                                    <div class="tab-pane" id="tab_5_3">
+                                        <div class="fb-comments"
+                                             data-href="http://xome.ln3.in/<?php echo $this->productCategoryIdentify($this->dataInfo[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]) . '/' . $this->dataInfo[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]); ?>"
+                                             data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                                            <a
+                                                class="fb-xfbml-parse-ignore" target="_blank"
+                                                href="https://www.facebook.com/sharer/sharer.php?u=http://xome.vn/<?php echo $this->productCategoryIdentify($this->dataInfo[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]) . '/' . $this->dataInfo[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]); ?>"
+                                                data-numposts="5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="foody-toolbar fd-clearbox ng-scope" style="margin-bottom: 15px;height:48px;"
+                     ng-controller="MicroSiteCtrl" ng-init="Init({ResId:'169399'})">
+                    <div class="fd-clearbox" style="height: auto; top: 0px;">
+
+                    </div>
+
+                </div>
+                <!-- Popup PhoneNumber -->
+                <div class="microsite-popup-phone-number"></div>
+                <!-- End Popup PhoneNumber-->
+
+            </div>
+
+
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /.container -->
+</div>
+
+

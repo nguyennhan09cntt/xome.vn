@@ -1,0 +1,103 @@
+<div class="page-content">
+    <!-- Breadcrumb -->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="/">Trang chủ</a></li>
+            <li class="active"><a href="/tin-tim-phong.html">Tìm kiếm nhà trọ, phòng trọ</a></li>
+        </ol>
+    </div>
+    <!-- end Breadcrumb -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="blog-page">
+                    <div class="media">
+                        <a href="#" class="pull-left">
+                            <img alt="" src="http://static.xome.vn/upload/default/no-avatar.png" class="media-object">
+                        </a>
+
+                        <div class="media-body" >
+                            <h4 class="media-heading"><?php echo $this->dataInfo[DbTable_Contact::COL_CONTACT_NAME]; ?>
+                                <span>
+									<?php echo $this->dataInfo[DbTable_Contact::COL_CONTACT_CREATED_AT];  ?>
+									</span>
+                            </h4>
+
+                            <p>
+                                <?php echo $this->dataInfo[DbTable_Contact::COL_CONTACT_PHONE]; ?>
+                            </p>
+                            <!--<hr>-->
+                            <!-- Nested media object -->
+
+                        </div>
+                    </div>
+                    <div class="blog-data">
+                        <p>
+                            <?php echo $this->dataInfo[DbTable_Contact::COL_CONTACT_MESSAGE]; ?>
+                        </p>
+                        <img src="<?php echo $this->encodeStringMap; ?>"
+                             class="img-responsive" alt="">
+                        <br>
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=http://xome.vn//tin-tim-phong/<?php echo Application_Function_String::getFormatUrl($this->dataInfo[DbTable_Contact::COL_CONTACT_ADDRESS]) . '-' . strtolower($this->contactEncode($this->dataInfo[DbTable_Contact::COL_CONTACT_ID])).'.html'; ?>&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        <hr>
+
+                        <div class="fb-comments" data-href="http://xome.vn//tin-tim-phong/<?php echo Application_Function_String::getFormatUrl($this->dataInfo[DbTable_Contact::COL_CONTACT_ADDRESS]) . '-' . strtolower($this->contactEncode($this->dataInfo[DbTable_Contact::COL_CONTACT_ID])).'.html'; ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?uhttp://xome.vn//tin-tim-phong/<?php echo Application_Function_String::getFormatUrl($this->dataInfo[DbTable_Contact::COL_CONTACT_ADDRESS]) . '-' . strtolower($this->contactEncode($this->dataInfo[DbTable_Contact::COL_CONTACT_ID])).'.html'; ?>" data-numposts="5"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- /.col-md-9 -->
+
+
+            <!-- sidebar -->
+
+            <div class="col-md-3" id="left_column">
+
+                <div class="block left-module">
+                    <h4 class="title_block">Gợi ý phòng trọ cho bạn</h4>
+
+                    <div class="block_content">
+                        <!-- layered -->
+                        <div class="layered">
+                            <div class="layered-content">
+                                <ul class="blog-list-sidebar clearfix">
+                                    <?php foreach ($this->productRelationData as $productRelation) {?>
+                                        <li>
+                                            <div class="post-thumb">
+                                                <a href="/<?php echo $this->productCategoryIdentify($productRelation[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($productRelation[DbTable_Product::COL_FK_DISTRICT]).'/' . $productRelation[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($productRelation[DbTable_Product::COL_PRODUCT_ID]); ?>"><img src="<?php echo $this->showImageUrl($productRelation[DbTable_Product::COL_PRODUCT_THUMB_NAIL], $productRelation[DbTable_Product::COL_PRODUCT_REFER_LINK]!='', 90);?>" alt="xome" style="height: 100px;width: 100%;"></a>
+                                            </div>
+                                            <div class="post-info">
+                                                <h5 class="entry_title"><a href="/<?php echo $this->productCategoryIdentify($productRelation[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($productRelation[DbTable_Product::COL_FK_DISTRICT]).'/' . $productRelation[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($productRelation[DbTable_Product::COL_PRODUCT_ID]); ?>"><?php echo $productRelation[DbTable_Product::COL_PRODUCT_NAME];?></a></h5>
+
+                                                <div class="post-meta">
+                                                    <span class="date"><i class="fa fa-calendar"></i> <?php echo $this->formatTime($productRelation[DbTable_Product::COL_PRODUCT_CREATED_AT]);?></span>
+                                                    <!--<span class="comment-count">
+                                                        <i class="fa fa-comment-o"></i> 3
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ./layered -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-3 -->
+            <!-- end Sidebar -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+</div>

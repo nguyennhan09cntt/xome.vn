@@ -1,0 +1,42 @@
+<?php if ($this->pageCount): ?>
+<div class="pull-right">
+<ul class="pagination" style="visibility: visible;">
+    <!-- First page link -->
+    <?php if (isset($this->previous)): ?>
+        <li class="prev"><a href="<?php echo $this->currentFullUrl(array('page' => $this->first)); ?>" title="First"><i class="fa fa-angle-double-left"></i>First</a></li>
+    <?php else: ?>
+        <li class="prev disabled"><a href="#" title="First"><i class="fa fa-angle-double-left"></i>First</a></li>
+    <?php endif; ?>
+    <!-- Previous page link -->
+    <?php if (isset($this->previous)): ?>
+        <li class="prev"><a href="<?php echo $this->currentFullUrl(array('page' => $this->previous)); ?>" title="Prev"><i class="fa fa-angle-left"></i>Prev</a></li>
+    <?php else: ?>
+        <li class="prev disabled"><a href="#" title="Prev"><i class="fa fa-angle-left"></i>Prev</a></li>
+    <?php endif; ?>
+    <!-- Numbered page links -->
+    <?php foreach ($this->pagesInRange as $page): ?>
+        <?php if ($page != $this->current): ?>
+            <li class=""><a href="<?php echo $this->currentFullUrl(array('page' => $page)); ?>"><?php echo $page; ?></a></li>
+        <?php else: ?>
+            <li class="active"><a href="#"><?php echo $page; ?></a></li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+
+    <!-- Next page link -->
+    <?php if (isset($this->next)): ?>
+    <li class="next"><a href="<?php echo $this->currentFullUrl(array('page' => $this->next)); ?>" title="Next">Next<i class="fa fa-angle-right"></i></a></li>
+
+    <?php else: ?>
+        <li class="next disabled"><a href="#" title="Next">Next<i class="fa fa-angle-right"></i></a></li>
+    <?php endif; ?>
+
+    <!-- Last page link -->
+    <?php if (isset($this->next)): ?>
+        <li class="next"><a href="<?php echo $this->currentFullUrl(array('page' => $this->last)); ?>" title="Last">Last<i class="fa fa-angle-double-right"></i></a></li>
+    <?php else: ?>
+        <li class="next disabled"><a href="#" title="Last">Last<i class="fa fa-angle-double-right"></i></a></li>
+    <?php endif; ?>
+
+</ul>
+</div>
+<?php endif; ?>

@@ -1,0 +1,28 @@
+<!-- Home slideder-->
+<div id="home-slider">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8 header-top-right">
+                <div class="header-top-right-wapper">
+                    <div class="homeslider">
+                        <div class="content-slide">
+                            <ul id="contenhomeslider">
+                                <?php if($this->sliderData) { ?>
+                                    <?php foreach ($this->sliderData as $key => $slider) { ?>
+                                        <li><img alt="Funky roots" src="/upload<?php echo $slider[DbTable_Site_Slide::COL_SITE_SLIDE_THUMBNAIL]?>" title="<?php echo $slider[DbTable_Site_Slide::COL_SITE_SLIDE_NAME]?>" /></li>
+
+                                    <?php }
+                                }?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <?php echo $this->render('widgets/search.phtml'); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Home slideder-->

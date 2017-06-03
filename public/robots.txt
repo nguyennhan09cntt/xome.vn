@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /operation/
+Sitemap: https://pasoto.com/sitemap.xml
+Sitemap: https://pasoto.com/tin-tuc/sitemap.xml

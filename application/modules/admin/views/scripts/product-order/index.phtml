@@ -1,0 +1,123 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Nhà trọ - Danh sách đơn hàng
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Danh sách đơn hàng
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn hành động...</option>
+                            <option value="deleted">Deleted</option>
+                            <option value="inactivate">Inactive</option>>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <button id="btn_add_new" class="btn green">
+                            Thêm mới <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="pull-right">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formText('e', $this->code, array('size' => 10, 'placeholder' => 'Mã đơn hàng', 'class' => 'input-inline form-control')); ?>
+                                <?php echo $this->formSelect(
+                                    'a',
+                                    $this->active,
+                                    array('class' => 'input-inline form-control'),
+                                    array('-1' => 'Tình trạng') + $this->productOrderStatus()
+                                ); ?>
+                                <?php echo $this->formText('n', $this->name, array('size' => 20, 'placeholder' => 'Tên khách hàng', 'class' => 'input-inline form-control')); ?>
+                                <?php echo $this->formText('m', $this->email, array('size' => 20, 'placeholder' => 'Email khách hàng', 'class' => 'input-inline form-control')); ?>
+                                <?php echo $this->formText('p', $this->phone, array('size' => 20, 'placeholder' => 'Sdt khách hàng', 'class' => 'input-inline form-control')); ?>
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_product_order">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_product_order .checkboxes"/>
+                        </th>
+                        <th>Mã đơn hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Sđt</th>
+                        <th>Email</th>
+                        <th>Tình trạng</th>
+                        <th>Ngày tạo</th>
+                        <th>Ngày cập nhật</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Product_Order::COL_PRODUCT_ORDER_ID},
+                                    array('class' => 'checkboxes')
+                                ); ?>
+                            </td>
+                            <td align="center"><?php echo $this->productOrderEncode($data->{DbTable_Product_Order::COL_PRODUCT_ORDER_ID}); ?></td>
+                            <td><?php echo $data->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_NAME}; ?></td>
+                            <td><?php echo $data->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_PHONE}; ?></td>
+                            <td><?php echo $data->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_MAIL}; ?></td>
+                            <td><?php echo $this->activeLabel($data->{DbTable_Product_Order::COL_FK_CONFIG_STATUS}); ?></td>
+                            <td><?php echo $data->{DbTable_Product_Order::COL_PRODUCT_ORDER_CREATED_AT}; ?></td>
+                            <td><?php echo $data->{DbTable_Product_Order::COL_PRODUCT_ORDER_UPDATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('product-order/detail/'); ?>?e=<?php echo $this->productOrderEncode($data->{DbTable_Product_Order::COL_PRODUCT_ORDER_ID}); ?>" target="_blank">Chi tiết</a>
+
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

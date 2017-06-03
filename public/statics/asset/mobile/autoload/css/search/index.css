@@ -1,0 +1,159 @@
+
+.map-navigation {
+    background-color: rgba(33,150,243,0.9);
+    border-top: 3px solid #4a8fd8;
+    padding: 15px 15px 0px 15px;
+    position: absolute;
+    right: 0px;
+    top: -400px;
+    z-index: 99;
+	width: 100%;
+}
+#map{
+    height: 510px;
+}
+
+.marker {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 0;
+    background: #ff3366;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border:none;
+}
+.marker:hover{
+     -webkit-transform: rotate(-45deg);
+     transform: rotate(-45deg);
+}
+.marker img {
+    /* display: none; */
+    margin-top: 2px;
+    transform: rotate(45deg);
+    margin-left: 2px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+}
+
+.marker:after {
+    content: '';
+    width: 35px;
+    height: 35px;
+    margin: 5px 0 0 5px;
+    /*background: #2f2f2f;*/
+    position: absolute;
+    border-radius: 50%;
+    /*background-image: url(http://xome.ln3.in/favicon.ico);*/
+    background-size: 33px 33px;
+    background-repeat: no-repeat;    
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.infobox-content-body-beds strong{
+    color: red;
+}
+.marker-inner span{
+    top: 15px;
+    left: 10px;
+    color: white;
+    position: absolute;
+}
+
+#demopanel {
+    right: 50px;
+    position: fixed;
+    top: 200px;
+    z-index: 99999;
+}
+.panel_button {
+    cursor: pointer;
+    position: relative;
+    width: 48px;
+    display: block;
+    right: 50px;
+    border: 1px solid #ddd;
+    background: #ff5c39;
+}
+
+
+.pin img{
+    display: none;
+}
+.pin {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50% 50% 0;
+    background: #89849b;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -o-animation-name: bounce;
+    -ms-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.pin:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    margin: 5px 0 0 5px;
+    background: #2f2f2f;
+    position: absolute;
+    border-radius: 50%;
+    background-image: url(https://www.zita.vn/assets/files/photos/property/704893/thumb_170110040827_NCTIMG_5585-710x400.jpg);
+    background-size: 33px 33px;
+    background-repeat: no-repeat;    
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.pulse {
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 11px 0px 0px -12px;
+    -webkit-transform: rotateX(55deg);
+    -moz-transform: rotateX(55deg);
+    -o-transform: rotateX(55deg);
+    -ms-transform: rotateX(55deg);
+    transform: rotateX(55deg);
+    z-index: -2;
+}
+
+
+@media (max-width: 767px) {
+    /* 767px */
+    .map-navigation{
+        position: static;
+    }
+}
+@media (max-width: 480px) {
+    .map-navigation{
+        position: static;
+    }
+}

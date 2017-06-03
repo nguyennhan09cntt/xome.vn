@@ -1,0 +1,148 @@
+<div role="main" class="main">
+    <!-- Slider -->
+    <?php echo $this->render('index/widgets/slider-layout.phtml'); ?>
+    <?php echo $this->render('index/widgets/search-box.phtml'); ?>
+    <div class="home-intro light" id="home-intro">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <p>
+                        Quý khách có thể tham gia nhóm <em> <a href="https://www.facebook.com/groups/thuephongtrohcm/">Thuê
+                                trọ Hồ Chí Minh</a></em> trên Facebook
+                        <span>Với hơn 70.000 thành viên và hơn 1.000 bài viết mỗi ngày.</span>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="get-started">
+                        <a href="https://www.facebook.com/groups/thuephongtrohcm/" class="btn btn-lg btn-primary">Tham
+                            gia ngay!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row mt-xlg">
+            <!-- Left colunm -->
+            <!-- <div class="column col-xs-12 col-sm-3" id="left_column">
+            <?php /*echo $this->render('widgets/sidebar-left.phtml'); */ ?>
+
+
+
+
+        </div>-->
+            <!-- ./left colunm -->
+            <!-- Center colunm-->
+            <div class="center_column col-xs-12 col-sm-12" id="center_column">
+                <!-- view-product-list-->
+                <div id="view-product-list" class="view-product-list mt-none">
+                    <h2 class="page-heading center">
+                        <span class="page-heading-title">TIN CHO THUÊ MỚI ĐĂNG</span>
+                    </h2>
+                    <!--<div class="sortPagiBar" style="position: absolute;right: 0;top: 0;margin-top: 0px;">
+                        <div class="sort-product">
+                            <select>
+                                <option value="">Mặc định</option>
+                                <option value="">Giá thuê</option>
+                                <option value="">Lượt xem</option>
+                            </select>
+                            <div class="sort-product-icon">
+                                <i class="fa fa-sort-alpha-asc"></i>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- PRODUCT LIST -->
+
+                    <div class="row product-list list mt-sm">
+                        <?php foreach ($this->productData as $key => $product) { ?>
+
+                            <div class="col-md-4 product-item">
+                                <span class="thumb-info thumb-info-preview thumb-info-preview-long">
+                                    <span class="thumb-info-wrapper">
+                                        <!--<span class="thumb-info-image" data-original="img/previews/preview-corporate-version8.jpg" data-plugin-lazyload="" style="display: block; background-image: url(&quot;img/previews/preview-corporate-version8.jpg&quot;);"></span>-->
+                                        <a class=""
+                                           href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>">
+                                            <img class="thumb-info-image"
+                                                 src="<?php echo $this->showImageUrl($product[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$product[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>"
+                                                 alt="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?>"
+                                                 height="100">
+                                        </a>
+                                        <div class="figType"><a
+                                                href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?>.html"><?php echo $this->productCategoryLabel($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?></a>
+                                        </div>
+                                        <div class="figPrice">
+                                            <?php echo $product[DbTable_Product::COL_PRODUCT_PAID_PRICE] > 1000 ? number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE]) . ' VND' : 'Thỏa thuận' ?>
+                                        </div>
+                                    </span>
+                                </span>
+
+                                <div class="recent-posts pt-md mb-lg" style="border: 1px solid #DDD; border-top: none;">
+                                    <article class="post mr-sm ml-sm">
+                                        <h5 class="mb-xs course-title" style="min-height: 35px;">
+                                            <a class=""
+                                               href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>"><?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?></a>
+                                        </h5>
+
+                                        <div style="min-height: 50px;">
+                                            Địa chỉ:
+                                            <span><?php echo $product[DbTable_Product::COL_PRODUCT_ADDRESS] ?></span>
+                                        </div>
+
+                                        <div class="post-meta">
+                                            <span><i
+                                                    class="fa fa-calendar"></i> <?php echo $this->formatTime($product[DbTable_Product::COL_PRODUCT_CREATED_AT]); ?> </span>
+                                            <span><i
+                                                    class="fa fa-phone"></i>  <?php echo $product[DbTable_Product::COL_PRODUCT_PHONE]; ?></span>
+
+
+                                        </div>
+                                        <div class="post-meta-action">
+                                            <div class="cf_teacher">
+                                                <div class="cf_ava"><span
+                                                        style="background-image: url(<?php echo $product[DbTable_Product_Own::COL_PRODUCT_OWN_FACEBOOK_ID] ? 'https://graph.facebook.com/' . $product[DbTable_Product_Own::COL_PRODUCT_OWN_FACEBOOK_ID] . '/picture?type=large' : 'http://static.' . Application_Constant_Global::DOMAIN . '/upload/default/no-avatar.png'; ?>)"></span>
+                                                </div>
+                                                <div class="cf_t_n"><a
+                                                        href="/thong-tin-nguoi-dang/<?php echo Application_Function_String::getFormatUrl(Application_Function_String::convertNoVn($product[DbTable_Product::COL_PRODUCT_PHONE])) . '-' . strtolower($this->productOwnerEncode($product[DbTable_Product::COL_FK_PRODUCT_OWNER])) . '.html'; ?>"
+                                                        target="_blank"><?php echo $product[DbTable_Product::COL_FK_PRODUCT_OWNER] && $product[DbTable_Product_Own::COL_PRODUCT_OWN_NAME] != '' ? $product[DbTable_Product_Own::COL_PRODUCT_OWN_NAME] : $product[DbTable_Product::COL_PRODUCT_PHONE]; ?></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+
+                        <?php } ?>
+
+
+                    </div>
+                    <!-- ./PRODUCT LIST -->
+                </div>
+                <!-- ./view-product-list-->
+                <div class="sortPagiBar">
+                    <div class="bottom-pagination pull-right">
+                        <a class="btn btn-default btn_search_box  blue-steel" href="/tim-kiem?page=2">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <!-- ./ Center colunm -->
+        </div>
+
+    </div>
+
+    <div class="container center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Xome-Index -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-2851250231451019"
+             data-ad-slot="6619430282"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+</div>

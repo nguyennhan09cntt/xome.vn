@@ -1,0 +1,125 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Administration - Danh sách Liên hệ
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Danh sách Liên hệ</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn hành động...</option>
+                            <option value="finished">Đã xử lý</option>
+                            <option value="pending">Chưa xử lý</option>
+                            <option value="deleted">Xoa</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+
+                    <div class="pull-right margin-bottom-15">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formText('n', $this->name, array('size' => 40, 'placeholder' => 'Tên', 'class' => 'input-inline form-control')); ?>
+                                <?php echo $this->formSelect(
+                                    'a',
+                                    $this->active,
+                                    array('class' => 'input-inline form-control'),
+                                    array(
+                                        '-1' => 'Tình trạng',
+                                        Application_Constant_Db_Config_Active::FINISHED => 'Đã xử lý',
+                                        Application_Constant_Db_Config_Active::PENDING => 'Chưa xử lý'
+                                    )
+                                ); ?>
+
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_contact">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_contact .checkboxes"/>
+                        </th>
+                        <th>Tên</th>
+                        <th>Phone</th>
+						<th width="90">Email</th>
+                        <th>Giá</th>
+                        <th>Địa điểm</th>
+                        <th width="120">Nhà trọ</th>
+                        <th width="120">Yêu cầu khác</th>
+                        <th>Tình trạng</th>
+                        <!--<th>Ngày tạo</th>-->
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Contact::COL_CONTACT_ID},
+                                    array('class' => 'checkboxes')
+                                ); ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_NAME}; ?></td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_PHONE};?></td>
+							<td><?php echo $data->{DbTable_Contact::COL_CONTACT_EMAIL}; ?></td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_PRICE};?></td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_ADDRESS};?></td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_PRODUCT};?></td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_MESSAGE};?></td>
+                            <td><?php echo $data->{DbTable_Contact::COL_CONTACT_STATUS} == Application_Constant_Db_Config_Active::FINISHED ? 'Đã xử lý' :'Chưa xử lý' ;?></td>
+                            <!--<td><?php /*echo $data->{DbTable_Contact::COL_CONTACT_CREATED_AT}; */?></td>-->
+                            <td>
+                                <a href="<?php echo $this->adminUrl('contact/edit/'); ?>?i=<?php echo $data->{DbTable_Contact::COL_CONTACT_ID}; ?>">Cập nhật</a>
+                            </td>
+
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

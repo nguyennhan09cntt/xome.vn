@@ -1,0 +1,43 @@
+<div class="row row-wrap" id="items">
+    <?php foreach ($this->productData as $key => $product) { ?>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="property">
+                <a href="/nha-tro/<?php echo $this->productComponentIdentify($product[DbTable_Product::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>">
+                    <div class="property-image">
+                        <img alt="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?>"  src="<?php echo '/upload' . $product[DbTable_Product::COL_PRODUCT_THUMB_NAIL];?>">
+                    </div>
+                    <div class="overlay">
+                        <div class="info">
+                            <div class="tag price"><?php echo number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE]);?></div>
+                            <h3><?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?></h3>
+                            <figure><?php echo $product[DbTable_Product::COL_PRODUCT_ADDRESS]?></figure>
+                        </div>
+                        <?php $facility = $this->showProductFacility($product['product_facility']);?>
+                        <ul class="additional-info" style="<?php echo $facility? 'padding-top:0px;': '';?>" >
+                            <li style="width: 25%;">
+                                <header>Diện tích:</header>
+                                <figure><?php echo $product[DbTable_Product::COL_PRODUCT_AREA]?>m<sup>2</sup></figure>
+                            </li>
+                            <li style="width: 75%;">
+
+                                <?php if($facility){?>
+                                    <header>Tiện ích:</header>
+                                    <figure class="ellipsis" style="clear: both; max-width: 170px;"><?php echo $facility;?></figure>
+                                <?php }?>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </div><!-- /.property -->
+        </div><!-- /.col-md-4 -->
+
+    <?php }?>
+
+
+</div>
+<div class="row">
+    <div id="pagination_container" class="pull-right">
+    <?php echo $this->pagination;?>
+    </div>
+</div>

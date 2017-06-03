@@ -1,0 +1,91 @@
+<div class="wrapper">
+    <h2>Promotion Page</h2>
+    <form method="get" action="">
+        <fieldset class="filter">
+            <?php echo $this->formText('title', $this->title, array('size' => 70, 'placeholder' => 'Tiêu đề')); ?>
+            <?php echo $this->formSelect(
+                'active',
+                $this->active,
+                array(),
+                array('-1' => '+++ Trạng thái +++') +  array(
+                    1 => 'Activate',
+                    0 => 'Inactivate'
+                )
+            ); ?>
+            <?php echo $this->formText(
+                'expiredDate',
+                $this->expiredDate,
+                array('placeholder' => 'Ngày hết hạn','class' => 'datepicker validate[required]')
+            ); ?>
+            <input type="submit" value="Tìm kiếm" class="button greenB" />
+            <input type="button" value="Thêm mới" class="button blueB" id="btAddNew" />
+        </fieldset>
+    </form>
+
+</div>
+<div class="wrapper">
+    <div class="widget">
+        <div class="title">
+            <img src="images/icons/dark/frames.png" alt="" class="titleIcon" />
+            <h6><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)</h6>
+        </div>
+        <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+            <thead>
+                <tr>
+                    <td class="titleIcon"><?php echo $this->formCheckbox(null, null, array('class' => 'check-all')); ?></td>
+                    <td>Tiêu đề</td>
+                    <td>Mo ta</td>
+                    <td>Ngày hết hạn</td>
+                    <td>Trạng thái</td>
+                    <td>Ngày tạo</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->pagination as $data) {?>
+                <tr>
+                    <td>
+                        <?php echo $this->formCheckbox(
+                            null,
+                            $data->{DbTable_Promotion::COL_PROMOTION_ID},
+                            array('class' => 'check-items')
+                        ); ?>
+                    </td>
+                    <td>
+                        <?php echo $data->{DbTable_Promotion::COL_PROMOTION_TITLE}; ?>
+                    </td>
+                    <td>
+                        <?php echo $data->{DbTable_Promotion::COL_PROMOTION_SUB_CONTENT}; ?>
+                    </td>
+                    <td>
+                        <?php echo $data->{DbTable_Promotion::COL_PROMOTION_EXPIRED_DATE}; ?>
+                    </td>
+                    <td>
+                        <?php echo $this->activeLabel($data->{DbTable_Promotion::COL_PROMOTION_ACTIVE}); ?>
+                    </td>
+                    <td>
+                        <?php echo $data->{DbTable_Promotion::COL_PROMOTION_CREATED_AT}; ?>
+                    </td>
+
+                    <td>
+                        <a href="<?php echo '/promotion/edit/?i=' . $data->{DbTable_Promotion::COL_PROMOTION_ID}; ?>">Cập nhật</a><br>
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8">
+                        <div class="itemActions">
+                            <label>Cập nhật hàng loạt:</label>
+                            <select id="manualUpdateElement">
+                                <option value="">Chọn một hành động...</option>
+                                <option value="activate">Active</option>
+                                <option value="inactivate">Inactive</option>>
+                            </select>
+                        </div>
+                        <?php echo $this->pagination; ?>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>

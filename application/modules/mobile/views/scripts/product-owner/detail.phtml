@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img alt="" class="img-responsive"
+                 src="<?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_FACEBOOK_ID] ? 'https://graph.facebook.com/'. $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_FACEBOOK_ID].'/picture?type=large': '/upload/default/no-images.png'; ?>" style="width: 100%;">
+        </div>
+        <div class="col-md-8">
+
+            <h2 class="mb-none">
+                <strong><?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_NAME]; ?></strong></h2>
+            <h4 class="heading-primary"><?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_PHONE]; ?></h4>
+
+            <hr class="solid">
+
+
+            <ul class="list list-icons">
+                <li><i class="fa fa-check"></i> Email: Chưa cập nhật.</li>
+                <li><i class="fa fa-check"></i>
+                    Facebook: <?php if($this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_FACEBOOK_ID]) {
+                        echo '<a href="http://facebook.com/'.$this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_FACEBOOK_ID].'">'.$this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_NAME].'</a>';
+                    }else{
+                        echo 'Chưa cập nhật';
+                    }?>
+                </li>
+               <!-- <li><i class="fa fa-check"></i> Thành phố hoạt động: Hồ Chí Minh.</li>
+                <li><i class="fa fa-check"></i> Khu vực: Chưa cập nhật.</li>-->
+                <li><i class="fa fa-check"></i> Thông tin người đăng:
+                    <div class="radio-list">
+                        <label class="radio-inline">
+                            <input type="radio" name="categoryId" id="optionsRadios4"
+                                   value="1" <?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_TYPE] == 1 ? 'checked' : ''; ?>
+                                   disabled> Chính chủ</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="categoryId" id="optionsRadios5"
+                                   value="2" <?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_TYPE] == 2 ? 'checked' : ''; ?>
+                                   disabled> Môi giới </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="categoryId" id="optionsRadios6"
+                                   value="0" <?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_TYPE] == 0 ? 'checked' : ''; ?>
+                                   disabled> Chưa xác định </label>
+                    </div>
+                </li>
+            </ul>
+            <div class="fb-comments" data-href="http://xome.vn/thong-tin-nguoi-dang/<?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_PHONE].'-'. $this->productOwnerEncode($this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_ID]).'.html'; ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://xome.vn//thong-tin-nguoi-dang/<?php echo $this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_PHONE].'-'. $this->productOwnerEncode($this->dataInfo[DbTable_Product_Own::COL_PRODUCT_OWN_ID]).'.html'; ?>" data-numposts="5"></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h4 class="mt-xlg mb-none text-uppercase"><strong>Tin</strong> đã đăng</h4>
+
+            <p>Những tin nhà trọ, phòng trọ đã đăng.</p>
+
+            <div class="row">
+
+                <ul class="portfolio-list">
+                    <?php foreach ($this->productData as $product) { ?>
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="portfolio-item">
+                            <a href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>">
+												<span class="thumb-info">
+													<span class="thumb-info-wrapper">
+														<img src="<?php echo $this->showImageUrl($product[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$product[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>" class="img-responsive"
+                                                             alt="" style="height: 150px;">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner ellipsis"><?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?></span>
+															<span class="thumb-info-type"><?php echo $this->productCategoryLabel($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?></span>
+														</span>
+														<span class="thumb-info-action">
+															<span class="thumb-info-action-icon"><i
+                                                                    class="fa fa-link"></i></span>
+														</span>
+													</span>
+												</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <?php } ?>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+

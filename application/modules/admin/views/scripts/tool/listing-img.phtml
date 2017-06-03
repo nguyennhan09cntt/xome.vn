@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <h2>Quản lý hình ảnh</h2>
+</div>
+<style>
+
+</style>
+<div class="wrapper">
+    <div class="widget">
+        <form id="validate" class="form" enctype="multipart/form-data" method="post" action="<?php echo $this->adminUrl('tool/add-img'); ?>">
+            <div class="formRow">
+                <label>Upload hình ảnh:</label><input type="file" id="file_image" name="file_image" />
+                <input type="submit" value="Upload" class="greenB" />
+            </div>
+        </form>
+        <ul>
+            <?php
+                foreach($this->aImage as $image){?>
+                    <li>
+                        <img src="/upload/pasoto/<?php echo basename($image); ?>" >
+                        <p><?php echo $image; ?></p>
+                        <a href="<?php echo $this->adminUrl('tool/delete-img/?url='.$image)?>" class="btn_del button redB" data-url="<?php echo $image; ?>" onlick="javascript:void(0)">Xóa</a>
+                    </li>
+                <?php }
+            ?>
+        </ul>
+    </div>
+</div>

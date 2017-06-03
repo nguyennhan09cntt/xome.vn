@@ -1,0 +1,304 @@
+<div id="page-content" class="page-content">
+    <!-- Breadcrumb -->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="/">Trang chủ</a></li>
+            <li class="active"><?php echo $this->productCategoryLabel($this->dataInfo[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?></li>
+        </ol>
+    </div>
+    <!-- end Breadcrumb -->
+
+    <div class="container">
+        <div class="row">
+
+
+            <!-- Property Detail Content -->
+            <div class="col-md-9 col-sm-9">
+                <section id="property-detail"
+                         class="<?php echo $this->dataInfo[DbTable_Product::COL_FK_CONFIG_STATUS] != 1 ? 'expired' : '' ?>">
+                    <header class="property-title">
+                        <h1><?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_NAME]; ?></h1>
+                    </header>
+                    <div class="tabbable-custom mt-md ">
+                        <ul class="nav nav-tabs ">
+                            <li>
+                                <a href="#tab_5_1" data-toggle="tab">
+                                    Hình ảnh </a>
+                            </li>
+                            <li class="active">
+                                <a href="#tab_5_2" data-toggle="tab">
+                                    Bản đồ </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab_5_1">
+                                <section id="property-gallery" class="mt-md center">
+                                    <?php if (count($this->productImageData) > 0) { ?>
+                                        <div id="home-slider">
+                                            <div class="homeslider">
+                                                <div class="content-slide">
+                                                    <ul id="contenhomeslider">
+                                                        <?php if ($this->productImageData) { ?>
+                                                            <?php foreach ($this->productImageData as $key => $data) { ?>
+                                                                <li><img
+                                                                        alt="<?php echo $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NOTE]; ?>"
+                                                                        src="<?php echo $this->showImageUrl($data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME], $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_IMPORT],800); ?>"
+                                                                        title="<?php echo $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NOTE]; ?>"
+                                                                        style="width: 100%;"/></li>
+
+                                                            <?php }
+                                                        } ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="owl-carousel property-carousel">
+                                            <?php /*foreach ($this->productImageData as $data) { */ ?>
+                                                <div class="property-slide">
+                                                    <a href="/upload/<?php /*echo $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME] ? $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME] :'/no-image.png'; */ ?>"
+                                                       class="image-popup">
+                                                        <div class="overlay">
+                                                            <h3><?php /*echo $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NOTE]; */ ?></h3>
+                                                        </div>
+                                                        <img alt=""
+                                                             src="/upload/<?php /*echo $data[DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME]; */ ?>">
+                                                    </a>
+                                                </div>--><!-- /.property-slide -->
+                                        <!-- <?php /*} */ ?>
+                                        </div>-->
+                                    <?php } else { ?>
+                                        <img alt=""
+                                             src="<?php echo $this->showImageUrl($this->dataInfo[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$this->dataInfo[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>">
+                                    <?php } ?>
+                                    <div class="entry-meta-data mt-sm align-left">
+                                        <!--<span class="author">
+                                        <i class="fa fa-user"></i>
+                                        by: <a href="#">Admin</a></span>-->
+                            <span class="cat">
+                                <i class="fa fa-folder-o"></i>
+                                <a class="primary-link"
+                                   href="/thue-tro/sai-gon/<?php echo $this->districtIdentify($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]); ?>"><?php echo $this->districtLabel($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]); ?>
+                                    , </a>
+                                <a href="#">Sài Gòn</a>
+
+
+                            </span>
+                                        <span class="date ml-md"><i
+                                                class="fa fa-calendar"></i> <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_CREATED_AT]; ?></span>
+                                        <!--  <span class="date ml-md pull-right"><a class="primary-link fancybox" href="#googlemaps"><i class="fa fa-map-marker"></i> Bản đồ</a></span>-->
+
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="tab-pane active" id="tab_5_2">
+                                <div id="googlemaps" class="google-map mt-md"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <table class="table mt-md summary-info">
+
+                                <tbody>
+                                <tr class="">
+
+                                    <th scope="row" class="info">
+                                        Địa chỉ:
+                                    </th>
+                                    <td colspan="3">
+                                        <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_ADDRESS]; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="info">
+                                        Loại tin rao:
+                                    </th>
+                                    <td>
+                                        <?php echo $this->productCategoryLabel($this->dataInfo[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?>
+                                    </td>
+                                    <th scope="row" class="info">
+                                        Mã tin:
+                                    </th>
+                                    <td>
+                                        <?php echo $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]); ?>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="info">
+                                        Người đăng:
+                                    </th>
+                                    <td>
+                                        <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_OWN] ? $this->dataInfo[DbTable_Product::COL_PRODUCT_OWN] : 'admin'; ?>
+                                    </td>
+                                    <th scope="row" class="info">
+                                        Điện thoại:
+                                    </th>
+                                    <td>
+                                        <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PHONE]; ?>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="info">
+                                        Tin đăng:
+                                    </th>
+                                    <td class="warning">
+                                        <span class="widget-title-color-red">
+                                            <a href="<?php echo ($this->dataInfo[DbTable_Product::COL_PRODUCT_REFER_LINK]); ?>">Nguồn</a>
+                                        </span>
+                                    </td>
+                                    <th scope="row" class="info">
+                                        Đối tượng thuê:
+                                    </th>
+                                    <td>
+                                        <?php echo $this->genderLabel($this->dataInfo[DbTable_Product::COL_PRODUCT_OBJECT]); ?>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th scope="row" class="info">
+                                        Diện tích:
+                                    </th>
+                                    <td>
+                                        <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_AREA]; ?> m<sub>2</sub>
+                                    </td>
+                                    <th scope="row" class="info">
+                                        Giá cho thuê:
+                                    </th>
+                                    <td style="color: red;">
+                                        <?php echo number_format($this->dataInfo[DbTable_Product::COL_PRODUCT_PAID_PRICE]); ?>
+                                        vnđ
+                                    </td>
+                                </tr>
+
+                                <tr class="">
+
+                                    <th scope="row" class="info">
+                                        Tiện ích:
+                                    </th>
+                                    <td colspan="3">
+                                        <?php $facility = $this->showProductFacility($this->dataInfo['product_facility']); ?>
+                                        <?php echo $facility; ?>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <section id="description" class="mt-sm">
+                                <div class="panel panel-default dd">
+                                    <a href="tel://<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PHONE]; ?>"
+                                       class="btn btn-zita-focus btn-block btn-lg align-left"
+                                       onclick="">Liên
+                                        hệ ngay: <span
+                                            class="contact-tel"><?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PHONE]; ?></span></a>
+                                </div>
+                                <div class="panel panel-default dd">
+                                    <a href="#content-1"
+                                                                       class="btn btn-zita-pri btn-block btn-lg align-left"
+                                                                       data-toggle="collapse"
+                                                                       data-parent="#accordion" style="background: #4B77BE !important;color: #fff;">Thông tin mô tả<span
+                                            class="fa fa-chevron-down pull-right"></span></a>
+
+                                    <div id="content-1" class="panel-collapse collapse in">
+                                        <div class="panel-body property-content">
+                                            <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_DESCRIPTION]; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </section>
+                            <!-- /#description -->
+
+
+
+                            <?php echo $this->formHidden(
+                                'title',
+                                $this->dataInfo ? $this->dataInfo[DbTable_Product::COL_PRODUCT_NAME] : null
+                            ); ?>
+
+                            <?php echo $this->formHidden(
+                                'address',
+                                $this->dataInfo ? $this->dataInfo[DbTable_Product::COL_PRODUCT_ADDRESS] : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'lat',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LAT} : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'lng',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LONG} : null
+                            ); ?>
+
+                        </div>
+                        <!-- /.col-md-12 -->
+
+
+                    </div>
+                    <!-- /.row -->
+                </section>
+                <!-- /#property-detail -->
+
+
+            </div>
+            <!-- /.col-md-9 -->
+            <!-- end Property Detail Content -->
+
+            <!-- sidebar -->
+            <div class="col-md-3 col-sm-3" id="left_column">
+
+                <div class="block left-module">
+                    <p class="title_block">Tin tức khác</p>
+
+                    <div class="block_content">
+                        <!-- layered -->
+                        <div class="layered">
+                            <div class="layered-content">
+                                <ul class="blog-list-sidebar clearfix">
+                                    <?php foreach ($this->productRelationData as $productRelation) {
+                                        if ($productRelation[DbTable_Product::COL_PRODUCT_ID] == $this->dataInfo[DbTable_Product::COL_PRODUCT_ID]) continue;
+                                        ?>
+                                        <li>
+                                            <div class="post-thumb" style="height: 90px;">
+                                                <a href="/<?php echo $this->productCategoryIdentify($productRelation[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($productRelation[DbTable_Product::COL_FK_DISTRICT]) . '/' . $productRelation[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($productRelation[DbTable_Product::COL_PRODUCT_ID]); ?>"><img
+                                                        src="<?php echo $this->showImageUrl($productRelation[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$productRelation[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>"
+                                                        alt="<?php echo $productRelation[DbTable_Product::COL_PRODUCT_NAME]; ?>"
+                                                        class="real-estate"></a>
+                                            </div>
+                                            <div class="post-info">
+                                                <h5 class="entry_title"><a
+                                                        href="/<?php echo $this->productCategoryIdentify($productRelation[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($productRelation[DbTable_Product::COL_FK_DISTRICT]) . '/' . $productRelation[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($productRelation[DbTable_Product::COL_PRODUCT_ID]); ?>"><?php echo $productRelation[DbTable_Product::COL_PRODUCT_NAME]; ?></a>
+                                                </h5>
+
+                                                <div class="post-meta">
+                                                    <span class="date"><i
+                                                            class="fa fa-calendar"></i> <?php echo $this->formatTime($productRelation[DbTable_Product::COL_PRODUCT_CREATED_AT]); ?></span>
+                                                    <!--<span class="comment-count">
+                                                        <i class="fa fa-comment-o"></i> 3
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ./layered -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-3 -->
+            <!-- end Sidebar -->
+
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+

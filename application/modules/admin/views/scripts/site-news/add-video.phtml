@@ -1,0 +1,71 @@
+<div class="wrapper">
+    <h2>Quản lý bài viết - Thêm mới/Cập nhật video tin tức</h2>
+</div>
+
+<div class="wrapper">
+    <form id="validate" class="form" enctype="multipart/form-data" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('site-news/submit-edit'); ?>">
+        <fieldset>
+            <div class="widget">
+                <div class="title"><img src="images/icons/dark/alert.png" alt="" class="titleIcon" /><h6>Thông tin hình ảnh</h6></div>
+                <div class="formRow">
+	            	<label>Tên:<span class="req">*</span></label>
+	                <div class="formRight">
+	                        <?php echo $this->formText(
+	                            'name',
+	                            $this->dataInfo ? $this->dataInfo->{DbTable_Blog::COL_BLOG_NAME} : null,
+	                            array('class' => 'validate[required]')
+	                        ); ?>
+	                </div>
+	                <div class="clear"></div>
+	            </div>
+
+
+                <div class="formRow">
+                    <label>Mô tả:</label>
+                    <div class="formRight">
+                        <?php echo $this->formTextarea(
+                            'description',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Blog::COL_BLOG_DESCRIPTION} : null,
+                            array('rows' => 3, 'class' => 'validate[maxSize[1024]]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="formRow">
+                    <label>Code Youtube:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formTextarea(
+                            'content',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Blog::COL_BLOG_CONTENT} : null,
+                            array('rows' => 1, 'class' => 'validate[required]', 'style'=> 'width:100px')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Danh mục:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->categoryData[3];?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+				
+            </div>            
+
+            <div class="formSubmit">
+                <?php echo $this->formHidden(
+                    'id',
+                    $this->dataInfo ? $this->dataInfo->{DbTable_Blog::COL_BLOG_ID} : null
+                ); ?>
+                <?php echo $this->formHidden(
+                    'category',
+                    3
+                ); ?>
+                 
+                <input type="submit" value="Cập nhật" class="redB" />
+            </div>
+        </fieldset>
+    </form>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

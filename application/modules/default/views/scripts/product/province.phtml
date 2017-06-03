@@ -1,0 +1,96 @@
+<div class="columns-container">
+    <div class="container" id="columns">
+
+        <!-- breadcrumb -->
+        <div class="breadcrumb clearfix">
+            <a class="home" href="/" title="Return to Home">Trang chủ</a>
+            <span class="navigation-pipe">&nbsp;</span>
+            <span class="navigation_page">Nhà cho thuê</span>
+        </div>
+        <!-- ./breadcrumb -->
+
+        <div class="row">
+            <div class="col-md-3 hidden-xs" id="left_column">
+                <?php echo $this->render('widgets/sidebar-left.phtml'); ?>
+            </div>
+
+            <div class="center_column col-xs-12 col-sm-9" id="center_column">
+                <?php echo $this->render('widgets/register-real-estate.phtml'); ?>
+                <!-- view-product-list-->
+                <div id="view-product-list" class="view-product-list">
+                    <h2 class="page-heading">
+                        <span class="page-heading-title">Tin nhà trọ <?php echo $this->districtInfo[DbTable_District::COL_DISTRICT_TYPE] . ' '. $this->districtInfo[DbTable_District::COL_DISTRICT_NAME]?> mới nhất</span>
+                    </h2>
+
+                    <!--<div class="sortPagiBar" style="position: absolute;right: 0;top: 0;margin-top: 0px;">
+                        <div class="sort-product">
+                            <select>
+                                <option value="">Mặc định</option>
+                                <option value="">Giá thuê</option>
+                                <option value="">Lượt xem</option>
+                            </select>
+
+                            <div class="sort-product-icon">
+                                <i class="fa fa-sort-alpha-asc"></i>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- PRODUCT LIST -->
+                    <div class="row product-list list mt-sm">
+                        <?php foreach ($this->productData as $key => $product) { ?>
+
+                            <div class="col-md-4 product-item">
+                                <span class="thumb-info thumb-info-preview thumb-info-preview-long">
+                                    <span class="thumb-info-wrapper">
+                                        <!--<span class="thumb-info-image" data-original="img/previews/preview-corporate-version8.jpg" data-plugin-lazyload="" style="display: block; background-image: url(&quot;img/previews/preview-corporate-version8.jpg&quot;);"></span>-->
+                                        <img class="thumb-info-image"
+                                             src="<?php echo $this->showImageUrl($product[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$product[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]); ?>"
+                                             alt="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?>" height="100">
+                                        <div class="figType"><a
+                                                href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?>.html"><?php echo $this->productCategoryLabel($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]); ?></a> </div>
+                                    </span>
+                                </span>
+
+                                <div class="recent-posts pt-md mb-lg" style="border: 1px solid #DDD; border-top: none;">
+                                    <article class="post mr-sm ml-sm">
+                                        <h5 class="mb-xs course-title"><a class=""
+                                                                          href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>"><?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?></a>
+                                        </h5>
+                                        Địa chỉ: <span><?php echo $product[DbTable_Product::COL_PRODUCT_ADDRESS]?></span>
+                                        <div class="post-meta">
+                                            <span><i
+                                                    class="fa fa-calendar"></i> <?php echo $this->formatTime($product[DbTable_Product::COL_PRODUCT_CREATED_AT]); ?> </span>
+                                            <span><i class="fa fa-user"></i> By <a
+                                                    href="/thong-tin-nguoi-dang/<?php echo $product[DbTable_Product::COL_PRODUCT_PHONE].'-'. $this->productOwnerEncode($product[DbTable_Product::COL_FK_PRODUCT_OWNER]).'.html'; ?>"
+                                                    target="_blank"><?php echo $product[DbTable_Product::COL_PRODUCT_PHONE]; ?></a> </span>
+
+                                            <!--<span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>-->
+                                        </div>
+                                        <div class="post-meta-action">
+                                            <span class="product-price"><i class="fa fa-tag"></i> <?php echo  $product[DbTable_Product::COL_PRODUCT_PAID_PRICE] > 1000 ? number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE]).' VND' : 'Thỏa thuận' ?></span>
+                                            <span class="pull-right"><a
+                                                    href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>"
+                                                    class="btn btn-xs btn-primary">Chi tiết</a></span>
+                                            <!--<a href="/khoa-hoc/dang-ky.html" class="btn btn-xs btn-primary pull-right">Đăng ký</a>-->
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        <?php } ?>
+
+
+                    </div>
+                    <!-- ./PRODUCT LIST -->
+                </div>
+                <!-- ./view-product-list-->
+                <div class="sortPagiBar">
+                    <div class="bottom-pagination">
+                        <?php echo $this->pagination;?>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

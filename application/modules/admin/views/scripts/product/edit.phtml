@@ -1,0 +1,273 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Nhà trọ - Thêm mới/Cập nhật Nhà trọ
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Thêm mới/Cập nhật Nhà trọ
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin Nhà trọ
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" enctype="multipart/form-data" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('product/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tiêu đề:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'name',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_NAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hình đại diện<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php if ($this->dataInfo && $this->dataInfo->{DbTable_Product::COL_PRODUCT_THUMB_NAIL}) {
+                                    echo $this->showImage($this->dataInfo->{DbTable_Product::COL_PRODUCT_THUMB_NAIL}, 150,!$this->dataInfo->{DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE});
+                                    echo '<br />';
+                                } ?>
+                               
+                                <input type="file" id="file_image" name="file_image" class="margin-top-20">
+                                <?php echo $this->formHidden(
+                                    'image',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_THUMB_NAIL} : null
+                                ); ?>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Giá thuê<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'paid_price',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_PAID_PRICE} : null,
+                                    array('class' => 'form-control validate[required]')
+                                );?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Diện tích<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'area',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_AREA} : null,
+                                    array('class' => 'form-control validate[required]')
+                                );?>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Số điện thoại:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'phone',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_PHONE} : null,
+                                    array('class' => 'form-control')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Chủ nhà:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'own',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_OWN} : null,
+                                    array('class' => 'form-control')
+                                ); ?>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Danh mục:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'category',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_CATEGORY_ID} : null,
+                                    array('class' => 'productCategory validate[required] form-control'),
+                                    array('' => '++') + $this->categoryData
+                                ); ?>
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Quận/Huyện:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'district',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_FK_DISTRICT} : null,
+                                    array('class' => 'district validate[required] form-control'),
+                                    array('' => '++') + $this->districtData
+                                ); ?>
+                                <?php echo $this->formHidden(
+                                    'hiddenDistrict',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_FK_DISTRICT} : null
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Địa chỉ:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formTextarea(
+                                    'address',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_ADDRESS} : null,
+                                    array(
+                                        'rows' => 3,
+                                        'cols' => 70
+                                    )
+                                ); ?>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn blue" id="btn-search-map">Search</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Bản đồ:</label>
+                            <div class="col-md-9">
+                                <div id="map-canvas"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Đối tượng thuê:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'object',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_OBJECT} : null,
+                                    array('class' => 'form-control'),
+                                    array(
+                                        '' => '++',
+                                        1 => 'Nam',
+                                        2 => 'Nu'
+                                    )
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Thông tin chi tiết:</label>
+                            <div class="col-md-9">
+                                <?php echo $this->formTextarea(
+                                    'description',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_DESCRIPTION} : null,
+                                    array(
+                                        'rows' => 30,
+                                        
+                                    )
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tiện ích:</label>
+                            <div class="col-md-9">
+                                <?php foreach ($this->facilityData as $facility) { ?>
+                                <div class="checkbox-list">
+                                    <label>
+                                        <?php echo $this->formCheckbox(
+                                            'facilityArrId[]',
+                                            $facility[DbTable_Config_Product_Facility::COL_CONFIG_PRODUCT_FACILITY_ID],
+                                            array(
+                                                'id' => 'checked' . $facility[DbTable_Config_Product_Facility::COL_CONFIG_PRODUCT_FACILITY_ID],
+                                                'checked' => in_array($facility[DbTable_Config_Product_Facility::COL_CONFIG_PRODUCT_FACILITY_ID], $this->facilityArr) ? 1 : 0
+                                            )
+                                        ); ?>
+
+                                        <?php echo $facility[DbTable_Config_Product_Facility::COL_CONFIG_PRODUCT_FACILITY_NAME]; ?>
+                                    </label>
+                                </div>
+
+                                <?php } ?>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Ghi chú:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formTextarea(
+                                    'note',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_NOTE} : null,
+                                    array('rows' => 3)
+                                ); ?>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_ID} : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'processFlag',
+                                $this->processFlag
+                            ); ?>
+
+                            <?php echo $this->formHidden(
+                                'componentId',
+                                1
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'lat',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LAT} : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'lng',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LONG} : null
+                            ); ?>
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+    var productCategoryJson = <?php echo json_encode(Admin_Model_ProductCategory::getInstance()->getAllProductCategory());?>;
+</script>

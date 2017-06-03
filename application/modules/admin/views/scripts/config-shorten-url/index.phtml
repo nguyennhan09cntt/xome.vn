@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <h2>Cấu hình hệ thống - Shorten Url</h2>
+    <form method="get" action="">
+        <fieldset class="filter">
+            <?php echo $this->formText('s', $this->short_url, array('size' => 30, 'placeholder' => 'Short url')); ?>
+            <?php echo $this->formText('f', $this->full_url, array('size' => 30, 'placeholder' => 'Full url')); ?>
+            <input type="submit" value="Tìm kiếm" class="button greenB" />
+            <input type="button" value="Thêm mới" class="button blueB" id="btAddnew" />
+        </fieldset>
+    </form>
+</div>
+<div class="wrapper">
+    <div class="widget">
+        <div class="title">
+            <img src="images/icons/dark/frames.png" alt="" class="titleIcon" />
+            <h6><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)</h6>
+        </div>
+
+        <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+            <thead>
+            <tr>
+                <td>Short url</td>
+                <td>Full url</td>
+                <td>Ngày tạo</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->pagination as $data) {?>
+                <tr>
+                    <td><?php echo $data->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_SHORT_URL}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_FULL_URL}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_CREATED_AT}; ?></td>
+                    <td>
+                        <a href="<?php echo $this->adminUrl('config-shorten-url/edit/'); ?>?i=<?php echo $data->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_ID}; ?>" title="Cập nhật" class="tipS">Cập nhật</a>
+                        |
+                        <a class="btDeleteUrl red tipS" href="javascript:void(0)" title="Hủy"
+                           rel="<?php echo sprintf('%d', $data->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_ID});?>">
+                            Hủy</a>
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="99">
+                    <?php echo $this->pagination; ?>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

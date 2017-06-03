@@ -1,0 +1,117 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý slide - Danh sách slide
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Danh sách slide</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn hành động...</option>
+                            <option value="activate">Active</option>
+                            <option value="inactivate">Inactive</option>>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <button id="btn_add_new" class="btn green">
+                            Thêm mới <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="pull-right">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formText('n', $this->name, array('size' => 40, 'placeholder' => 'Tên slide', 'class' =>'form-control input-inline')); ?>
+                                <?php echo $this->formSelect(
+                                    'a',
+                                    $this->active,
+                                    array('class' => 'form-control input-inline'),
+                                    array('-1' => 'Tình trạng') + $this->activeValue()
+                                ); ?>
+
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_privilege">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_privilege .checkboxes"/>
+                        </th>
+                        <td>Tên</td>
+                        <td>Hình ảnh</td>
+                        <td>Tình trạng</td>
+                        <td>Ngày tạo</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Site_Slide::COL_SITE_SLIDE_ID},
+                                    array('class' => 'checkboxes')
+                                ); ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Site_Slide::COL_SITE_SLIDE_NAME}; ?></td>
+                            <td><?php echo $this->showImage($data->{DbTable_Site_Slide::COL_SITE_SLIDE_THUMBNAIL}, 100); ?></td>
+
+
+                            <td><?php echo $this->activeLabel($data->{DbTable_Site_Slide::COL_FK_CONFIG_ACTIVE}); ?></td>
+                            <td><?php echo $data->{DbTable_Site_Slide::COL_SITE_SLIDE_CREATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('site-slide/edit/'); ?>?i=<?php echo $data->{DbTable_Site_Slide::COL_SITE_SLIDE_ID}; ?>">Cập nhật</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div id="header" class="header" style="height: auto;min-height">
+    <div class="top-header">
+        <div class="container">
+            <div class="nav-top-links">
+                <a class="first-item" href="#">Chào mùng bạn đến LN3.IN|Thuê trọ </a>
+                <a href="#" class="hidden-xs">Liên hệ: +01224678951</a>
+            </div>
+
+            <!-- <a class="btn-fb-login" href="#">Login fb</a>-->
+            <div class="support-link hidden-xs">
+                <?php if (!$this->customerInfo) { ?>
+                    <a href="/tai-khoan/dang-ky.html">Đăng ký</a>
+                    <a href="/tai-khoan/dang-nhap.html">Đăng nhập</a>
+                <?php }else{?>
+
+                    <a href="/tai-khoan/thong-tin.html"><i class="icon-user mr-sm mt-sm"></i><?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_FIST_NAME} ?></a>
+                <?php }?>
+            </div>
+
+        </div>
+    </div>
+    <!--/.top-header -->
+    <!-- MAIN HEADER -->
+    <div id="main-header">
+        <div class="container main-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 logo">
+                    <a href="/"><img alt="LN3.IN|Thuê trọ" src="<?php echo HOST_STATIC_DEFAULT;?>images/logo.jpg" style="border: 1px solid #ddd;"/></a>
+                </div>
+                <div id="main-menu" class="col-sm-12 col-md-8 main-menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand" href="#">MENU</a>
+                            </div>
+                            <?php echo $this->render('widgets/menu.phtml'); ?>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-xs-12 col-md-1 group-button-header pl-md">
+                    <a href="/dang-tin-cho-thue.html" class="btn blue">Đăng tin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MANIN HEADER -->
+    <div class="nav-top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3" id="box-vertical-megamenus">
+                    <div class="box-vertical-megamenus">
+                        <h4 class="title">
+                            <span class="title-menu">Quận Sài Gòn</span>
+                            <span class="btn-open-mobile pull-right home-page"><i class="fa fa-bars"></i></span>
+                        </h4>
+                        <?php echo $this->render('widgets/category-featured.phtml'); ?>
+
+                    </div>
+                </div>
+                <div class="col-sm-9 col-md-9 formsearch-option4">
+                    <form class="form-inline" action="/tim-kiem">
+                        <div class="form-group form-category">
+                            <select class="select-category" name="category">
+                                <option value="">Danh mục</option>
+                                <option value="2">Phòng trọ</option>
+                                <option value="1">Nhà trọ</option>
+                                <option value="3">Ở ghép</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-category">
+                            <select class="select-category" name="province">
+                                <option value="tat-ca">Tỉnh/Thành</option>
+                                <option value="sai-gon" selected>Sài Gòn</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group form-category">
+                            <select class="select-category" name="district">
+                                <option value="">Quận/huyện</option>
+                                <?php foreach ($this->districtData as $key => $districtName) {  ?>
+                                    <option value="<?php echo $key; ?>"> Quận <?php echo $districtName; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group input-serach">
+                            <input type="text"  placeholder="Từ khóa cần tìm">
+                        </div>
+                        <button type="submit" class="pull-right btn-search"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

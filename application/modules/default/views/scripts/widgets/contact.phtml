@@ -1,0 +1,51 @@
+<form role="form" id="form-contact" method="post"  class="clearfix" style="display: none;width: 500px" action="/contact/submit-contact">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="form-contact-name">Họ tên<em>*</em></label>
+                <input type="text" class="form-control" id="form-contact-name" name="name" required>
+            </div><!-- /.form-group -->
+        </div><!-- /.col-md-6 -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="form-contact-phone">Số điện thoại<em>*</em></label>
+                <input type="text" class="form-control" id="form-contact-phone" name="phone" required>
+            </div><!-- /.form-group -->
+        </div><!-- /.col-md-6 -->
+    </div><!-- /.row -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="form-contact-address">Bạn muốn tìm nhà trọ ở đâu?</label>
+                <textarea class="form-control" id="form-contact-address" rows="2" name="address"></textarea>
+            </div><!-- /.form-group -->
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="form-contact-price">Bạn muốn tìm nhà trọ giá bao nhiêu?</label>
+                <textarea class="form-control" id="form-contact-price" rows="2" name="price"></textarea>
+            </div><!-- /.form-group -->
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="form-contact-message">Các yêu cầu khác về phòng trọ? ( diện tích, toilet, bếp, giờ giấc...)</label>
+                <textarea class="form-control" id="form-contact-message" rows="6" name="message"></textarea>
+            </div><!-- /.form-group -->
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+    <?php echo $this->formHidden(
+        'product',
+        $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_NAME} .' - '. $this->dataInfo->{DbTable_Product::COL_PRODUCT_ADDRESS} : null
+    ); ?>
+    <div class="form-group clearfix">
+        <button type="submit" class="btn pull-right btn-default">Xác nhận</button>
+    </div><!-- /.form-group -->
+    <div id="form-status"></div>
+</form><!-- /#form-contact -->
+                        

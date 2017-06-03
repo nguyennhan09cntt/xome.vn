@@ -1,0 +1,44 @@
+<p><strong>Gửi quản trị viên website Pasoto.com</strong><p>
+<p>Hệ thống nhắc nhở bạn xác nhận danh sách hành khách với nhà xe các chuyên xe sau đây.</p>
+<table cellpadding="0" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <td>Nhà xe/td>
+        <td>Tuyến</td>
+        <td>Giờ KH</td>
+        <td>Ngày KH</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->dataInfo as $data) { ?>
+            <td>
+                <?php echo $data->{DbTable_Company::COL_COMPANY_NAME}; ?>
+            </td>
+            <td>
+                <?php echo sprintf(
+                    '%s - %s',
+                    $data->{Application_Constant_Module_Cli::REGION_PROVINCE_FROM},
+                    $data->{Application_Constant_Module_Cli::REGION_PROVINCE_TO}
+                );?>
+            </td>
+            <td>
+                <?php echo $data->{DbTable_Company_Trip::COL_COMPANY_TRIP_START_TIME}; ?>
+            </td>
+            <td>
+                <?php echo $data->{DbTable_Company_Trip::COL_COMPANY_TRIP_DATE}; ?>
+            </td>
+            <td>
+                <a href="https://operation.pasoto.com/outbound/delivered?
+                c=<?php echo $data->{DbTable_Company::COL_COMPANY_NAME}; ?>
+                &pf=<?php echo $data->{Application_Constant_Module_Cli::REGION_PROVINCE_FROM}; ?>
+                &pt=<?php echo $data->{Application_Constant_Module_Cli::REGION_PROVINCE_TO}; ?>
+                &tm=<?php echo $data->{DbTable_Company_Trip::COL_COMPANY_TRIP_START_TIME}; ?>
+                &td=<?php echo $data->{DbTable_Company_Trip::COL_COMPANY_TRIP_DATE}; ?>">
+                chi tiết
+                </a>
+            </td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>

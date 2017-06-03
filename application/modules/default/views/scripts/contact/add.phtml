@@ -1,0 +1,87 @@
+<div class="page-content">
+    <!-- Breadcrumb -->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="/">Trang chủ</a></li>
+            <li class="active">Tìm kiếm nhà trọ, phòng trọ</li>
+        </ol>
+    </div>
+    <!-- end Breadcrumb -->
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-9 col-sm-9">
+                <form role="form" id="form-contact" method="post"  class="clearfix"  action="/contact/submit-contact">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="form-contact-name">Họ tên<span class="required" aria-required="true"> 										* </span></label>
+                                <input type="text" class="form-control" id="form-contact-name" name="name" required>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="form-contact-phone">Số điện thoại<span class="required" aria-required="true"> 										* </span></label>
+                                <input type="text" class="form-control" id="form-contact-phone" name="phone" required>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form-contact-message">Yêu cầu của bạn về phòng trọ (diện tích, giá phòng, giờ giấc...)</label>
+                                <textarea class="form-control" id="form-contact-message" rows="4" name="message" required></textarea>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form-contact-address">Khu vực bạn muốn tìm phòng:</label>
+                                <!--<input type="text" class="form-control" id="form-contact-address" name="address" required>-->
+
+                                <input id="pac-input" class="controls" type="text" placeholder="Khu vực" name="address" required>
+                                <div id="panel">
+                                    <div id="color-palette"></div>
+                                    <div>
+                                        <button type="button" id="delete-button">Xóa</button>
+                                    </div>
+                                </div>
+                                <div id="map"></div>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+
+
+
+
+                    <div class="form-group clearfix">
+                        <button type="submit" class="btn pull-right btn-primary" id="btn_submit_contact">Xác nhận</button>
+                    </div><!-- /.form-group -->
+                    <div id="form-status"></div>
+                    <div id="img-out"></div>
+                    <input type="hidden" name="lat" id="map_lat">
+                    <input type="hidden" name="lng" id="map_lng">
+                    <input type="hidden" name="radius" id="map_radius">
+                    <input type="hidden" name="color" id="map_color">
+                </form><!-- /#form-contact -->
+
+
+            </div><!-- /.col-md-9 -->
+
+
+            <!-- sidebar -->
+            <div class="col-md-3 col-sm-3">
+                <?php echo $this->render('widgets/sidebar-left.phtml'); ?>
+            </div><!-- /.col-md-3 -->
+            <!-- end Sidebar -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+
+</div>
+
+<!--<script src="http://maps.google.com/maps/api/js?key=AIzaSyB-AOx4WsiNTjZ3fne0YV8Jy6ngfwIH_f4&sensor=false&libraries=places,drawing"></script>-->
+<!--<script src="http://maps.google.com/maps/api/js?key=AIzaSyACxeyH_WD2MaKwbNS4AIFpgKQf_hk3NCk&sensor=false&libraries=places,drawing"></script>-->

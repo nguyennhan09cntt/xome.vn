@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='index_msg_newsletter_email_exits_already'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Email này đã đăng ký nhận bản tin trước đó]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='index_msg_newsletter_validation_time'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vui lòng chờ %d phút để thực hiện tiếp chức năng này]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='index_msg_newsletter_successful'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Đăng ký nhận thông tin từ Website thành công. Xin cảm ơn quý khách.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='index_choose_route'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Chọn chuyến]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='index_'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+</body>

@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <h2>Quản lý bài viết - Danh sách category</h2>
+</div>
+
+<div class="wrapper">
+    <form id="validate" class="form" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('blog-category/submit-edit'); ?>">
+        <fieldset>
+            <div class="widget">
+                <div class="title"><img src="images/icons/dark/alert.png" alt="" class="titleIcon" /><h6>Thông tin danh mục</h6></div>
+                <div class="formRow">
+                    <label>Tên:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'name',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Blog_Category::COL_BLOG_CATEGORY_NAME} : null,
+                            array('class' => 'validate[required]')
+                        ); ?>
+	                       
+                    </div>
+                    <div class="clear"></div>
+                </div>
+				<?php if($this->dataInfo){?>
+                <div class="formRow">
+                    <label>Identify:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                                'identify',
+                                $this->dataInfo->{DbTable_Blog_Category::COL_BLOG_CATEGORY_IDENTIFY},
+                                array('class' => 'validate[required]')
+                        );?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <?php }?>
+                <div class="formRow">
+                    <label>Nhóm danh mục:</label>
+                    <div class="formRight">
+                        <?php echo $this->formSelect(
+                            'parentId',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Blog_Category::COL_BLOG_CATEGORY_PARENT_ID} : null,
+                            array(),
+                            array('' => '++') + $this->categoryData
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>            
+
+            <div class="formSubmit">
+                <?php echo $this->formHidden(
+                    'id',
+                    $this->dataInfo ? $this->dataInfo->{DbTable_Blog_Category::COL_BLOG_CATEGORY_ID} : null
+                ); ?>
+                <input type="submit" value="Cập nhật" class="redB" />
+            </div>
+        </fieldset>
+    </form>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

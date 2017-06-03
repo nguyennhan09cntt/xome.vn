@@ -1,0 +1,89 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active">Tài khoản của tôi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Danh sách các lớp học đã nhận dạy</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+
+
+    <div class="row profile">
+        <div class="col-md-12">
+            <div clbreadcrumbass="featured-boxes">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <?php echo $this->render('customer/widgets/sidebar.phtml');?>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="featured-box featured-box-primary align-left mt-xlg">
+                            <div class="box-content">
+                                <h4 class="heading-primary text-uppercase mb-md">Các khóa học của tôi</h4>
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            #
+                                        </th>
+                                        <th>
+                                            Tên khóa học
+                                        </th>
+                                        <th>
+                                            Trung tâm
+                                        </th>
+                                        <th>
+                                            Ngày đăng ký
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($this->courseBookingData as $index => $data) { ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $index + 1; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $data[DbTable_Course::COL_COURSE_NAME] ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $this->centerLabel($data[DbTable_Course::COL_FK_CENTER]); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $this->formatTime($data[DbTable_Course_Booking::COL_COURSE_BOOKING_CREATED_AT]); ?>
+                                            </td>
+                                            <td>
+                                                <a href="/<?php echo $this->courseComponentIdentify($data[DbTable_Course::COL_FK_COMPONENT]); ?>/<?php echo $this->courseCategoryIdentify($data[DbTable_Course::COL_FK_CATEGORY]) . '/' . $data[DbTable_Course::COL_COURSE_IDENTIFY] . '.html' ?>"
+                                                   class="btn btn-xs btn-primary">Chi tiết</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        districtJson = <?php echo json_encode(Model_District::getInstance()->getAll());?>;
+    </script>
+
+</div>

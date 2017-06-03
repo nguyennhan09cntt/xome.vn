@@ -1,0 +1,96 @@
+<div id="header" class="header" style="height: auto;min-height">
+    <div class="nav-top-menu" id="nav-top-menu">
+        <div class="container">
+            <div class="row">
+
+                <div id="main-menu" class="col-sm-12 col-md-12 main-menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand" href="#">MENU</a>
+                            </div>
+                            <?php echo $this->render('widgets/menu.phtml'); ?>
+                        </div>
+                    </nav>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form id="form-search-courses" action="/tim-kiem-ban-do" novalidate="novalidate">
+                        <div class="input-group" style="margin-top:10px;">
+                            <!-- /btn-group -->
+                           <!-- <input type="text" class="form-control" placeholder="Tên khóa học" name="tu-khoa">-->
+                            <?php echo $this->formSelect(
+                                'price-value',
+                                isset($this->priceValue) ? $this->priceValue : null,
+                                array(
+                                    'class' => 'form-control price',
+                                    'id' => 'search_room_prices',
+                                    'style'=>'width:100px;'
+                                ),
+                                array(
+                                    '' => 'Mức giá',
+
+                                    1 => '500K - 1Tr',
+                                    2 => '1Tr - 1.5Tr',
+                                    3 => '1.5Tr - 2.5Tr',
+                                    4 => '2.5Tr - 3Tr',
+                                    5 => '> 3Tr',
+
+                                )
+                            ); ?>
+						
+                        <?php echo $this->formSelect(
+                            'district',
+                            isset($this->district) ? $this->district : null,
+                            array(
+                                'class' => 'form-control',
+                                'id' => 'search_district',
+                                'style'=>'width:150px;'
+                            ),
+                            array(
+                                '' => 'Quận/Huyện',
+                                760 => 'Quận 1',
+                                769 => 'Quận 2',
+                                770 => 'Quận 3',
+                                773 => 'Quận 4',
+                                774 => 'Quận 5',
+                                775 => 'Quận 6',
+                                778 => 'Quận 7',
+                                776 => 'Quận 8',
+                                763 => 'Quận 9',
+                                771 => 'Quận 10',
+                                772 => 'Quận 11',
+                                761 => 'Quận 12',
+                                762 => 'Quận Thủ Đức',
+                                764 => 'Quận Gò Vấp',
+                                765 => 'Quận Bình Thạnh',
+                                766 => 'Quận Tân Bình',
+                                767 => 'Quận Tân Phú',
+                                768 => 'Quận Phú Nhuận',
+                                777 => 'Quận Bình Tân',
+                                783 => 'Huyện Củ Chi',
+                                784 => 'Huyện Hóc Môn',
+                                785 => 'Huyện Bình Chánh',
+                                786 => 'Huyện Nhà Bè',
+                                787 => 'Huyện Cần Giờ',
+                            )
+                        ); ?>
+
+                        <input type="hidden" name="danh-muc" id="search-category-id" value="tat-ca">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Tìm</button>
+                            </div>
+                            <!-- /btn-group -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

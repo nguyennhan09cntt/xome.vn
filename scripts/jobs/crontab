@@ -1,0 +1,18 @@
+*/15 * * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c ticket -a release-holding
+0 */1 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c company-trip -a disable-less-than-24hour
+2,32 * * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c ticket -a remind-start-time
+30 23 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c sml-transaction -a clean-up
+35 23 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c ticket -a clean-up-cancellation
+45 23 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c company-trip -a clean-up-over
+50 23 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c webservice-log -a clean-up
+#3 0 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c company-trip -a disable-over
+#00 12 * * 5  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c company-trip -a disable-weekend
+#00 12 * * 6  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c company-trip -a disable-saturday
+1 0 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c ticket -a proceed-waiting-for-pickup
+5 0 * * *  clearmemcache
+8 0 * * *  clearwebcache
+10 0 * * * /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c report -a report
+12 0 * * * /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c ticket -a ref-bonus
+0 9,12,16 * * * /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c tool-crawl -a update-original-price-sinh-cafe
+10 12 * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c customer-new-year -a delete-ticket-payment-over-time
+*/20 * * * *  /usr/bin/php /home/www/pasoto.com/httpdocs/live/public/cli.php -c report-queue -a exec

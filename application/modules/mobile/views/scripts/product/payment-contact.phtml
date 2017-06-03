@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+            <?php echo $this->render('widgets/sidebar-left.phtml'); ?>
+        </div>
+        <div class="col-md-9">
+            <form id="frmBillingAddress" class="" method="POST" novalidate="novalidate" action="/product/submit-payment">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Họ tên <span class="required"style="color: #f00;">*</span></label>
+                            <input type="text" value="" data-msg-required="Xin điền họ tên của bạn." maxlength="100"
+                                   class="form-control validate[required]" name="name" id="contactName" required=""
+                                   aria-required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Điện thoại <span class="required" style="color: #f00;">*</span></label>
+                            <input type="text" id="contactPhone" class="validate[required,custom[phone]] form-control"
+                                   value="" name="phone" required  data-msg-required="Xin quý khách điền thông tin số điện.">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Email</label>
+                            <input type="email" value="" id="contactEmail" class="validate[custom[email]] form-control"
+                                   data-msg-required="Xin quý khách điền thông tin mail"
+                                   data-msg-email="Xin quý khách điền thông tin số email" maxlength="100" name="email" email>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Địa chỉ</label>
+                            <textarea id="contactAddress" cols="5" rows="5"
+                                      class="validate[required] form-control" name="address"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                     <div class="form-group">
+                         <div class="col-md-3">
+                             <label>Mã xác nhận <span class="required" style="color: #f00;">*</span></label>
+                             <input type="text" id="contactCaptcha" class="validate[required] form-control" style="width:150px; text-transform:lowercase">
+
+                         </div>
+                         <div class="col-md-3">
+                             <img alt="Captcha" id="captchaImg"
+                                  src="/captcha.jpg" style="margin-top: 30px;">
+                         </div>
+                     </div>
+                 </div>-->
+                <div class="row" style="margin-top: 10px;">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="hidden" id="lgContact" value="vn">
+                            <input type="submit" value="Xác nhận" class="btn btn-primary btn-lg"
+                                   data-loading-text="Loading...">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

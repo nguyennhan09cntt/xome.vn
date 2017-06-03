@@ -1,0 +1,95 @@
+<div class="wrapper">
+    <h2><?php echo $this->dataInfo ? 'Cập nhật' : 'Thêm mới';?> Khuyến mãi</h2>
+</div>
+<div class="wrapper">
+    <form id="validate" class="form" method="post" enctype="multipart/form-data" target="ifrmEdit" action="/promotion/submit-edit">
+        <fieldset>
+            <div class="widget">
+                <div class="title"><img src="images/icons/dark/alert.png" alt="" class="titleIcon" /><h6>Thông tin Khuyến mãi</h6></div>
+                <div class="formRow">
+                    <label>Tiêu đề:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'name',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_TITLE} : null,
+                            array('class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="formRow">
+                    <label>Hình đại diện (270 x 200):<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php if ($this->dataInfo && $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_IMAGE}) {
+                            echo $this->showImage($this->dataInfo->{DbTable_Promotion::COL_PROMOTION_IMAGE}, 150);
+                            echo '<br />';
+                        } ?>
+                        <input type="file" id="file_image" name="file_image" class="<?php echo $this->dataInfo ? '' : 'validate[required]';?>"/>
+                        <?php echo $this->formHidden(
+                            'image',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_IMAGE} : null
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Hình slider - chi tiết (1170 x 330):<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php if ($this->dataInfo && $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_IMAGE_SLIDER}) {
+                            echo $this->showImage($this->dataInfo->{DbTable_Promotion::COL_PROMOTION_IMAGE_SLIDER}, 250);
+                            echo '<br />';
+                        } ?>
+                        <input type="file" id="file_imageSlider" name="file_imageSlider" class="<?php echo $this->dataInfo ? '' : 'validate[required]';?>"/>
+                        <?php echo $this->formHidden(
+                            'imageSlider',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_IMAGE_SLIDER} : null
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Ngày hết hạn:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'expiredDate',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_EXPIRED_DATE} : null,
+                            array('class' => 'datepicker validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Nội dung ngắn:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formTextarea(
+                            'subContent',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_SUB_CONTENT} : null,
+                            array('rows' => 3,'class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Nội dung:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formTextarea(
+                            'content',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_CONTENT} : null,
+                            array('rows' => 3, 'class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formSubmit">
+                    <?php echo $this->formHidden(
+                        'id',
+                        $this->dataInfo ? $this->dataInfo->{DbTable_Promotion::COL_PROMOTION_ID} : null
+                    ); ?>
+                    <input type="submit" value="Cập nhật" class="redB" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

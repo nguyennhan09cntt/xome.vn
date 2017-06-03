@@ -1,0 +1,10 @@
+
+.tab-content .bx-wrapper {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+.bx-viewport{
+	height: 400px!important;
+}

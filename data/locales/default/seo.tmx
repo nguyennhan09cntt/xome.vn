@@ -1,0 +1,183 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='seo_homepage_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Vé xe khách online. Vé máy bay online. Giá tốt nhất. Dịch vụ tốt nhất.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_homepage_keyword'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Vé xe khách, tuyến đường]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_homepage_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Pasoto.com chuyên bán vé xe khách, vé máy bay, phòng khách sạn. Online. Thuận tiện. Dịch vụ và giá tốt nhất. Mua xe khách đi các tỉnh, tìm vé xe giá rẻ khuyến mãi tốt nhất. Mua vé máy bay Vietnam airline, Vietjet Air,Jetstar giá tốt. Đặt phòng khách sạn giá tốt nhất.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_index_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt mua vé xe từ %s đi %s]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_index_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt mua vé xe online từ %s đến %s nhanh chóng, tiện lợi cùng nhiều chương trình khuyến mãi tại website bán vé xe khách Pasoto.com.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_index_title_with_company'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt mua vé xe %s từ %s đi %s]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_index_description_with_company'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt mua vé xe online từ %s đến %s của nhà xe %s tiện lợi và nhanh chóng nhất tại website bán vé xe khách Pasoto.com.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_ticket_index_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Kiểm tra vé]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_index_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Xe %s: Số điện thoại, giá vé và lịch trình xe %s]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_index_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Xe khách %s: Thông tin lịch trình, số điện thoại, địa chỉ của nhà xe %s. Mua vé xe %s online tại website Pasoto.com]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_promotion_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt mua vé xe rẻ từ %s đi %s]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_promotion_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt mua vé xe online giá rẻ từ %s đến %s tại Pasoto.  Click để xem các chương trình khuyến mãi mới nhất cho chặng đường từ %s đến %s.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_listing_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thông tin các chuyến xe được khai thác tại PASOTO]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_trip_listing_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Danh sách các chuyến xe khởi hành từ Sài gòn đi các tỉnh và ngược lại. Khách hàng sẽ tìm thấy thông tin cần thiết như: giá vé, nhà xe, lộ trình...một cách nhanh nhất]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_listing_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Tổng hợp danh sách các nhà xe liên kết cùng PASOTO]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_company_listing_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Tập hợp toàn bộ thông các nhà xe liên kết với Pasoto để mang lại cho hành khách những trải nghiệm tốt nhất trong hành trình của mình. ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_campaign_listing_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thông tin các chương trình ưu đãi, khuyến mãi cùng PASOTO]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_campaign_listing_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Cập nhật các tin tức khuyến mãi từ các nhà xe và các chương trình liên kết cùng PASOTO. Hành khách sẽ có cơ hội sở hữu nhiều ưu đãi với giá vé siêu rẻ và các phần quà hấp dẫn]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+</body>

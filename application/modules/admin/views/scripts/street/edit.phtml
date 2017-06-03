@@ -1,0 +1,83 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Hành tỉnh - Thêm mới/Cập nhật tuyến đường
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Thêm mới/Cập nhật tuyến đường
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin danh mục
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('blog-category/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tên tuyến đường<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'name',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Street::COL_STREET_NAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+                        <?php if($this->dataInfo){?>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Định danh<span class="required" aria-required="true"> * </span>:</label>
+                                <div class="col-md-6">
+                                    <?php echo $this->formText(
+                                        'identify',
+                                        $this->dataInfo->{DbTable_Street::COL_STREET_IDENTIFY},
+                                        array('class' => 'form-control validate[required]')
+                                    );?>
+                                </div>
+                            </div>
+                        <?php }?>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Quận/huyện<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'parentId',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Street::COL_FK_DISTRICT} : null,
+                                    array(),
+                                    array('' => '++') + $this->districtData
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Street::COL_STREET_ID} : null
+                            ); ?>
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

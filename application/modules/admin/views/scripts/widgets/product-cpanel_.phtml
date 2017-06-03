@@ -1,0 +1,39 @@
+<div class="wrapper">
+    <div class="toggle">
+        <div class="title closed"><img src="images/icons/dark/help.png" alt="" class="titleIcon" /><h6><?php echo $this->productInfo->{DbTable_Product::COL_PRODUCT_NAME}; ?></h6></div>
+        <div class="body">
+            <div class="line"></div>
+            <div class="statsRow">
+                <div class="wrapper">
+                    <p>
+                        <img src="images/icons/dark/addressBook.png" /> <?php echo $this->productInfo->{DbTable_Product::COL_PRODUCT_NAME}; ?>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="images/icons/dark/dialog.png" /> <?php echo $this->productInfo->{DbTable_Product::COL_PRODUCT_REFER_CODE}; ?>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="statsRow">
+                <div class="wrapper">
+                    <div class="horControlB">
+                        <ul>
+                            <li><a href="<?php echo $this->adminUrl('product/edit/?i=' . $this->productInfo->{DbTable_Product::COL_PRODUCT_ID});?>" title="">
+                                    <img src="images/icons/control/16/pencil.png" alt="" /><span>Chỉnh sửa</span></a></li>
+                            <li><a href="<?php echo $this->adminUrl('product-image/?p=' . $this->productInfo->{DbTable_Product::COL_PRODUCT_ID});?>" title="">
+                                    <img src="images/icons/control/16/database.png" alt="" /><span>Quản lý hình ảnh</span></a></li>
+                            <li><a href="<?php echo $this->adminUrl('product-category/?i=' . $this->productInfo->{DbTable_Product::COL_PRODUCT_CATEGORY_ID});?>" title="">
+                                    <img src="images/icons/control/16/customers.png" alt="" /><span>Quản lý danh mục</span></a></li>
+                          <!--  <li><a href="<?php /*echo $this->adminUrl('product-component/?i=' . $this->productInfo->{DbTable_Product::COL_FK_PRODUCT_COMPONENT});*/?>" title="">
+                                    <img src="images/icons/control/16/milestone.png" alt="" /><span>Quản lý thành phần</span></a></li>-->
+                            <li><a href="<?php echo $this->adminUrl('product/?n='.$this->productInfo->{DbTable_Product::COL_PRODUCT_NAME} );?>" title="">
+                                    <img src="images/icons/control/16/sitemap.png" alt="" /><span>Quản lý Nhà trọ</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

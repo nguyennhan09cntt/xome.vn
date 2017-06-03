@@ -1,0 +1,86 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Administration - Thêm mới/ cập nhật Module - Tab
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Module</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin module
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('admin-module/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tên module/ tab <span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'priority',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Module::COL_ADMIN_MODULE_NAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="col-md-3 control-label">Thứ tự hiển thị<span class="required" aria-required="true"> * </span>:</label>
+                        <div class="col-md-6">
+                            <?php echo $this->formText(
+                                'priority',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Module::COL_ADMIN_MODULE_PRIORITY} : null,
+                                array('class' => 'form-control validate[required]')
+                            ); ?>
+                        </div>
+
+
+                    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hệ thống<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'componentId',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Module::COL_FK_ADMIN_COMPONENT} : null,
+                                    array('class' => 'form-control validate[required]'),
+                                    array(
+                                        Application_Constant_Db_Admin_Component::CMS => 'CMS',
+                                        Application_Constant_Db_Admin_Component::OPERATION => 'Operation'
+                                    )
+                                ); ?>
+                            </div>
+                        </div>
+                    <div class="form-actions right">
+                        <?php echo $this->formHidden(
+                            'id',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Module::COL_ADMIN_MODULE_ID} : null
+                        ); ?>
+                        <!--<button type="button" class="btn default">Cancel</button>-->
+                        <button type="submit" class="btn green">Cập nhật</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

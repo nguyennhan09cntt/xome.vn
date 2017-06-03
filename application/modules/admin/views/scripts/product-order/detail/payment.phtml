@@ -1,0 +1,63 @@
+<div class="portlet box grey-cascade">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>Chi tiết đơn hàng
+        </div>
+    </div>
+    <div class="portlet-body">
+
+        <table class="table table-striped table-bordered table-hover" id="table_product_order">
+            <thead>
+            <tr>
+                <td width="60">Mã SP</td>
+                <!-- <td>Giá mua</td>-->
+                <td>Giá bán</td>
+                <td>Số lượng</td>
+                <td>Thuộc tính</td>
+                <td>Thành tiền</td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->productData as $product) {?>
+                <tr>
+                    <td style="text-align: center">
+                        <?php echo $product->{DbTable_Product::COL_PRODUCT_REFER_CODE}?>
+                    </td>
+                    <!--<td style="text-align: center"><?php /*echo number_format($product->{DbTable_Product::COL_PRODUCT_ORIGINAL_PRICE}); */?></td>-->
+                    <td style="text-align: center"><?php echo number_format($product->{DbTable_Product_Product_Order::COL_PRODUCT_PRODUCT_ORDER_PAID_PRICE}); ?></td>
+                    <td style="text-align: center"><?php echo number_format($product->{DbTable_Product_Product_Order::COL_PRODUCT_PRODUCT_ORDER_QTY}); ?></td>
+                    <td style="text-align: center">
+                        <span><?php echo $product->{DbTable_Product_Product_Order::COL_PRODUCT_PRODUCT_ORDER_SIZE}?></span>
+                        -
+                        <span><?php echo $product->{DbTable_Product_Product_Order::COL_PRODUCT_PRODUCT_ORDER_COLOR}?></span>
+                    </td>
+                    <td>
+                        <?php
+                        $princeInfo = sprintf(
+                            '%d|%d',
+                            $product->{DbTable_Product_Product_Order::COL_PRODUCT_PRODUCT_ORDER_ID},
+                            $product->{DbTable_Product_Product_Order::COL_PRODUCT_PRODUCT_ORDER_QTY}
+                        );
+                        ?>
+                        <?php echo number_format($product->{Application_Constant_Global::KEY_TOTAL}); ?>
+                        <!-- <a href="javascript:void(0)" title="Thay đổi số lượng" class="btUpdateQuanty tipS" rel="<?php /*echo $princeInfo;*/?>">
+                        <img src="images/icons/lists/plusR.png"></a>-->
+
+                    </td>
+                </tr>
+            <? }?>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4">
+                    Tổng cộng:
+                </td>
+                <td>
+                    <strong> <?php echo number_format($this->totalPrice);?></strong>
+                </td>
+
+            </tfoot>
+        </table>
+
+    </div>
+</div>

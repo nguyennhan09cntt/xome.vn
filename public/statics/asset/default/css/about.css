@@ -1,0 +1,34 @@
+
+.title {
+	padding-left:8px;
+	border-left:4px solid #14bfcc;
+	font-size:40px;
+	margin-bottom:15px;
+}
+.fb-page iframe{
+	max-width:100%;
+	
+}
+.thumbnail img{
+	height:200px;
+}
+
+.timeline>li,.list-unstyled li{
+	list-style:none;
+}
+.timeline-body{
+	overflow:visible;
+}
+#mobile .content{
+	margin-left:10px;
+	margin-right:10px;
+}
+#mobile .container{
+	padding-left:5px;
+	padding-right:5px;
+}
+.menu-category-name{
+	border-color: #428bca;
+	background-color: #428bca;
+	color: #fff;
+}

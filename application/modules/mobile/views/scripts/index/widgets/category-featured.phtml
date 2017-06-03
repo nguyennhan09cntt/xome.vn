@@ -1,0 +1,16 @@
+<ul class="list-group margin-bottom-25 sidebar-menu">
+    <li data-id="3" class=""><a href="javascript:;" class="btn-primary">Danh mục</a>
+        <ul class="product-sub-category">
+            <?php foreach ($this->productCategoryHomeData as $category) { ?>
+                <?php if ($category[DbTable_Product_Category::COL_PRODUCT_CATEGORY_PARENT_ID] == 3 && $category[DbTable_Product_Category::COL_PRODUCT_CATEGORY_STATUS] == Application_Constant_Db_Config_Active::ACTIVE) { ?>
+                    <li>
+                        <a href="/san-pham/<?php echo $this->productComponentIdentify($category[DbTable_Product_Category::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($category[DbTable_Product_Category::COL_PRODUCT_CATEGORY_ID]); ?>.html"
+                           title="<?php echo($category[DbTable_Product_Category::COL_PRODUCT_CATEGORY_NAME]); ?>"><span> » </span><?php echo($category[DbTable_Product_Category::COL_PRODUCT_CATEGORY_NAME]); ?>
+                        </a>
+                    </li>
+                <?php }
+            }?>
+        </ul>
+    </li>
+
+</ul>

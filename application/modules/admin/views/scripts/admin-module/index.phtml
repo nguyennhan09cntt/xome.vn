@@ -1,0 +1,118 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Administration - Module / Main-tab
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Module</a>
+            </li>
+
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <button id="btn_add_new" class="btn green">
+                            Thêm mới <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="pull-right">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <label>Hệ thống</label>
+                                <?php echo $this->formSelect(
+                                    'c',
+                                    $this->componentId,
+                                    array('class' =>'input-inline form-control'),
+                                    array(0 => '++') + array(
+                                        Application_Constant_Db_Admin_Component::CMS => 'CMS',
+                                        Application_Constant_Db_Admin_Component::OPERATION => 'Operation'
+                                    )
+                                ); ?>
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_module">
+                    <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Tên Module
+                        </th>
+                        <th>
+                            Thứ tự hiển thị
+                        </th>
+                        <th>
+                            Hệ thống
+                        </th>
+                        <th>
+                            Ngày tạo
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td><?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_ID}; ?></td>
+                            <td><?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_NAME}; ?></td>
+                            <td><?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_PRIORITY}; ?></td>
+                            <td><?php if ($data->{DbTable_Admin_Module::COL_FK_ADMIN_COMPONENT}==Application_Constant_Db_Admin_Component::CMS) {
+                                    echo 'CMS';
+                                } else {
+                                    echo 'Operation';
+                                } ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_NAME_CREATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('admin-resource/'); ?>?m=<?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_ID}; ?>">Manage Resource</a>
+                                &nbsp;|&nbsp;
+                                <a href="<?php echo $this->adminUrl('admin-resource/edit/'); ?>?m=<?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_ID}; ?>">Add Resource</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

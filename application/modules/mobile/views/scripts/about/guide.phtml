@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 hidden-xs">
+            <?php echo $this->render('widgets/sidebar-left.phtml'); ?>
+        </div>
+        <div class="col-md-9">
+            <?php if($this->content){echo $this->content;}?>
+
+        </div>
+    </div>
+</div>

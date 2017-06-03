@@ -1,0 +1,75 @@
+<section id="sidebar">
+    <aside id="edit-search">
+        <header><h3>Khung tìm kiếm</h3></header>
+        <form role="form" id="form-sidebar" class="form-search" action="/nha-tro/tim-kiem">
+
+            <div class="form-group">
+                <select name="district">
+                    <option value="">Quận/Huyện</option>
+                    <option value="1">Quận 1</option>
+                    <option value="10">	Quận 2</option>
+                    <option value="11">	Quận 3</option>
+                    <option value="14">	Quận 4</option>
+                    <option value="15">	Quận 5</option>
+                    <option value="16">	Quận 6</option>
+                    <option value="21">	Quận 7</option>
+                    <option value="17">	Quận 8</option>
+                    <option value="4">Quận 9</option>
+                    <option value="12">	Quận 10</option>
+                    <option value="13">	Quận 11</option>
+                    <option value="2">Quận 12</option>
+                    <option value="18">	Quận Bình Tân</option>
+                    <option value="5">Quận Gò Vấp</option>
+                    <option value="6">Quận Bình Thạnh</option>
+                    <option value="7">Quận Tân Bình</option>
+                    <option value="8">Quận Tân Phú</option>
+                    <option value="9">Quận Phú Nhuận</option>
+                    <option value="3">Quận Thủ Đức</option>
+                    <option value="23">	Huyện Củ Chi</option>
+                    <option value="22">	Huyện Hóc Môn</option>
+                    <option value="24">	Huyện Bình Chánh</option>
+                    <option value="25">	Huyện Nhà Bè</option>
+                </select>
+            </div><!-- /.form-group -->
+            <div class="form-group">
+                <select name="facility">
+                    <option value="">Tiện ích</option>
+                    <option value="1">Miễn phí wifi</option>
+                    <option value="2">Bãi đậu xe</option>
+                    <option value="3">Có gác/ lầu</option>
+                    <option value="4">Nhà vệ sinh riêng</option>
+                </select>
+            </div><!-- /.form-group -->
+            <div class="form-group">
+                <div class="price-range">
+                    <input id="price-input" type="text" name="price" value="1000000;10000000">
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Tìm kiếm</button>
+            </div><!-- /.form-group -->
+        </form><!-- /#form-map -->
+    </aside><!-- /#edit-search -->
+    <aside id="featured-properties">
+        <header><h3>Nhà trọ nổi bật</h3></header>
+        <?php foreach ($this->productHotData as $key => $product) { ?>
+        <div class="property small">
+            <a href="/nha-tro/<?php echo $this->productComponentIdentify($product[DbTable_Product::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>">
+                <div class="property-image">
+                    <img alt="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?>" src="<?php echo '/upload' . $product[DbTable_Product::COL_PRODUCT_THUMB_NAIL];?>">
+                </div>
+            </a>
+            <div class="info">
+                <a href="/nha-tro/<?php echo $this->productComponentIdentify($product[DbTable_Product::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>">
+                    <h4><?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?></h4>
+                </a>
+                <figure><?php echo $product[DbTable_Product::COL_PRODUCT_ADDRESS]?></figure>
+                <div class="tag price"><?php echo number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE]);?></div>
+            </div>
+        </div><!-- /.property -->
+        <?php }?>
+    </aside><!-- /#featured-properties -->
+
+</section><!-- /#sidebar -->
+<div class="gap-small"></div>
+<?php echo $this->render('widgets/blog-news.phtml'); ?>

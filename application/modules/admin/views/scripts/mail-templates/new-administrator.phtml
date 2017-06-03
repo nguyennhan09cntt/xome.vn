@@ -1,0 +1,23 @@
+Xin chào <strong><?php echo $this->fullName; ?></strong>.
+<p>Tài khoản quản trị của bạn đã được tạo tại hệ thống <strong>Pasoto.com</strong>. Dưới đây là thông tin tài khoản của bạn, vui lòng kiểm tra lại bằng cách thử đăng nhập hệ thống và liên hệ với chúng tôi nếu có bất cứ khó khăn gì.</p>
+<table cellpadding="8" cellspacing="8" style="border:1px solid #ccc;">
+    <tr>
+        <td style="background: #ccc;">Họ và tên:</td>
+        <td><strong><?php echo $this->fullName; ?></strong></td>
+    </tr>
+    <tr>
+        <td style="background: #ccc;">Email đăng nhập:</td>
+        <td><strong><?php echo $this->email; ?></strong></td>
+    </tr>
+    <tr>
+        <td style="background: #ccc;">Mật khẩu:</td>
+        <td><strong><?php echo $this->password; ?></strong></td>
+    </tr>
+    <tr>
+        <td style="background: #ccc;">Truy cập hệ thống:</td>
+        <td><a href="http://admin.pasoto.com">http://admin.pasoto.com</a></td>
+    </tr>
+</table>
+<p>Email được gửi tự động, vui lòng không trả lời email này.</p>
+<p>Xin cảm ơn và chúc bạn 1 ngày làm việc tốt làm.</p>
+<p><em>(*)Gửi từ hệ thống Pasoto.com vào lúc <?php echo date('Y-m-d H:i:s'); ?></em></p>

@@ -1,0 +1,21 @@
+<aside id="featured-properties">
+    <header><h3>Tin tức mới</h3></header>
+    <?php if($this->blogNewListData) { ?>
+    <?php foreach ($this->blogNewListData as $key => $blog) { ?>
+
+            <div class="property small">
+                <a href="/tin-tuc/<?php echo $this->blogCategoryIdentify($blog[DbTable_Blog::COL_FK_BLOG_CATEGORY])?>/<?php echo $blog[DbTable_Blog::COL_BLOG_IDENTIFY]?>.html">
+                    <div class="property-image">
+                        <img src="/upload/<?php echo $blog[DbTable_Blog::COL_BLOG_THUMB_IMAGE] ?>">
+                    </div>
+                </a>
+                <div class="info">
+                    <a href="/tin-tuc/<?php echo $this->blogCategoryIdentify($blog[DbTable_Blog::COL_FK_BLOG_CATEGORY])?>/<?php echo $blog[DbTable_Blog::COL_BLOG_IDENTIFY]?>.html">
+                        <h4><?php echo $blog[DbTable_Blog::COL_BLOG_NAME] ?></h4>
+                    </a>
+                    <figure><?php echo $blog[DbTable_Blog::COL_BLOG_DESCRIPTION]?></figure>
+                </div>
+            </div><!-- /.property -->
+        <?php }
+    }?>
+</aside>

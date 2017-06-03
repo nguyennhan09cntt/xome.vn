@@ -1,0 +1,94 @@
+<!-- Slider -->
+<?php echo $this->render('index/widgets/slider.phtml'); ?>
+
+
+<div class="container">
+
+    <div class="row mt-xlg">
+        <!-- Left colunm -->
+       <!-- <div class="column col-xs-12 col-sm-3" id="left_column">
+            <?php /*echo $this->render('widgets/sidebar-left.phtml'); */?>
+
+
+
+
+        </div>-->
+        <!-- ./left colunm -->
+        <!-- Center colunm-->
+        <div class="center_column col-xs-12 col-sm-12" id="center_column">
+            <!-- view-product-list-->
+            <div id="view-product-list" class="view-product-list mt-none">
+                <h2 class="page-heading">
+                    <span class="page-heading-title">Tin mới nhất</span>
+                </h2>
+                <!--<div class="sortPagiBar" style="position: absolute;right: 0;top: 0;margin-top: 0px;">
+                    <div class="sort-product">
+                        <select>
+                            <option value="">Mặc định</option>
+                            <option value="">Giá thuê</option>
+                            <option value="">Lượt xem</option>
+                        </select>
+                        <div class="sort-product-icon">
+                            <i class="fa fa-sort-alpha-asc"></i>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- PRODUCT LIST -->
+                <ul class="row product-list list mt-sm">
+                    <?php foreach ($this->productData as $key => $product) { ?>
+
+                    <li class="col-sx-12 col-sm-4" style="margin-top:5px;">
+                        <div class="product-container mt-none" style="border: 1px solid #ddd;">
+                            <div class="left-block" style="height: 200px;">
+                                <a href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/'.$this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]).'/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>" style="border: 1px solid #ddd;">
+                                    <img class="img-responsive real-estate" alt="xome" src="<?php echo $this->showImageUrl($product[DbTable_Product::COL_PRODUCT_THUMB_NAIL], !$product[DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE]);?>"/>
+                                </a>
+                                <!--<div class="quick-view">
+                                    <a title="Bản đồ" class="search" href="#"></a>
+                                </div>-->
+                                <div class="date-add">
+                                    <?php echo $this->formatTime($product[DbTable_Product::COL_PRODUCT_CREATED_AT]);?>
+                                </div>
+                            </div>
+                            <div class="right-block">
+                                <h5 class="product-name"><a href="/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/'.$this->districtIdentify($product[DbTable_Product::COL_FK_DISTRICT]).'/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>"><?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?></a></h5>
+                                <!--<div class="product-star">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>-->
+                                <div class="content_price">
+                                    <span class="price product-price"><?php echo  $product[DbTable_Product::COL_PRODUCT_PAID_PRICE] > 0 ? number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE]).' VND' : 'Thỏa thuận' ?></span>
+                                </div>
+                                <div class="info-orther">
+                                    <!--<p>Mã tin: #<?php /*echo $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]);*/?></p>-->
+                                    <p class="availability">Địa chỉ: <span><?php echo $product[DbTable_Product::COL_PRODUCT_ADDRESS]?></span></p>
+                                    <p class="">Diện tích: <?php echo ($product[DbTable_Product::COL_PRODUCT_AREA]);?> m<sub>2</sub></p>
+                                    <!--<div class="product-desc mt-none">
+                                        <?php /*echo $product[DbTable_Product::COL_PRODUCT_SHORT_DESCRIPTION]*/?>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <?php } ?>
+
+
+                </ul>
+                <!-- ./PRODUCT LIST -->
+            </div>
+            <!-- ./view-product-list-->
+            <div class="sortPagiBar">
+                <div class="bottom-pagination">
+                    <nav>
+                        <?php echo $this->pagination;?>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- ./ Center colunm -->
+    </div>
+
+</div>

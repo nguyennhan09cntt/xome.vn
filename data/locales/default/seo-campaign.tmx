@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+	<tu tuid='campaign_my_tour_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Ưu đãi giảm giá 20% cho khách hàng của Mytour.vn]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='campaign_my_tour_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Nhập mã MYTOUR để được giảm ngay 20% chuyến xe từ TP.HCM đi các tỉnh, xe giường nằm chất lượng cao, giao vé tận nhà, nhanh chóng, tiện lợi!]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='campaign_ve_xe_khach_gia_re_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Vé Xe Khách Giá Rẻ, vé xe đi các tỉnh giảm 50% tại Pasoto.com]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='campaign_ve_xe_khach_gia_re_description'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Mua Vé Xe Khách Giá Rẻ từ [điểm đầu] đến [điểm cuối]. Đảm bảo uy tín chất lượng bởi hãng xe và Pasoto.com, số lượng có hạn, MUA NGAY!]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+
+	<tu tuid='campaign_ho_chi_minh_di_nha_trang_49k_title'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Xe chất lượng cao TP.HCM đi Nha Trang giá chỉ 49.000đ]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='campaign_ho_chi_minh_di_nha_trang_49k_description'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vé xe khách giường nằm TP.HCM đi Nha Trang giá siêu rẻ CHỈ 49.000đ, thanh toán dễ dàng, giao vé tận nhà trong vòng 24h. Mua Ngay tại Pasoto.com]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	
+	<tu tuid='campaign_khuyen_mai_moi_nhat_title'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vé xe khách giá rẻ, khuyến mãi mới nhất từ Pasoto.com]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='campaign_khuyen_mai_moi_nhat_49k_description'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Trang tổng hợp tất cả các khuyến mãi mới, hấp dẫn nhất từ Pasoto.com. Ưu đãi lên đến 50% cho tất cả các tuyến đường trọng điểm, xem ngay!]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='seo_ve_tet_title'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Đặt mua vé xe Tết 2016 tiện lợi tại Pasoto.com]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='seo_ve_tet_keyword'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='seo_ve_tet_description'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Mua vé xe tết 2016 online nhanh chóng, tiện lợi, giao vé tận nơi, đảm bảo uy tín chất lượng của các hãng xe. Mua ngay, số lượng có hạn!]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+</body>

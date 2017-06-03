@@ -1,0 +1,39 @@
+<div class="row row-wrap" id="">
+    <?php foreach ($this->productData as $key => $product) { ?>
+        <div class="col-md-4 item">
+            <div class="product-thumb">
+                <div class="product-inner">
+                    <header class="product-header">
+                        <a href="/san-pham/<?php echo $this->productComponentIdentify($product[DbTable_Product::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>.html">
+
+                            <img src="<?php echo '/upload' . $product[DbTable_Product::COL_PRODUCT_THUMB_NAIL];?>" alt="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?>"
+                                 title="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?>" />
+
+                        </a>
+                    </header>
+                    <h5 class="product-title ellipsis"><?php echo $product[DbTable_Product::COL_PRODUCT_NAME]?></h5>
+                    <!--<p class="product-desciption"><?php /*echo $product[DbTable_Product::COL_PRODUCT_SHORT_DESCRIPTION]*/?></p>-->
+                    <div class="product-meta">
+                        <?php if($product[DbTable_Product::COL_PRODUCT_PROMOTION_PRICE] > 0){?>
+                            <ul class="product-price-list">
+                                <li class=""><span class="product-old-price"><?php echo number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE])?> đ</span></li>
+                                <li class="pull-right"><span class="product-price"><?php echo number_format($product[DbTable_Product::COL_PRODUCT_PROMOTION_PRICE])?> đ</span></li>
+                            </ul>
+                        <?php }else{?>
+                            <p class="thumb-list-item-price"><span><?php echo $product[DbTable_Product::COL_PRODUCT_PAID_PRICE] > 0 ? number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE]) .' đ': 'Giá liên hệ';?></span></p>
+                        <?php }?>
+                        <ul class="product-actions-list">
+                            <li class="">
+                                <span>Mã: <strong><?php echo $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]);?></strong></span>
+                            </li>
+                            <li class="pull-right"> <a class="btn btn-sm btn-primary" href="/product/add-cart/?encode=<?php echo $this->productEncode($product[DbTable_Product::COL_PRODUCT_ID])?>"><i
+                                        class="fa fa-shopping-cart"></i>Đặt hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php }?>
+
+
+</div>

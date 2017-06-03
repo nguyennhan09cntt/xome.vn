@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="page-title">
+            Quản lý Nhà trọ - Thông tin đơn hàng <strong><?php echo $this->idEncode;?></strong>
+        </h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $this->render('product-order/detail/info.phtml'); ?>
+        <?php echo $this->render('product-order/detail/customer.edit.phtml');?>
+    </div>
+    <div class="col-md-6">
+        <?php echo $this->render('product-order/detail/payment.phtml'); ?>
+    </div>
+    <?php echo $this->formHidden('id', $this->id);?>
+</div>

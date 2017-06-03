@@ -1,0 +1,40 @@
+<? if($this->isError==1){ ?>
+<div class="wrapper">
+    <div class="nNote nFailure hideit">
+        <p><strong>LỖI: </strong>Thành thật xin lỗi. Tài khoản bạn vừa cung cấp không được tìm thấy trong hệ thống. Mời bạn đăng nhập lại.</p>
+    </div>
+</div>
+<? } ?>
+<!-- BEGIN LOGIN FORM -->
+<form class="login-form" action="/login/submit" id="validate" class="form">
+    <h3 class="form-title">Đăng nhập hệ thống</h3>
+
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+			<span>
+			Xin điền email và mật khẩu. </span>
+    </div>
+    <div class="form-group">
+        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+        <label class="control-label visible-ie8 visible-ie9"></label>
+
+        <div class="input-icon">
+            <i class="fa fa-user"></i>
+            <input type="text" name="email" class="validate[required] form-control placeholder-no-fix" id="login" autocomplete="off" placeholder="Email"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Mật khẩu</label>
+
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" class="validate[required] form-control placeholder-no-fix" id="pass" autocomplete="off" placeholder="Password"/>
+        </div>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn green pull-right">
+            Đăng nhập <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+</form>
+<!-- END LOGIN FORM -->

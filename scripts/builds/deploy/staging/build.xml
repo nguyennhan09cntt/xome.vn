@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PASOTO" default="release" basedir="./..">
+    <property file="properties/staging/ssh" />
+    <property file="properties/staging/host" />
+
+    <property name="dir.current" value="." />
+    <property name="tar.file" value="trunk.tar" />
+    <property name="zip.file" value="${tar.file}.zip" />
+    <property name="tar.path" value="${dir.current}/${tar.file}" />
+    <property name="zip.path" value="${dir.current}/${zip.file}" />
+    <property name="dir.deploy" value="../../../" />
+
+    <target name="release">
+        <delete file="${tar.path}" />
+        <delete file="${zip.path}" />
+        <tar destfile="${tar.path}">
+            <fileset dir="${dir.deploy}">
+                <exclude name="**/production.ini" />
+                <exclude name="**/.htaccess" />
+                <exclude name="**/favicon.ico" />
+                <exclude name="public/index.php" />
+                <exclude name="**/off.html" />
+                <exclude name="**/robots.txt" />
+                <exclude name="**/sitemap.xml" />
+                <exclude name="**/sitemap.xsl" />
+                <exclude name=".svn/**" />
+                <exclude name=".idea/**" />
+                <exclude name="data/cache/**" />
+                <exclude name="data/fonts/**" />
+                <exclude name="data/logs/**" />
+                <exclude name="data/uploads/**" />
+                <exclude name="docs/**" />
+                <exclude name="library/**" />
+                <exclude name="public/upload/**" />
+                <exclude name="public/tin-tuc/**" />
+                <exclude name="public/ve-may-bay/**" />
+                <exclude name="scripts/builds/deploy/**" />
+            </fileset>
+        </tar>
+        <zip destfile="${zip.path}">
+            <fileset dir="${dir.current}">
+                <include name="**/**.tar" />
+            </fileset>
+        </zip>
+
+        <scp host="${ssh.host}" username="${ssh.username}" pubkeyfile="${ssh.pubkeyfile}" privkeyfile="${ssh.privkeyfile}" privkeyfilepassphrase="${ssh.privkeyfilepassphrase}"
+             fetch="false" todir="${host.path_deploy}">
+            <fileset dir="${dir.current}">
+                <include name="**/**.zip" />
+            </fileset>
+        </scp>
+
+        <ssh host="${ssh.host}" username="${ssh.username}" pubkeyfile="${ssh.pubkeyfile}" privkeyfile="${ssh.privkeyfile}" privkeyfilepassphrase="${ssh.privkeyfilepassphrase}" command="
+			cd ${host.path_deploy};
+			unzip ${zip.file};
+			tar -xvf ${tar.file};
+			rm -rf ${tar.file};
+			rm -rf ${zip.file};
+			rm -rf ${host.path_staging}/public/statics/asset/default/autoload/*;
+			rm -rf ${host.path_staging}/public/statics/asset/mobile/autoload/*;
+			rm -rf ${host.path_staging}/public/statics/asset/bus/autoload/*;
+			rm -rf ${host.path_staging}/public/statics/asset/internal/autoload/*;
+			rm -rf ${host.path_staging}/public/statics/asset/admin/autoload/*;
+			rm -rf ${host.path_staging}/public/statics/asset/operation/autoload/*;
+			rm -rf ${host.path_staging}/public/statics/asset/agency/autoload/*;
+			cp -rf ${host.path_deploy}/* ${host.path_staging};
+			rm -rf ${host.path_deploy}/*;
+			cd ${host.path_staging};
+			/build/phpfpm/bin/php public/cli.php -m cli -c migration;
+			crontab scripts/jobs/crontab-staging;
+		" />
+    </target>
+</project>

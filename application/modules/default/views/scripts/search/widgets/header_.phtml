@@ -1,0 +1,54 @@
+<div id="header" class="header" style="height: auto;min-height">
+    <div class="top-header">
+        <div class="container">
+            <div class="nav-top-links">
+                <a class="first-item" href="#">Chào mùng bạn đến XOME | PHÒNG TRỌ SINH VIÊN </a>
+                <a href="#" class="hidden-xs">Liên hệ: +01224678951</a>
+            </div>
+
+            <!-- <a class="btn-fb-login" href="#">Login fb</a>-->
+            <?php if (!$this->customerInfo) { ?>
+                <div class="support-link hidden-xs ">
+                    <a href="/tai-khoan/dang-ky.html">Đăng ký</a>
+                    <a href="/tai-khoan/dang-nhap.html">Đăng nhập</a>
+                </div>
+            <?php }else{?>
+                <!-- Single button -->
+                <div id="user-info-top" class="user-info pull-right">
+                    <div class="dropdown">
+                        <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span><?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_NAME} ?></span></a>
+                        <ul class="dropdown-menu mega_dropdown" role="menu">
+
+                            <li><a href="/tai-khoan/thong-tin.html">Thông tin</a></li>
+                            <li><a href="/tai-khoan/danh-sach-tin-nha-tro.html">Tin cho thuê</a></li>
+                            <li><a href="/tai-khoan/dang-xuat">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            <?php }?>
+
+        </div>
+    </div>
+    <div class="nav-top-menu" id="nav-top-menu">
+        <div class="container">
+            <div class="row">
+
+                <div id="main-menu" class="col-sm-12 col-md-12 main-menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand" href="#">MENU</a>
+                            </div>
+                            <?php echo $this->render('widgets/menu.phtml'); ?>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

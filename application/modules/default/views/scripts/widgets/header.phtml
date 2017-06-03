@@ -1,0 +1,113 @@
+<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
+    <div class="header-body">
+        <div class="header-container container">
+            <div class="header-row">
+                <div class="header-column">
+                    <div class="header-logo">
+                        <a href="/">
+                            <img alt="Xome.vn" width="111" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="<?php echo HOST_STATIC_DEFAULT;?>img/logo.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-column">
+                    <div class="header-row">
+                        <nav class="header-nav-top">
+                            <ul class="nav nav-pills">
+                                <li class="hidden-xs">
+                                    <a href="/gioi-thieu.html"><i class="fa fa-angle-right"></i> Giới thiệu</a>
+                                </li>
+                                <li class="hidden-xs">
+                                    <a href="/dang-tin-tim-phong.html"><i class="fa fa-angle-right"></i> Đăng tin tìm phòng</a>
+                                </li>
+                                <li>
+                                    <span class="ws-nowrap"><i class="fa fa-phone"></i> 01633193495</span>
+                                </li>
+                                <?php if (!$this->customerInfo) { ?>
+                                    <li>
+                                        <a href="/tai-khoan/dang-ky.html">Đăng ký</a>
+                                    </li>
+                                    <li>
+                                        <a href="/tai-khoan/dang-nhap.html"> Đăng nhập</a>
+                                    </li>
+                                <?php }else{?>
+                                    <li>
+                                        <a href="/tai-khoan/danh-sach-tin-nha-tro.html"><i class="icon-user mr-sm"></i><?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_FIST_NAME} ?></a>
+                                    </li>
+
+                                <?php }?>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-row">
+                        <div class="header-nav">
+                            <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <ul class="header-social-icons social-icons hidden-xs">
+                                <li class="social-icons-facebook"><a href="https://www.facebook.com/xome.vn/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <!--<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>-->
+                                <li class="social-icons-linkedin"><a href="https://vn.linkedin.com/in/xome-phòng-trọ-sinh-viên-aa6aaa137" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                            <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+                                <nav>
+                                    <ul class="nav nav-pills" id="mainNav">
+                                        <li class=" <?php echo  ($this->menuHeader == null || $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_HOME) ? 'active' : '';?>">
+                                            <a class="" href="/">
+                                                Trang chủ
+                                            </a>
+
+                                        </li>
+                                        <li class="dropdown <?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_LEASE ? 'active' : '';?>">
+                                            <a class="dropdown-toggle" href="#">
+                                                Cho thuê phòng trọ
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/nha-cho-thue.html">Nhà trọ</a></li>
+                                                <li><a href="/phong-cho-thue.html">Phòng trọ</a></li>
+                                                <li><a href="/tim-nguoi-o-ghep.html">Tìm người ở ghép</a></li>
+                                            </ul>
+
+                                        </li>
+                                        <li class="dropdown <?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_RENT ? 'active' : '';?>">
+                                            <a class="dropdown-toggle" href="#">
+                                                Tìm phòng trọ
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                              <li><a href="/tin-tim-phong.html">Tin tìm phòng</a></li>
+                                                <li><a href="/dang-tin-tim-phong.html">Đăng tin tìm phòng</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="<?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_MOTEL_OWNER_INFO ? 'active' : '';?>">
+                                            <a class="" href="/thong-tin-nguoi-dang.html">
+                                                Thông tin người đăng
+                                            </a>
+                                        </li>
+                                       <!-- <li class="dropdown <?php /*echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_BLOG ? 'active' : '';*/?>">
+                                            <a class="dropdown-toggle" href="#">
+                                                Thủ thuật & Kinh nghiệm
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="portfolio-4-columns.html">Kinh nghiệm đi thuê</a></li>
+                                                <li><a href="portfolio-3-columns.html">Thủ thuật</a></li>
+                                            </ul>
+
+                                        </li>-->
+					<li style="color: white;"><a class="btn" href="/tim-kiem-ban-do?<?php echo $this->queryPagination;?>"><i class="fa fa-map-marker"></i>&nbsp;Tìm kiếm</a></li>
+                                        <li class="<?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_LEASE_ADD ? 'active' : '';?>">
+                                            <a class="" href="/dang-tin-cho-thue.html">
+                                                Đăng tin
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

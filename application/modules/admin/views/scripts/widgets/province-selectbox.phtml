@@ -1,0 +1,9 @@
+<select name="<?php echo $this->name;?>" id="<?php echo $this->id;?>" onchange="AdminCommon.showDistrictOptions(this.value);">
+    <option value="">Chọn tỉnh/ thành</option>
+    <?php foreach ($this->data as $province) { ?>
+        <option value="<?php echo $province[DbTable_Region_Province::COL_REGION_PROVINCE_ID];?>"
+            <?php if ($province[DbTable_Region_Province::COL_REGION_PROVINCE_ID]==$this->provinceID) echo 'selected'; ?>>
+            <?php echo $province[DbTable_Region_Province::COL_REGION_PROVINCE_NAME];?>
+        </option>
+    <? } ?>
+</select>

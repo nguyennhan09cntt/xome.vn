@@ -1,0 +1,21 @@
+
+<div class="sidebar-products clearfix">
+    <h2><a href="#" class="btn-primary btn-sm btn">Nhà trọ bán chạy</a></h2>
+    <?php if($this->productSaleData) { ?>
+        <?php foreach ($this->productSaleData as $key => $product) { ?>
+            <div class="item">
+                <a href="/san-pham/<?php echo $this->productComponentIdentify($product[DbTable_Product::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>.html">
+                    <img src="<?php echo '/upload' . $product[DbTable_Product::COL_PRODUCT_THUMB_NAIL];?>"
+                         alt="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?>"
+                         title="<?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?>" height="30"/>
+                </a>
+
+                <h3>
+                    <a href="/san-pham/<?php echo $this->productComponentIdentify($product[DbTable_Product::COL_FK_PRODUCT_COMPONENT]); ?>/<?php echo $this->productCategoryIdentify($product[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/' . $product[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($product[DbTable_Product::COL_PRODUCT_ID]); ?>.html"><?php echo $product[DbTable_Product::COL_PRODUCT_NAME] ?></a>
+                </h3>
+
+                <div class="price"><?php echo $product[DbTable_Product::COL_PRODUCT_PROMOTION_PRICE] > 0 ? number_format($product[DbTable_Product::COL_PRODUCT_PROMOTION_PRICE]): number_format($product[DbTable_Product::COL_PRODUCT_PAID_PRICE])?></div>
+            </div>
+        <?php }
+    }?>
+</div>

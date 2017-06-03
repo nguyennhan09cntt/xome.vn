@@ -1,0 +1,81 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title"
+
+             style="cursor:pointer;">
+            <i class="fa fa-plus-square"></i>
+            <a href="/dang-tin-tim-phong.html">Đăng tin tìm phòng trọ</a>
+
+        </h4>
+    </div>
+    <div id="collapseOne"
+         class="panel-collapse collapse">
+        <div class="panel-body">
+            <form role="form" id="form-contact" method="post"  class="clearfix"  action="/contact/submit-contact">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="form-contact-name">Họ tên<span class="required" aria-required="true"> 										* </span></label>
+                            <input type="text" class="form-control" id="form-contact-name" name="name" required>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="form-contact-phone">Số điện thoại<span class="required" aria-required="true"> 										* </span></label>
+                            <input type="text" class="form-control" id="form-contact-phone" name="phone" required>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="form-contact-price">Email<span class="required" aria-required="true"> 										* </span></label>
+                            <input class="form-control" id="form-contact-email" rows="2" name="email" required>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="form-add-price">Bạn muốn tìm nhà trọ giá bao nhiêu?<span class="required" aria-required="true"> 										* </span></label>
+                            <input type="text" class="form-control" id="form-add-price" name="price" required>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="form-add-area">Bạn muốn tìm nhà trọ diện tích(m2)?</label>
+                            <input type="number" class="form-control" id="form-add-area" name="area">
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form-contact-address">Bạn muốn tìm nhà trọ ở đâu?</label>
+                            <textarea class="form-control" id="form-contact-address" rows="2" name="address"></textarea>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form-contact-message">Các yêu cầu khác về phòng trọ? ( diện tích, toilet, bếp, giờ giấc...)</label>
+                            <textarea class="form-control" id="form-contact-message" rows="6" name="message"></textarea>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn pull-right btn-primary">Xác nhận</button>
+                </div><!-- /.form-group -->
+                <div id="form-status"></div>
+            </form><!-- /#form-contact -->
+
+
+        </div>
+    </div>
+</div>

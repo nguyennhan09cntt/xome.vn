@@ -1,0 +1,173 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Administration - Danh sách quản trị viên
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Danh sách quản trị viên</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin quản trị viên
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('admin/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email <span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php
+                                if ($this->dataInfo) {
+                                    echo $this->dataInfo->{DbTable_Admin::COL_ADMIN_EMAIL};
+                                    echo $this->formHidden(
+                                        'email',
+                                        $this->dataInfo->{DbTable_Admin::COL_ADMIN_EMAIL}
+                                    );
+                                } else {
+                                    echo $this->formText(
+                                        'email',
+                                        null,
+                                        array('class' => 'form-control validate[required,custom[email]]')
+                                    );
+                                }
+                                ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Mật khẩu:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php
+                                if ($this->dataInfo) {
+                                    echo 'xxx';
+                                    echo $this->formHidden(
+                                        'password',
+                                        $this->dataInfo->{DbTable_Admin::COL_ADMIN_PASSWORD}
+                                    );
+                                } else {
+                                    echo $this->formPassword(
+                                        'password',
+                                        null,
+                                        array('class' => 'form-control validate[required]')
+                                    );
+                                }
+                                ?>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Xác nhận mật khẩu::<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php
+                                if ($this->dataInfo) {
+                                    echo 'xxx';
+                                    echo $this->formHidden(
+                                        're_password',
+                                        $this->dataInfo->{DbTable_Admin::COL_ADMIN_PASSWORD}
+                                    );
+                                } else {
+                                    echo $this->formPassword(
+                                        're_password',
+                                        null,
+                                        array('class' => 'form-control validate[required,equal[password]]')
+                                    );
+                                }
+                                ?>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Họ và Tên:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'fullName',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin::COL_ADMIN_FULLNAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nhóm quản trị:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'fkRole',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin::COL_FK_ADMIN_ROLE} : null,
+                                    array('class' => 'form-control validate[required]'),
+                                    array('' => '++') + $this->roleData
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <?php if($this->privilegeData) { ?>
+                            <?php foreach ($this->privilegeData as $module => $resourceData) { ?>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"><?php echo $module; ?>:</label>
+
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <?php foreach ($resourceData as $resource => $privilegeData) { ?>
+                                                <div class="col-md-4">
+                                                    <p><strong><?php echo $resource; ?></strong></p>
+
+                                                    <div class="checkbox-list">
+                                                        <?php foreach ($privilegeData as $privilege) { ?>
+
+                                                            <label>
+                                                                <?php echo $this->formCheckbox(
+                                                                    'privilegeArrId[]',
+                                                                    $privilege[DbTable_Admin_Privilege::COL_ADMIN_PRIVILEGE_ID],
+                                                                    array(
+                                                                        'id' => 'checked' . $privilege[DbTable_Admin_Privilege::COL_ADMIN_PRIVILEGE_ID],
+                                                                        'checked' => in_array($privilege[DbTable_Admin_Privilege::COL_ADMIN_PRIVILEGE_ID], $this->permissionArr) ? 1 : 0
+                                                                    )
+                                                                ); ?>
+
+                                                                <?php echo $privilege[DbTable_Admin_Privilege::COL_ADMIN_PRIVILEGE_NAME]; ?>
+                                                            </label>
+
+
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <? }
+                        }?>
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Admin::COL_ADMIN_ID} : null
+                            ); ?>
+
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

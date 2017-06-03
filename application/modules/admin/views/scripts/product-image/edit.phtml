@@ -1,0 +1,78 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Nhà trọ - Thêm mới/Cập nhật hình ảnh
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Thêm mới/Cập nhật hình ảnh
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin hình ảnh Nhà trọ
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" enctype="multipart/form-data" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('product-image/submit-edit'); ?>">
+                    <div class="form-body">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hình ảnh(950x480)<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php if ($this->dataInfo && $this->dataInfo->{DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME}) {
+                                    echo $this->showImage($this->dataInfo->{DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME}, 150);
+                                    echo '<br />';
+                                } ?>
+                                <input type="file" id="file_image" name="file_image" class="margin-top-10"/>
+                                <?php echo $this->formHidden(
+                                    'image',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product_Image::COL_PRODUCT_IMAGE_NAME} : null
+                                ); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Ghi chú:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formTextarea(
+                                    'note',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Product_Image::COL_PRODUCT_IMAGE_NOTE} : null,
+                                    array('rows' => 3)
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Product_Image::COL_PRODUCT_IMAGE_ID} : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'product',
+                                $this->product
+                            ); ?>
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

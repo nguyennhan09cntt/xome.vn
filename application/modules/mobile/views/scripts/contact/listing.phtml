@@ -1,0 +1,52 @@
+<div class="container ">
+    <div class="col-md-12">
+        <div class="row ">
+            <div class="col-md-9">
+                <div class="home-header" style="margin-top: 0px;">
+                    <h2 class="">
+                        Cần thuê nhà trọ tại Hồ Chí Minh
+                    </h2>
+                </div>
+
+                <div class="gap gap-small"></div>
+                <?php echo $this->render('widgets/register-real-estate.phtml'); ?>
+                <div class="gap gap-small"></div>
+
+                <?php foreach ($this->contactData as $contact) { ?>
+                    <div class="row row-wrap">
+                        <div class="col-md-4">
+                        <span class="img-thumbnail">
+                            <img class="img-responsive"
+                                 src="<?php echo $contact[DbTable_Contact::COL_CONTACT_URL_STATIC_MAP] ? $contact[DbTable_Contact::COL_CONTACT_URL_STATIC_MAP] : '/upload/backgrounds/no-image-box.png'; ?>"
+                                 alt="<?php echo $contact[DbTable_Contact::COL_CONTACT_ADDRESS]; ?>"
+                                 title="<?php echo $contact[DbTable_Contact::COL_CONTACT_ADDRESS]; ?>">
+                        </span>
+
+                        </div>
+
+                        <div class="col-md-8">
+                            <h4 style="color: #073855;font-weight:bold;"><a
+                                    href="/tin-tim-phong/<?php echo Application_Function_String::getFormatUrl($contact[DbTable_Contact::COL_CONTACT_ADDRESS]) . '-' . strtolower($this->contactEncode($contact[DbTable_Contact::COL_CONTACT_ID])).'.html'; ?>">Cần
+                                    thuê phòng trọ
+                                    gần <?php echo $contact[DbTable_Contact::COL_CONTACT_ADDRESS]; ?></a></h4>
+
+                            <div>
+                                <?php echo $contact[DbTable_Contact::COL_CONTACT_MESSAGE]; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <div class="row">
+
+                    <div id="pagination_container" style="text-align: center;">
+                        <?php echo $this->pagination; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <?php echo $this->render('widgets/sidebar-left.phtml'); ?>
+            </div>
+        </div>
+    </div>
+</div>

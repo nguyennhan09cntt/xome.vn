@@ -1,0 +1,6 @@
+ssh.host=123.30.140.8
+ssh.port=2230
+ssh.username=root
+ssh.privkeyfile=E:/Web/pasoto/credentials/ssh/private_linux
+ssh.pubkeyfile=E:/Web/pasoto/credentials/ssh/public_linux
+ssh.privkeyfilepassphrase=mjphong123

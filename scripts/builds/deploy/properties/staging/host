@@ -1,0 +1,3 @@
+host.path_live=/home/www/pasoto.com/httpdocs/live
+host.path_staging=/home/www/pasoto.com/httpdocs/staging
+host.path_deploy=/home/www/pasoto.com/httpdocs/deploy

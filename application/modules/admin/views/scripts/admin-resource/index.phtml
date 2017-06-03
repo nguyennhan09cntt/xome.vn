@@ -1,0 +1,129 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Administration - Quản lý Resource
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Quản lý Resource</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn một hành động...</option>
+                            <option value="activate">Active</option>
+                            <option value="inactivate">Inactive</option>>
+                            <option value="display">Hiển thị</option>
+                            <option value="non-display">Không hiển thị</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <button id="btn_add_new" class="btn green">
+                            Thêm mới <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="pull-right">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formSelect(
+                                    'm',
+                                    $this->fkModule,
+                                    array('class' =>'input-inline form-control'),
+                                    array(0 => '++') + $this->moduleData
+                                ); ?>
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_privilege">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_privilege .checkboxes"/>
+                        </th>
+
+                        <td>Tên Resource</td>
+                        <td>Module</td>
+                        <td>Controller</td>
+                        <td>Tình trạng</td>
+                        <td>Thứ tự</td>
+                        <td>Hiển thị</td>
+                        <td>Ngày tạo</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_ID},
+                                    array('class' => 'checkboxes')
+                                ); ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_NAME}; ?></td>
+                            <td><?php echo $data->{DbTable_Admin_Module::COL_ADMIN_MODULE_NAME}; ?></td>
+                            <td><?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_CONTROLLER}; ?></td>
+                            <td><?php echo $this->activeLabel($data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_ACTIVE}); ?></td>
+                            <td><?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_PRIORITY}; ?></td>
+                            <td align="center">
+                                <?php if ($data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_DISPLAY}==Application_Constant_Db_Admin_Resource::DISPLAY) { ?>
+                                  <i class="fa fa-check font-green"></i>
+                                <? } ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_CREATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('admin-resource/edit/'); ?>?i=<?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_ID}; ?>">Edit</a>
+                                &nbsp;|&nbsp;
+                                <a href="<?php echo $this->adminUrl('admin-privilege/'); ?>?r=<?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_ID}; ?>">Manage Privilege</a>
+                                &nbsp;|&nbsp;
+                                <a href="<?php echo $this->adminUrl('admin-privilege/edit/'); ?>?r=<?php echo $data->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_ID}; ?>">Add Privilege</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

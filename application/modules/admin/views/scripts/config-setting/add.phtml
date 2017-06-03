@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <h2>Cấu hình hệ thống - Thêm mới setting management</h2>
+</div>
+<div class="wrapper">
+    <form id="validate" class="form" method="post" action="<?php echo $this->adminUrl('config-setting/submit-add'); ?>">
+        <fieldset>
+            <div class="widget">
+                <div class="formRow">
+                    <label>Ghi chú:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'note',
+                            null,
+                            array('class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Giá trị:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'value',
+                            null,
+                            array('class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Kiểu:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formTextarea(
+                            'type',
+                            null,
+                            array('rows' => 3, 'class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formRow">
+                    <label>Admin:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formSelect(
+                            'fk_admin',
+                            null,
+                            array('class' => 'validate[required]'),
+                            array('' => ' -- Chọn') + $this->adminData
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="formSubmit">
+                    <input type="submit" value="Cập nhật" class="redB" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

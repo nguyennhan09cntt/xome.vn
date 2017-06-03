@@ -1,0 +1,25 @@
+.map-navigation {
+    background-color: rgba(33,150,243,0.9);
+    border-top: 3px solid #4a8fd8;
+    padding: 15px 15px 0px 15px;
+    position: absolute;
+    right: 0px;
+    top: -120px;
+    z-index: 99;
+    width: 100%;
+}
+.post-meta-action{
+    min-height: 60px;
+}
+
+@media (max-width: 767px) {
+    /* 767px */
+    .map-navigation{
+        position: static;
+    }
+}
+@media (max-width: 480px) {
+    .map-navigation{
+        position: static;
+    }
+}

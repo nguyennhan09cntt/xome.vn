@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Basic -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Xome - Phòng trọ sinh viên">
+    <meta property="article:author" content="https://www.facebook.com/xome.vn/">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="keywords" content="<?php echo $this->metaKeyword;?>">
+    <meta name="description" content="<?php echo $this->metaDescription;?>">
+    <?php if (isset($this->canonical) && $this->canonical) { ?>
+        <link rel="canonical" href="<?php echo $this->canonical;?>" />
+    <? } ?>
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?php if ($this->metaTitle) echo $this->metaTitle . ' | '; ?> - Xóm trọ">
+    <meta property="og:description" content="<?php echo $this->metaDescription;?>">
+    <meta property="og:url" content="<?php echo Application_Function_Common::fullCurrentUrlNoParam();?>">
+    <meta property="og:image" content="<?php echo $this->metaImage ? $this->metaImage : ''?>">
+    <meta property="og:site_name" content="Xome">
+    <meta property="article:publisher" content="https://www.facebook.com/Xome-Pho%CC%80ng-Tro%CC%A3-Sinh-Vi%C3%AAn-1212428578819117/">
+    <!-- <meta property="fb:admins" content="1471827889803836">-->
+    <meta name="geo.region" content="VN" />
+    <meta name="geo.position" content="14.058324;108.277199" />
+    <meta name="ICBM" content="14.058324, 108.277199" />
+    <title><?php if ($this->metaTitle) echo $this->metaTitle ; ?></title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/magnific-popup/magnific-popup.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/theme.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/theme-elements.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/theme-blog.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/theme-shop.css">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/theme-animate.css">
+
+    <!-- Current Page CSS -->
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/css/settings.css" media="screen">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/css/layers.css" media="screen">
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/css/navigation.css" media="screen">
+
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>vendor/circle-flip-slideshow/css/component.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="<?php echo HOST_STATIC_GLOBAL;?>plugins/uniform/css/uniform.default.css" />
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/skins/default.css">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo HOST_STATIC_DEFAULT;?>css/realia.css" />
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/custom.css">
+
+
+    <!-- Head Libs -->
+    <script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/modernizr/modernizr.js"></script>
+
+    <!--[if IE]>
+    <link rel="stylesheet" href="<?php echo HOST_STATIC_DEFAULT;?>css/ie.css">
+    <![endif]-->
+
+    <!--[if lte IE 8]>
+    <script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/respond/respond.js"></script>
+    <script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/excanvas/excanvas.js"></script>
+    <![endif]-->
+    <?php echo $this->headLink(); ?>
+
+</head>
+<body>
+
+<div class="body">
+    <?php echo $this->render('widgets/header.phtml'); ?>
+    <?php echo $this->layout()->content; ?>
+
+    <?php echo $this->render('widgets/footer.phtml'); ?>
+    <div id="fb-root"></div>
+</div>
+
+<!-- Vendor -->
+<!--[if lt IE 9]>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery/jquery.js"></script>
+<!--<![endif]-->
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.appear/jquery.appear.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.easing/jquery.easing.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery-cookie/jquery-cookie.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/bootstrap/js/bootstrap.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/common/common.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.validation/jquery.validation.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.stellar/jquery.stellar.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.gmap/jquery.gmap.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.lazyload/jquery.lazyload.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/isotope/jquery.isotope.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/owl.carousel/owl.carousel.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/vide/vide.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="<?php echo HOST_STATIC_DEFAULT;?>js/theme.js"></script>
+
+<!-- Specific Page Vendor and Views -->
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>js/views/view.home.js"></script>
+<script type="text/javascript" src="<?php echo HOST_STATIC_GLOBAL;?>plugins/uniform/jquery.uniform.min.js"></script>
+
+<!-- Map -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=true&key=AIzaSyB-AOx4WsiNTjZ3fne0YV8Jy6ngfwIH_f4&libraries=places"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.gmap/jquery.gmap.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>vendor/jquery.gmap/infobox.js"></script>
+<script src="<?php echo HOST_STATIC_DEFAULT;?>js/markerclusterer.js"></script>
+
+<!-- Theme Custom -->
+<script src="<?php echo HOST_STATIC_DEFAULT;?>js/custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="<?php echo HOST_STATIC_DEFAULT;?>js/theme.init.js"></script>
+
+<script src="<?php echo HOST_STATIC_DEFAULT;?>js/facebook.init.js"></script>
+
+<?php echo $this->headScript(); ?>
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-12345678-1', 'auto');
+    ga('send', 'pageview');
+</script>
+ -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55709783-6', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

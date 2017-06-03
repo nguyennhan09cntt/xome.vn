@@ -1,0 +1,16 @@
+<div id="map" class="google-map mt-none mb-none" style="height: 92vh;"></div>
+<style>
+    @media (max-width: 480px) {
+        #search_district{
+            width: 170px!important;
+        }
+    }
+    @media (max-width: 320px) {
+        #search_district{
+            width: 110px!important;
+        }
+    }
+</style>
+<script>
+    var markers = <?php echo $this->productMapJson($this->productSearchData); ?>;
+</script>

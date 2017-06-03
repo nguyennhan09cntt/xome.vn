@@ -1,0 +1,6 @@
+ssh.host=203.162.79.85
+ssh.port=22
+ssh.username=root
+ssh.privkeyfile=E:/pasoto_source/DuyCA-Pasoto_linux_Pass
+ssh.pubkeyfile=E:/pasoto_source/DuyCA-Pasoto_linux_Pub
+ssh.privkeyfilepassphrase=duyca123@@@

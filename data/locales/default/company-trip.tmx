@@ -1,0 +1,631 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='company_trip_ticket_not_able_to_order'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Vị trí này đang có trạng thái [%s]. Không thể tiến hành đặt vé.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_ticket_order_customer_info_null'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vui lòng cung cấp đầy đủ thông tin khách hàng]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_ticket_order_seat_not_available'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Chuyến [%s - %s] ngày [%s] lúc [%s]: Vé xe [%s] đã được đặt mua. Vui lòng chọn lại số ghế khác.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_ticket_order_successful'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vé xe đã được đặt thành công. Xin quý khách vui lòng thanh toán vé xe này trong %s phút. Sau thời gian này hệ thống sẽ tự động hủy phiếu đặt hàng này.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_captcha_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Mã xác nhận không chính xác. Vui lòng kiểm tra]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_ticket_holding_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Đã quá thời hạn tạm giữ thanh toán. Bạn không thể thực hiện thanh toán vé xe này.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_COD'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Tiền mặt]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_ATM'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[ATM]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_DEBIT'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Debit Card]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_AGENCY'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Thanh toán tại đại lý]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_route_trip_back'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Đặt vé chiều về]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_route_trip_forward'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Đặt vé chiều đi]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_head_time'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Thời gian]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_head_rate'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Đánh giá]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_head_seat'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Ghế]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_head_price'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Giá]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_bt_filter'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Lọc]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_filter_time'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thời gian khởi hành]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_filter_company'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Hãng xe]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_filter_bt_submit'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đồng ý]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_filter_bt_reset'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thiết lập lại]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_seat'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Chọn chỗ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_txt_ordered'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đã có người đặt]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_txt_available'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Chỗ trống]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_seat_pos'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Số chỗ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_no_booking'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Chuyến xe này không hỗ trợ chọn chỗ. Nhân viên Pasoto sẽ thông báo số ghế theo số lượng mà quý khách yêu cầu]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_booking_no_qty'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Chưa có vị trí nào được chọn. Mời quý khách chọn trực tiếp trên sơ đồ xe được hiển thị bên dưới.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_no_booking_qty'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Số vé bạn muốn mua]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_pickup_point'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đón khách]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_release_point'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Trả khách]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_total_price'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Tổng tiền]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_detail_bt_order'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Đặt vé]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_order_customer_info'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thông tin hành khách]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_order_customer_name'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Họ và tên]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_order_customer_phone'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Điện thoại]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_order_customer_note'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Ghi chú]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_order_bt_payment'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thanh toán]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_atm_bank'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Ngân hàng]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_atm_otp'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Nhập OTP]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_cod_note'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Bạn sẽ thanh toán bằng tiền mặt khi nhận vé tại nhà]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_cod_address'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Địa chỉ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_agency_note'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Bạn vui lòng đến các đại lý gần nhất thanh toán trong vòng 24h]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_agency_tip'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Các đại lý của pasoto]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_debit_acc_number'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Số thẻ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_debit_acc_name'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Tên in trên thẻ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_debit_expired_date'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Ngày hết hạn]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_ticket_info_code'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Mã vé]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_ticket_info_route'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Tuyến đường]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_ticket_info_start_time'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Giờ khởi hành]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_ticket_info_end_time'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Giờ đến]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_trip_info'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thông tin chuyến đi]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_company'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Nhà xe]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_head'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Thông tin thanh toán]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_voucher_invalid'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Mã khuyến mãi không hợp lệ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_payment_voucher_over'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Mã khuyến mãi đã vượt quá số lần sử dụng]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='company_trip_voucher_code'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Mã khuyến mãi]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_bt_submit_voucher'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Sử dụng]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_total_price'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Tiền vé]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_promotion'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Ưu đãi]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_order_non_booking'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Chuyến xe %s - %s lúc %s %s đã có khách hàng mua vé, hiện chỉ còn %d chỗ trống.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_customer_email_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Email đã được đăng ký thành viên Pasoto. Hãy thực hiện đăng nhập để xác thực thông tin.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_customer_phone_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Số điện thoại này đã được đăng ký thành viên Pasoto. Hãy thực hiện đăng nhập để xác thực thông tin.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_type_not_support'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Thành thật cáo lỗi. Hiện tại chúng tôi không hỗ trợ thanh toán tiền mặt với các khu vực ngoài TP. Hồ Chí Minh. Xin vui lòng chọn hình thức thanh toán khác.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_type_not_support_district'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Hiện tại Pasoto chỉ áp dụng thanh toán tiền mặt tại các quận nội thành khu vực TP. Hồ Chí Minh.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_promotion_err'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Các chương trình khuyến mãi không hỗ trợ thanh toán tiền mặt. Mong quý khách thông cảm.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_company_err'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Mã khuyến mãi không có hiệu lực với các nhà xe trong các hành trình của bạn.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_voucher_company_route_err'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Mã khuyến mãi không có hiệu lực với các nhà xe và tuyến đường trong các hành trình của bạn.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='company_trip_payment_voucher_route_err'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi không có hiệu lực với các tuyến đường này.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+     </tu>
+    <tu tuid='company_trip_voucher_need_ebanking'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này yêu cầu phải thanh toán online.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_not_available'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này không có hiệu lực.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_only_available_promotion'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này chỉ có hiệu lực với đơn hàng bao gồm vé khuyến mãi/ giá rẻ.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_only_available_normal'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này chỉ có hiệu lực với đơn hàng bao gồm vé thường.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_min_qty'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này chỉ có hiệu lực khi đặt mua tối thiểu %d vé.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_max_qty'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này chỉ có hiệu lực với tối đa %d vé.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_over_max_qty_package'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi này chỉ có thể sử dụng tối đa %d lần/ ngày.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_not_available_trip_date_package'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi không có hiệu lực với ngày khởi hành này]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_voucher_over_max_in_day'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Mã khuyến mãi đã vượt quá số lần sử dụng trong ngày]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+	<tu tuid='company_trip_payment_online_error'>
+         <tuv xml:lang="vi">
+             <seg><![CDATA[Giao dịch trực tuyến không thành công. Xin quý khách vui lòng thực hiện lại. Pasoto.com xin cáo lỗi cùng quý khách.]]></seg>
+         </tuv>
+         <tuv xml:lang="en">
+             <seg><![CDATA[aaa]]></seg>
+         </tuv>
+    </tu>
+</body>

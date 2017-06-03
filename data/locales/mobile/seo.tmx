@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='mobile_seo_company_trip_filter_title'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Tìm kiếm]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='mobile_seo_'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+</body>

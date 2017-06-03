@@ -1,0 +1,13 @@
+<div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+	    <li class="" style="width: 135px;"><a href="/" style="margin: 0px;"><img src="<?php echo HOST_STATIC_DEFAULT;?>images/logo_small.png" style="height: 50px;"></a></li>        
+
+        <li class="<?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_MOTEL ? 'active' : '';?>"><a href="/nha-cho-thue.html">NHÀ CHO THUÊ</a></li>
+        <li class="<?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_MOTEL_ROOM ? 'active' : '';?>"><a href="/phong-cho-thue.html">PHÒNG CHO THUÊ</a></li>
+        <li class="<?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_MOTEL_ROOM_TRANSPLANT ? 'active' : '';?>"><a href="/tim-nguoi-o-ghep.html">TÌM NGƯỜI Ở GHÉP</a></li>
+        <li class="<?php echo  $this->menuHeader ==  Application_Constant_Identify::MENU_HEADER_ABOUT ? 'active' : '';?>"><a href="/gioi-thieu.html">GIỚI THIỆU</a></li>
+        <li style="background-color:#3d1c79;color: white;"><a class="btn" href="/tim-kiem-ban-do?<?php echo $this->queryPagination;?>"><i class="fa fa-map-marker"></i>&nbsp;HIỂN THỊ THEO BẢN ĐỒ</a></li>
+        <li style="background-color: #ff3366;"><a href="/dang-tin-cho-thue.html">ĐĂNG TIN CHO THUÊ</a></li>
+        <!--<li class="pull-right"><a href="category.html" class="btn">ĐĂNG TIN</a></li>-->
+    </ul>
+</div><!--/.nav-collapse -->

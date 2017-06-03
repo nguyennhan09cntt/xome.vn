@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='customer_new_year_not_support_province'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Hiện tại chương trình đăng ký vé tết không hỗ trợ tuyến xe này. Mong quý khách thông cảm.]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='customer_new_year_not_support_province_today'>
+    		<tuv xml:lang="vi">
+    			<seg><![CDATA[Xin cáo lỗi cùng quý khách. Vé xe Tết của chuyến xe này đã được bán hết. Xin quý khách vui long chọn ngày khởi hành khác. Mọi thắc mắc xin quý khách vui long liên hệ 1900 63 64 98 để được tư vấn. Pasoto.com hân hạnh được phục vụ.]]></seg>
+    		</tuv>
+    		<tuv xml:lang="en">
+    			<seg><![CDATA[aaa]]></seg>
+    		</tuv>
+    </tu>
+</body>

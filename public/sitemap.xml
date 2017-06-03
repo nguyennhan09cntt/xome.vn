@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://pasoto.com/sitemap_nhaxe.xml</loc>
+        <lastmod>2015-06-04T16:23:01+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://pasoto.com/sitemap_vexe.xml</loc>
+        <lastmod>2015-06-04T16:23:01+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://pasoto.com/tin-tuc/sitemap.xml</loc>
+        <lastmod>2015-06-04T16:23:01+00:00</lastmod>
+    </sitemap>
+</sitemapindex>

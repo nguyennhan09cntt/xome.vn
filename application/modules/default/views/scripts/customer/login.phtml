@@ -1,0 +1,83 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="featured-boxes">
+                <div class="row">
+                    <div class="col-sm-3">
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-default  mt-xlg">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <i class="fa fa-plus-square"></i>
+                                    Đăng nhập
+
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse">
+                                <div class="panel-body">
+
+                                    <a href="<?php echo $this->loginUrl;?>" class="btn blue btn-block"><i class="fa fa-facebook-square" style="font-size:20px;margin: 4px;"></i>Đăng nhập bằng facebook</a>
+
+                                    <p class="text-center mt-sm mb-sm">Hoặc</p>
+
+                                    <div class="featured-box featured-box-primary align-left mt-xlg">
+                                        <div class="box-content">
+                                            <h4 class="heading-primary text-uppercase mb-md">Bạn đã có tài khoản</h4>
+                                            <form action="/customer/submit-login" id="frmSignIn" method="post">
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">
+                                                            <label>E-mail</label>
+                                                            <input type="email" value="" class="form-control input-lg"  name="email"  maxlength="256" minlength="6" email required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">
+                                                            <!--<a class="pull-right" href="/tai-khoan/quen-mat-khau.html">( Quên mật khẩu? )</a>-->
+                                                            <label>Mật khẩu</label>
+                                                            <input type="password" value="" class="form-control input-lg"  name="password" required minlength="6" maxlength="32">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                            <span class="remember-box checkbox">
+                                                <label for="rememberme">
+                                                    <input type="checkbox" id="rememberme" name="remember">Tự động đăng nhập lần sau
+                                                </label>
+                                            </span>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group  pull-right">
+                                                            <?php echo $this->formHidden('backUrl', $this->backUrl ? $this->backUrl : $this->backUrl);?>
+                                                            <a href="/tai-khoan/dang-ky.html" class="btn btn-default mt-sm">Đăng ký</a>
+                                                            <input type="submit" value="Đăng nhập" class="btn btn-primary mt-sm" data-loading-text="Loading...">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

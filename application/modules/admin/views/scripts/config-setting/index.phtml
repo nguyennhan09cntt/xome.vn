@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <h2>Cấu hình hệ thống - Setting Management</h2>
+    <form method="get" action="">
+        <fieldset class="filter">
+            <?php echo $this->formText('n', $this->note, array('size' => 20, 'placeholder' => 'Ghi chú')); ?>
+            <?php echo $this->formText('v', $this->value, array('size' => 40, 'placeholder' => 'Giá trị')); ?>
+            <?php echo $this->formText('t', $this->type, array('size' => 15, 'placeholder' => 'Kiểu')); ?>
+            <input type="submit" value="Tìm kiếm" class="button greenB" />
+            <input type="button" value="Thêm mới" class="button blueB" id="btAddnew" />
+        </fieldset>
+    </form>
+</div>
+
+<div class="wrapper">
+    <div class="widget">
+        <div class="title">
+            <img src="images/icons/dark/frames.png" alt="" class="titleIcon" />
+            <h6><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)</h6>
+        </div>
+
+        <table cellpadding="0" cellspacing="0" width="100%" class="sTable withCheck mTable" id="checkAll">
+            <thead>
+            <tr>
+                <td>#</td>
+                <td>Ghi chú</td>
+                <td>Giá trị</td>
+                <td>Kiểu</td>
+                <td>Ngày tạo</td>
+                <td>Cập nhật lần cuối</td>
+                <td width="100px"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->pagination as $data) {?>
+                <tr>
+                    <td><?php echo $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_ID}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_NOTE}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_VALUE}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_TYPE}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_CREATED_AT}; ?></td>
+                    <td><?php echo $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_UPDATED_AT}; ?></td>
+                    <td>
+                        <a href="<?php echo $this->adminUrl('config-setting/edit/?i=' . $data->{DbTable_Config_Setting::COL_CONFIG_SETTING_ID}); ?>">Cập nhật</a>
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="99">
+                    <?php echo $this->pagination; ?>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

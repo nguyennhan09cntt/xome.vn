@@ -1,0 +1,40 @@
+<div class="portlet box grey-cascade">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>Thông tin cơ bản
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-toolbar">
+
+
+        </div>
+        <table class="table table-striped table-bordered table-hover" id="table_product_order">
+            <tr>
+                <td>Ngày tạo: </td>
+                <td>
+                    <?php echo sprintf(
+                        '%s', $this->formatDate($this->orderData->{DbTable_Product_Order::COL_PRODUCT_ORDER_CREATED_AT})
+                    );?>
+                </td>
+            </tr>
+            <tr>
+                <td>Trạng thái:</td>
+                <td>
+                    <?php echo $this->formSelect(
+                        'statusId',
+                        $this->orderData->{DbTable_Product_Order::COL_FK_CONFIG_STATUS},
+                        array(),
+                        $this->statusData
+                    );?>
+                    <?php echo $this->formHidden('encode', $this->idEncode); ?>
+                    <?php echo $this->formHidden('currentStatusId', $this->orderData->{DbTable_Product_Order::COL_FK_CONFIG_STATUS}); ?>
+                    <input type="button" id="btUpdateStatus" value="Cập nhật" class="btn btn-xs blue" />
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>

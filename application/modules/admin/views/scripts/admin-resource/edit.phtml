@@ -1,0 +1,95 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Administration - Thêm mới/Cập nhật Resource
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Thêm mới/Cập nhật Resource</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin resource
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('admin-resource/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Resourrce <span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'resourceName',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_NAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Controller<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'controllerName',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_CONTROLLER} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Thứ tự<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'priority',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_PRIORITY} : null,
+                                    array('class' => 'form-control validate[required,custom[onlyNumberSp]]')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Module<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <div class="formRight">
+                                    <?php echo $this->formSelect(
+                                        'fkModule',
+                                        $this->fkModule,
+                                        array('class' => 'form-control validate[required]'),
+                                        array('' => '++') + $this->moduleData
+                                    ); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Admin_Resource::COL_ADMIN_RESOURCE_ID} : null
+                            ); ?>
+
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

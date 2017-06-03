@@ -1,0 +1,138 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý liên hệ - Thêm mới
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Thêm mới
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" enctype="multipart/form-data" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('contact/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Họ tên:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'name',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_NAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Số điện thoại:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'phone',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_PHONE} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'email',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_EMAIL} : null,
+                                    array('class' => 'form-control')
+                                ); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Quận/Huyện:<span class="required" aria-required="true"> * </span>:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formSelect(
+                                    'district',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_DISTRICT} : null,
+                                    array('class' => 'productCategory validate[required] form-control'),
+                                    array('' => '++') + $this->categoryData
+                                ); ?>
+                                <?php echo $this->formHidden(
+                                    'hiddenProductCategory',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_DISTRICT} : null
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Địa chỉ:</label>
+                            <div class="col-md-9">
+                                <?php echo $this->formTextarea(
+                                    'address',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_ADDRESS} : null,
+                                    array('rows' => 3)
+                                ); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Giá:</label>
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'price',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_PRICE} : null,
+                                    array('class' => 'form-control')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Yêu cầu khác:</label>
+                            <div class="col-md-9">
+                                <?php echo $this->formTextarea(
+                                    'message',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_MESSAGE} : null,
+                                    array('rows' => 3)
+                                ); ?>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Contact::COL_CONTACT_ID} : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'componentId',
+                                1
+                            ); ?>
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>
+
+<script>
+    var productCategoryJson = <?php echo json_encode(Admin_Model_ProductCategory::getInstance()->getAllProductCategory());?>;
+</script>

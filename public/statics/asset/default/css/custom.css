@@ -1,0 +1,3912 @@
+/* Add here all your CSS customizations */
+
+/***
+Customized Bootstrap Buttons
+***/
+/* Default buttons */
+.btn {
+    border-width: 0;
+    padding: 7px 14px;
+    font-size: 14px;
+    outline: none !important;
+    background-image: none !important;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0;
+}
+
+.btn.dropdown-toggle, .btn-group .btn.dropdown-toggle, .btn:hover, .btn:disabled, .btn[disabled], .btn:focus, .btn:active, .btn.active {
+    outline: none !important;
+    background-image: none !important;
+    filter: none;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn + .btn {
+    margin-left: 5px;
+}
+
+.btn-default {
+    border-width: 1px;
+    padding: 6px 13px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Bootstrap buttons */
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+    color: #333;
+    background-color: #ededed;
+    border-color: #b3b3b3;
+}
+
+.open .btn-default.dropdown-toggle {
+    color: #333;
+    background-color: #ededed;
+    border-color: #b3b3b3;
+}
+
+.btn-default:active, .btn-default.active {
+    background-image: none;
+    background-color: #e0e0e0;
+}
+
+.btn-default:active:hover, .btn-default.active:hover {
+    background-color: #e6e6e6;
+}
+
+.open .btn-default.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default .badge {
+    color: #fff;
+    background-color: #333;
+}
+
+.btn-default > i {
+    color: #aaa;
+}
+
+.btn-default > i[class^="icon-"],
+.btn-default > i[class*="icon-"] {
+    color: #8c8c8c;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    color: #fff;
+    background-color: #3379b5;
+    border-color: #2a6496;
+}
+
+.open .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #3379b5;
+    border-color: #2a6496;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background-image: none;
+    background-color: #2d6ca2;
+}
+
+.btn-primary:active:hover, .btn-primary.active:hover {
+    background-color: #3071a9;
+}
+
+.open .btn-primary.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn-primary .badge {
+    color: #428bca;
+    background-color: #fff;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #45B6AF;
+    border-color: #3ea49d;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
+    color: #fff;
+    background-color: #3b9c96;
+    border-color: #307f7a;
+}
+
+.open .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #3b9c96;
+    border-color: #307f7a;
+}
+
+.btn-success:active, .btn-success.active {
+    background-image: none;
+    background-color: #348a84;
+}
+
+.btn-success:active:hover, .btn-success.active:hover {
+    background-color: #37918b;
+}
+
+.open .btn-success.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
+    background-color: #45B6AF;
+    border-color: #3ea49d;
+}
+
+.btn-success .badge {
+    color: #45B6AF;
+    background-color: #fff;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #89C4F4;
+    border-color: #72b8f2;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
+    color: #fff;
+    background-color: #68b4f1;
+    border-color: #43a1ed;
+}
+
+.open .btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #68b4f1;
+    border-color: #43a1ed;
+}
+
+.btn-info:active, .btn-info.active {
+    background-image: none;
+    background-color: #51a8ef;
+}
+
+.btn-info:active:hover, .btn-info.active:hover {
+    background-color: #5aadf0;
+}
+
+.open .btn-info.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
+    background-color: #89C4F4;
+    border-color: #72b8f2;
+}
+
+.btn-info .badge {
+    color: #89C4F4;
+    background-color: #fff;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #dfba49;
+    border-color: #dbb233;
+}
+
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
+    color: #fff;
+    background-color: #daae2b;
+    border-color: #bb9521;
+}
+
+.open .btn-warning.dropdown-toggle {
+    color: #fff;
+    background-color: #daae2b;
+    border-color: #bb9521;
+}
+
+.btn-warning:active, .btn-warning.active {
+    background-image: none;
+    background-color: #c89f23;
+}
+
+.btn-warning:active:hover, .btn-warning.active:hover {
+    background-color: #d0a625;
+}
+
+.open .btn-warning.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
+    background-color: #dfba49;
+    border-color: #dbb233;
+}
+
+.btn-warning .badge {
+    color: #dfba49;
+    background-color: #fff;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #F3565D;
+    border-color: #f13e46;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
+    color: #fff;
+    background-color: #f1353d;
+    border-color: #ec111b;
+}
+
+.open .btn-danger.dropdown-toggle {
+    color: #fff;
+    background-color: #f1353d;
+    border-color: #ec111b;
+}
+
+.btn-danger:active, .btn-danger.active {
+    background-image: none;
+    background-color: #ef1d26;
+}
+
+.btn-danger:active:hover, .btn-danger.active:hover {
+    background-color: #f0262f;
+}
+
+.open .btn-danger.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
+    background-color: #F3565D;
+    border-color: #f13e46;
+}
+
+.btn-danger .badge {
+    color: #F3565D;
+    background-color: #fff;
+}
+
+/* Button sizes */
+.btn > i {
+    font-size: 14px;
+}
+
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    vertical-align: middle;
+}
+
+.btn-lg > i {
+    font-size: 18px;
+}
+
+.btn-sm,
+.btn-xs {
+    padding: 4px 10px 5px 10px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.btn-sm > i,
+.btn-xs > i {
+    font-size: 13px;
+}
+
+.btn-xs {
+    padding: 1px 5px;
+}
+
+.btn-xs > i {
+    font-size: 12px;
+}
+
+/* Small button in button group */
+.btn-group .input-sm .btn-default {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/* Arrow link */
+.btn-arrow-link {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.btn-arrow-link > i {
+    font-size: 14px;
+    line-height: 14px;
+    vertical-align: top;
+    margin: 2px 3px 2px 3px;
+    color: #999;
+}
+
+.btn-arrow-link.btn-arrow-link-lg {
+    font-size: 14px;
+}
+
+.btn-arrow-link.btn-arrow-link-lg > i {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 2px 3px 1px 3px;
+}
+
+/* Circle Buttons */
+.btn-circle {
+    border-radius: 25px !important;
+}
+
+.btn-circle-right {
+    border-radius: 0 25px 25px 0 !important;
+}
+
+.btn-circle-left {
+    border-radius: 25px 0 0 25px !important;
+}
+
+.btn-circle-bottom {
+    border-radius: 0 0 25px 25px !important;
+}
+
+.btn-circle-top {
+    border-radius: 25px 25px 0 0 !important;
+}
+
+.btn-icon-only {
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btn-icon-only > [class^="icon-"],
+.btn-icon-only > i {
+    text-align: center;
+    margin-top: 2px;
+}
+
+.btn-sm > [class^="glyphicon-"],
+.btn-sm > [class*=" glyphicon-"],
+.btn-sm > i {
+    font-size: 13px;
+}
+
+.btn-xs > [class^="glyphicon-"],
+.btn-xs > [class*=" glyphicon-"],
+.btn-xs > i {
+    font-size: 11px;
+}
+
+.btn-group.btn-group-circle > .btn:first-child {
+    border-radius: 25px 0 0 25px !important;
+}
+
+.btn-group.btn-group-circle > .btn:last-child {
+    border-radius: 0 25px 25px 0 !important;
+}
+
+.btn-group.btn-group-devided > .btn {
+    margin-right: 5px;
+}
+
+.btn-group.btn-group-devided > .btn:last-child {
+    margin-right: 0;
+}
+
+.btn-group-vertical.btn-group-vertical-circle > .btn:first-child {
+    border-radius: 25px 25px 0 0 !important;
+}
+
+.btn-group-vertical.btn-group-vertical-circle > .btn:last-child {
+    border-radius: 0 0 25px 25px !important;
+}
+
+/* Spacements */
+/* spacement top & bottom */
+.m-none {
+    margin: 0 !important;
+}
+
+.m-auto {
+    margin: 0 auto !important;
+}
+
+.m-xs {
+    margin: 5px !important;
+}
+
+.m-sm {
+    margin: 10px !important;
+}
+
+.m-md {
+    margin: 15px !important;
+}
+
+.m-lg {
+    margin: 20px !important;
+}
+
+.m-xl {
+    margin: 25px !important;
+}
+
+.m-xlg {
+    margin: 30px !important;
+}
+
+/* spacement top	*/
+.mt-none {
+    margin-top: 0 !important;
+}
+
+.mt-xs {
+    margin-top: 5px !important;
+}
+
+.mt-sm {
+    margin-top: 10px !important;
+}
+
+.mt-md {
+    margin-top: 15px !important;
+}
+
+.mt-lg {
+    margin-top: 20px !important;
+}
+
+.mt-xl {
+    margin-top: 25px !important;
+}
+
+.mt-xlg {
+    margin-top: 30px !important;
+}
+
+/* spacement bottom	*/
+.mb-none {
+    margin-bottom: 0 !important;
+}
+
+.mb-xs {
+    margin-bottom: 5px !important;
+}
+
+.mb-sm {
+    margin-bottom: 10px !important;
+}
+
+.mb-md {
+    margin-bottom: 15px !important;
+}
+
+.mb-lg {
+    margin-bottom: 20px !important;
+}
+
+.mb-xl {
+    margin-bottom: 25px !important;
+}
+
+.mb-xlg {
+    margin-bottom: 30px !important;
+}
+
+/* spacement left	*/
+.ml-none {
+    margin-left: 0 !important;
+}
+
+.ml-xs {
+    margin-left: 5px !important;
+}
+
+.ml-sm {
+    margin-left: 10px !important;
+}
+
+.ml-md {
+    margin-left: 15px !important;
+}
+
+.ml-lg {
+    margin-left: 20px !important;
+}
+
+.ml-xl {
+    margin-left: 25px !important;
+}
+
+.ml-xlg {
+    margin-left: 30px !important;
+}
+
+/* spacement right	*/
+.mr-none {
+    margin-right: 0 !important;
+}
+
+.mr-xs {
+    margin-right: 5px !important;
+}
+
+.mr-sm {
+    margin-right: 10px !important;
+}
+
+.mr-md {
+    margin-right: 15px !important;
+}
+
+.mr-lg {
+    margin-right: 20px !important;
+}
+
+.mr-xl {
+    margin-right: 25px !important;
+}
+
+.mr-xlg {
+    margin-right: 30px !important;
+}
+
+/* Spacement Padding */
+.p-none {
+    padding: 0 !important;
+}
+
+.p-xs {
+    padding: 5px !important;
+}
+
+.p-sm {
+    padding: 10px !important;
+}
+
+.p-md {
+    padding: 15px !important;
+}
+
+.p-lg {
+    padding: 20px !important;
+}
+
+.p-xl {
+    padding: 25px !important;
+}
+
+.p-xlg {
+    padding: 30px !important;
+}
+
+/* spacement top	*/
+.pt-none {
+    padding-top: 0 !important;
+}
+
+.pt-xs {
+    padding-top: 5px !important;
+}
+
+.pt-sm {
+    padding-top: 10px !important;
+}
+
+.pt-md {
+    padding-top: 15px !important;
+}
+
+.pt-lg {
+    padding-top: 20px !important;
+}
+
+.pt-xl {
+    padding-top: 25px !important;
+}
+
+.pt-xlg {
+    padding-top: 30px !important;
+}
+
+/* spacement bottom	*/
+.pb-none {
+    padding-bottom: 0 !important;
+}
+
+.pb-xs {
+    padding-bottom: 5px !important;
+}
+
+.pb-sm {
+    padding-bottom: 10px !important;
+}
+
+.pb-md {
+    padding-bottom: 15px !important;
+}
+
+.pb-lg {
+    padding-bottom: 20px !important;
+}
+
+.pb-xl {
+    padding-bottom: 25px !important;
+}
+
+.pb-xlg {
+    padding-bottom: 30px !important;
+}
+
+/* spacement left	*/
+.pr-none {
+    padding-left: 0 !important;
+}
+
+.pl-xs {
+    padding-left: 5px !important;
+}
+
+.pl-sm {
+    padding-left: 10px !important;
+}
+
+.pl-md {
+    padding-left: 15px !important;
+}
+
+.pl-lg {
+    padding-left: 20px !important;
+}
+
+.pl-xl {
+    padding-left: 25px !important;
+}
+
+.pl-xlg {
+    padding-left: 30px !important;
+}
+
+/* spacement right	*/
+.pr-none {
+    padding-right: 0 !important;
+}
+
+.pr-xs {
+    padding-right: 5px !important;
+}
+
+.pr-sm {
+    padding-right: 10px !important;
+}
+
+.pr-md {
+    padding-right: 15px !important;
+}
+
+.pr-lg {
+    padding-right: 20px !important;
+}
+
+.pr-xl {
+    padding-right: 25px !important;
+}
+
+.pr-xlg {
+    padding-right: 30px !important;
+}
+
+.ib {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.va-middle {
+    vertical-align: middle;
+}
+
+.ws-nowrap {
+    white-space: nowrap;
+}
+
+.ws-normal {
+    white-space: normal;
+}
+
+#footer-menu-box {
+    padding-bottom: 20px;
+    margin-bottom: 0px !important;
+}
+
+.blog-home .content-page h2 {
+    font-size: 16px;
+}
+
+.btn.default {
+    color: #333333;
+    background-color: #e5e5e5;
+    border-color: "";
+}
+
+.btn.default:hover, .btn.default:focus, .btn.default:active, .btn.default.active {
+    color: #333333;
+    background-color: #d6d6d6;
+}
+
+.open .btn.default.dropdown-toggle {
+    color: #333333;
+    background-color: #d6d6d6;
+}
+
+.btn.default:active, .btn.default.active {
+    background-image: none;
+}
+
+.open .btn.default.dropdown-toggle {
+    background-image: none;
+}
+
+.btn.default.disabled, .btn.default.disabled:hover, .btn.default.disabled:focus, .btn.default.disabled:active, .btn.default.disabled.active, .btn.default[disabled], .btn.default[disabled]:hover, .btn.default[disabled]:focus, .btn.default[disabled]:active, .btn.default[disabled].active, fieldset[disabled] .btn.default, fieldset[disabled] .btn.default:hover, fieldset[disabled] .btn.default:focus, fieldset[disabled] .btn.default:active, fieldset[disabled] .btn.default.active {
+    background-color: #e5e5e5;
+}
+
+.btn.default .badge {
+    color: #e5e5e5;
+    background-color: #333333;
+}
+
+/**********
+Blue Colors
+***********/
+/***
+Blue Default
+***/
+/* Button */
+.blue.btn {
+    color: white;
+    background-color: #4b8df8;
+    border-color: "";
+}
+
+.blue.btn:hover, .blue.btn:focus, .blue.btn:active, .blue.btn.active {
+    color: white;
+    background-color: #2e7af7;
+}
+
+.open .blue.btn.dropdown-toggle {
+    color: white;
+    background-color: #2e7af7;
+}
+
+.blue.btn:active, .blue.btn.active {
+    background-image: none;
+}
+
+.open .blue.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue.btn.disabled, .blue.btn.disabled:hover, .blue.btn.disabled:focus, .blue.btn.disabled:active, .blue.btn.disabled.active, .blue.btn[disabled], .blue.btn[disabled]:hover, .blue.btn[disabled]:focus, .blue.btn[disabled]:active, .blue.btn[disabled].active, fieldset[disabled] .blue.btn, fieldset[disabled] .blue.btn:hover, fieldset[disabled] .blue.btn:focus, fieldset[disabled] .blue.btn:active, fieldset[disabled] .blue.btn.active {
+    background-color: #4b8df8;
+}
+
+.blue.btn .badge {
+    color: #4b8df8;
+    background-color: white;
+}
+
+.btn > i {
+    font-size: 14px;
+}
+
+/***
+Fontawesome Icons
+***/
+[class^="fa-"],
+[class^="glyphicon-"],
+[class^="icon-"],
+[class*=" fa-"],
+[class*=" glyphicon-"],
+[class*=" icon-"] {
+    display: inline-block;
+    margin-top: 1px;
+    font-size: 14px;
+    *margin-right: .3em;
+    line-height: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.option4 {
+    background: #FFFFFF;
+}
+
+.date-add {
+    top: 0px;
+    right: 16px;
+    left: inherit;
+    bottom: inherit;
+    width: 129px;
+    height: 36px;
+    background: #0088cc;
+    line-height: 36px;
+    position: absolute;
+    color: #fff;
+    text-align: center;
+}
+
+.summary-info {
+    border: 1px solid #ddd;
+}
+
+.summary-info tbody > tr > td {
+    vertical-align: middle !important;
+}
+
+#property-detail h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+/* Links */
+a:hover {
+    cursor: pointer;
+}
+
+/* Primary Link */
+.primary-link {
+    color: #65A0D0;
+    font-weight: 600;
+}
+
+.primary-link:hover {
+    color: #5194ca;
+}
+
+.widget-title-color-purple {
+    color: #9a7caf;
+}
+
+.widget-title-color-purple-dark {
+    color: #4b365a;
+}
+
+.widget-title-color-purple-light {
+    color: #674d79;
+}
+
+.widget-title-color-green {
+    color: #4db3a4;
+}
+
+.widget-title-color-red {
+    color: #f36a5a;
+}
+
+.widget-title-color-blue {
+    color: #5b9bd1;
+}
+
+.widget-title-color-gray {
+    color: #323c45;
+}
+
+.widget-title-color-gray-dark {
+    color: #144f57;
+}
+
+.widget-title-color-white {
+    color: #fff;
+}
+
+.widget-title-color-dark {
+    color: #3e4f5e;
+}
+
+.widget-title-color-dark-light {
+    color: #8e9daa;
+}
+
+.widget-title-color-fb {
+    color: #475e98;
+}
+
+.widget-title-color-tw {
+    color: #55acee;
+}
+
+.google-map {
+    background: #E5E3DF;
+    height: 400px;
+    margin: -35px 0 30px 0;
+    width: 100%;
+}
+
+.tabbable-custom {
+    margin-bottom: 15px;
+    padding: 0px;
+    overflow: hidden;
+    /* justified tabs */
+    /* boxless tabs */
+    /* below justified tabs */
+    /* full width tabs */
+    /* below tabs */
+}
+
+.tabbable-custom > .nav-tabs {
+    border: none;
+    margin: 0px;
+}
+
+.tabbable-custom > .nav-tabs > li {
+    margin-right: 2px;
+    border-top: 2px solid transparent;
+}
+
+.tabbable-custom > .nav-tabs > li > a {
+    margin-right: 0;
+}
+
+.tabbable-custom > .nav-tabs > li > a:hover {
+    background: none;
+    border-color: transparent;
+}
+
+.tabbable-custom > .nav-tabs > li.active {
+    border-top: 3px solid #f3565d;
+    margin-top: 0;
+    position: relative;
+}
+
+.tabbable-custom > .nav-tabs > li.active > a {
+    border-top: none;
+    font-weight: 400;
+}
+
+.tabbable-custom > .nav-tabs > li.active > a:hover {
+    border-top: none;
+    background: #fff;
+    border-color: #d4d4d4 #d4d4d4 transparent;
+}
+
+.tabbable-custom > .tab-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 10px;
+}
+
+/***
+Portlets
+***/
+/* Full Screen portlet mode */
+.page-portlet-fullscreen {
+    overflow: hidden;
+}
+
+/* Basic portlet */
+.portlet {
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding: 0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.portlet.portlet-fullscreen {
+    z-index: 10060;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.portlet.portlet-fullscreen > .portlet-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 10px;
+}
+
+.portlet.portlet-fullscreen > .portlet-title {
+    padding: 0 10px;
+}
+
+.portlet > .portlet-title {
+    border-bottom: 1px solid #eee;
+    padding: 0;
+    margin-bottom: 10px;
+    min-height: 41px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.portlet > .portlet-title:before, .portlet > .portlet-title:after {
+    content: " ";
+    display: table;
+}
+
+.portlet > .portlet-title:after {
+    clear: both;
+}
+
+.portlet > .portlet-title > .caption {
+    float: left;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px 0;
+}
+
+.portlet > .portlet-title > .caption.bold {
+    font-weight: 400;
+}
+
+.portlet > .portlet-title > .caption > i {
+    float: left;
+    margin-top: 4px;
+    display: inline-block;
+    font-size: 13px;
+    margin-right: 5px;
+    color: #666;
+}
+
+.portlet > .portlet-title > .caption > i.glyphicon {
+    margin-top: 2px;
+}
+
+.portlet > .portlet-title > .caption > .caption-helper {
+    padding: 0;
+    margin: 0;
+    line-height: 13px;
+    color: #9eacb4;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.portlet > .portlet-title > .actions {
+    float: right;
+    display: inline-block;
+    padding: 6px 0;
+}
+
+.portlet > .portlet-title > .actions > .dropdown-menu i {
+    color: #555555;
+}
+
+.portlet > .portlet-title > .actions > .btn,
+.portlet > .portlet-title > .actions > .btn.btn-sm,
+.portlet > .portlet-title > .actions > .btn-group > .btn,
+.portlet > .portlet-title > .actions > .btn-group > .btn.btn-sm {
+    padding: 4px 10px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.portlet > .portlet-title > .actions > .btn.btn-default,
+.portlet > .portlet-title > .actions > .btn.btn-sm.btn-default,
+.portlet > .portlet-title > .actions > .btn-group > .btn.btn-default,
+.portlet > .portlet-title > .actions > .btn-group > .btn.btn-sm.btn-default {
+    padding: 3px 9px;
+}
+
+.portlet > .portlet-title > .actions > .btn > i,
+.portlet > .portlet-title > .actions > .btn.btn-sm > i,
+.portlet > .portlet-title > .actions > .btn-group > .btn > i,
+.portlet > .portlet-title > .actions > .btn-group > .btn.btn-sm > i {
+    font-size: 13px;
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only {
+    padding: 5px 7px 3px 7px;
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default {
+    padding: 4px 6px 2px 6px;
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default > i {
+    font-size: 14px;
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default.fullscreen {
+    font-family: FontAwesome;
+    color: #a0a0a0;
+    padding-top: 3px;
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default.fullscreen.btn-sm {
+    padding: 3px 3px !important;
+    height: 27px;
+    width: 27px;
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default.fullscreen:before {
+    content: "\f065";
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default.fullscreen.on:before {
+    content: "\f066";
+}
+
+.portlet > .portlet-title > .tools {
+    float: right;
+    display: inline-block;
+    padding: 12px 0 8px 0;
+}
+
+.portlet > .portlet-title > .tools > a {
+    display: inline-block;
+    height: 16px;
+    margin-left: 5px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.portlet > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon.png);
+    background-repeat: no-repeat;
+    width: 11px;
+}
+
+.portlet > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon.png);
+    background-repeat: no-repeat;
+    width: 12px;
+}
+
+.portlet > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon.png);
+    width: 13px;
+}
+
+.portlet > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon.png);
+    width: 14px;
+    visibility: visible;
+}
+
+.portlet > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon.png);
+    width: 14px;
+    visibility: visible;
+}
+
+.portlet > .portlet-title > .tools > a.fullscreen {
+    display: inline-block;
+    top: -3px;
+    position: relative;
+    font-size: 13px;
+    font-family: FontAwesome;
+    color: #ACACAC;
+}
+
+.portlet > .portlet-title > .tools > a.fullscreen:before {
+    content: "\f065";
+}
+
+.portlet > .portlet-title > .tools > a.fullscreen.on:before {
+    content: "\f066";
+}
+
+.portlet > .portlet-title > .tools > a:hover {
+    text-decoration: none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.portlet > .portlet-title > .pagination {
+    float: right;
+    display: inline-block;
+    margin: 2px 0 0 0;
+    border: 0;
+    padding: 4px 0;
+}
+
+.portlet > .portlet-title > .nav-tabs {
+    background: none;
+    margin: 0;
+    float: right;
+    display: inline-block;
+    border: 0;
+}
+
+.portlet > .portlet-title > .nav-tabs > li {
+    background: none;
+    margin: 0;
+    border: 0;
+}
+
+.portlet > .portlet-title > .nav-tabs > li > a {
+    background: none;
+    margin: 5px 0 0 1px;
+    border: 0;
+    padding: 8px 10px;
+    color: #fff;
+}
+
+.portlet > .portlet-title > .nav-tabs > li.active > a, .portlet > .portlet-title > .nav-tabs > li:hover > a {
+    color: #333;
+    background: #fff;
+    border: 0;
+}
+
+.portlet > .portlet-body {
+    clear: both;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.portlet > .portlet-empty {
+    min-height: 125px;
+}
+
+.portlet.full-height-content {
+    margin-bottom: 0;
+}
+
+/* Portlet background colors */
+/* Side bordered portlet */
+.portlet.bordered {
+    border-left: 2px solid #e6e9ec !important;
+}
+
+.portlet.bordered > .portlet-title {
+    border-bottom: 0;
+}
+
+/* Solid colored portlet */
+.portlet.solid {
+    padding: 0 10px 10px 10px;
+    border: 0px;
+}
+
+.portlet.solid > .portlet-title {
+    border-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.portlet.solid > .portlet-title > .caption {
+    padding: 16px 0 2px 0;
+}
+
+.portlet.solid > .portlet-title > .actions {
+    padding: 12px 0 6px 0;
+}
+
+.portlet.solid > .portlet-title > .tools {
+    padding: 14px 0 6px 0;
+}
+
+/* Solid bordered portlet */
+.portlet.solid.bordered > .portlet-title {
+    margin-bottom: 10px;
+}
+
+/* Box portlet */
+.portlet.box {
+    padding: 0px !important;
+}
+
+.portlet.box > .portlet-title {
+    border-bottom: 0;
+    padding: 0 10px;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.portlet.box > .portlet-title > .caption {
+    padding: 11px 0 9px 0;
+}
+
+.portlet.box > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.box > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.box > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.box > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.box > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.box > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box > .portlet-title > .actions {
+    padding: 7px 0 5px 0;
+}
+
+.portlet.box > .portlet-body {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.portlet.box.portlet-fullscreen > .portlet-body {
+    padding: 10px;
+}
+
+/* Light Portlet */
+.portlet.light {
+    padding: 12px 20px 15px 20px;
+    background-color: #fff;
+}
+
+.portlet.light.bordered {
+    border: 1px solid #e1e1e1 !important;
+}
+
+.portlet.light.bordered > .portlet-title {
+    border-bottom: 1px solid #eee;
+}
+
+.portlet.light.bg-inverse {
+    background: #F7F7F7;
+}
+
+.portlet.light > .portlet-title {
+    padding: 0;
+    min-height: 48px;
+}
+
+.portlet.light > .portlet-title > .caption {
+    color: #666;
+    padding: 10px 0;
+}
+
+.portlet.light > .portlet-title > .caption > .caption-subject {
+    font-size: 16px;
+}
+
+.portlet.light > .portlet-title > .caption > i {
+    color: #777;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 3px;
+}
+
+.portlet.light > .portlet-title > .caption.caption-md > .caption-subject {
+    font-size: 15px;
+}
+
+.portlet.light > .portlet-title > .caption.caption-md > i {
+    font-size: 14px;
+}
+
+.portlet.light > .portlet-title > .actions {
+    padding: 6px 0 14px 0;
+}
+
+.portlet.light > .portlet-title > .actions .btn-default {
+    color: #666;
+}
+
+.portlet.light > .portlet-title > .actions .btn-icon-only {
+    height: 27px;
+    width: 27px;
+}
+
+.portlet.light > .portlet-title > .actions .dropdown-menu li > a {
+    color: #555;
+}
+
+.portlet.light > .portlet-title > .inputs {
+    float: right;
+    display: inline-block;
+    padding: 4px 0;
+}
+
+.portlet.light > .portlet-title > .inputs > .portlet-input .input-icon > i {
+    font-size: 14px;
+    margin-top: 9px;
+}
+
+.portlet.light > .portlet-title > .inputs > .portlet-input .input-icon > .form-control {
+    height: 30px;
+    padding: 2px 26px 3px 10px;
+    font-size: 13px;
+}
+
+.portlet.light > .portlet-title > .inputs > .portlet-input > .form-control {
+    height: 30px;
+    padding: 3px 10px;
+    font-size: 13px;
+}
+
+.portlet.light > .portlet-title > .pagination {
+    padding: 2px 0 13px 0;
+}
+
+.portlet.light > .portlet-title > .tools {
+    padding: 10px 0 13px 0;
+    margin-top: 2px;
+}
+
+.portlet.light > .portlet-title > .nav-tabs > li {
+    margin: 0;
+    padding: 0;
+}
+
+.portlet.light > .portlet-title > .nav-tabs > li > a {
+    margin: 0;
+    padding: 12px 13px 13px 13px;
+    font-size: 13px;
+    color: #666;
+}
+
+.portlet.light > .portlet-title > .nav-tabs > li.active > a, .portlet.light > .portlet-title > .nav-tabs > li:hover > a {
+    margin: 0;
+    background: none;
+    color: #333;
+}
+
+.portlet.light.form-fit {
+    padding: 0;
+}
+
+.portlet.light.form-fit > .portlet-title {
+    padding: 17px 20px 10px 20px;
+    margin-bottom: 0;
+}
+
+.portlet.light .portlet-body {
+    padding-top: 8px;
+}
+
+.portlet.light.portlet-fullscreen > .portlet-body {
+    padding: 8px 0;
+}
+
+.tab-pane > p:last-child {
+    margin-bottom: 0px;
+}
+
+/* Reverse aligned tabs */
+.tabs-reversed > li {
+    float: right;
+    margin-right: 0;
+}
+
+.tabs-reversed > li > a {
+    margin-right: 0;
+}
+
+/* jQuery UI Draggable Portlets */
+.portlet-sortable:not(.portlet-fullscreen) > .portlet-title {
+    cursor: move;
+}
+
+.portlet-sortable-placeholder {
+    border: 2px dashed #eee;
+    margin-bottom: 25px;
+}
+
+.portlet-sortable-empty {
+    box-shadow: none !important;
+    height: 45px;
+}
+
+/**********
+Blue Colors
+***********/
+/***
+Blue Default
+***/
+/* Button */
+.blue.btn {
+    color: #FFFFFF;
+    background-color: #3598dc;
+}
+
+.blue.btn:hover, .blue.btn:focus, .blue.btn:active, .blue.btn.active {
+    color: #FFFFFF;
+    background-color: #2386ca;
+}
+
+.open .blue.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #2386ca;
+}
+
+.blue.btn:active, .blue.btn.active {
+    background-image: none;
+    background-color: #1f78b5;
+}
+
+.blue.btn:active:hover, .blue.btn.active:hover {
+    background-color: #217ebd;
+}
+
+.open .blue.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue.btn.disabled, .blue.btn.disabled:hover, .blue.btn.disabled:focus, .blue.btn.disabled:active, .blue.btn.disabled.active, .blue.btn[disabled], .blue.btn[disabled]:hover, .blue.btn[disabled]:focus, .blue.btn[disabled]:active, .blue.btn[disabled].active, fieldset[disabled] .blue.btn, fieldset[disabled] .blue.btn:hover, fieldset[disabled] .blue.btn:focus, fieldset[disabled] .blue.btn:active, fieldset[disabled] .blue.btn.active {
+    background-color: #3598dc;
+}
+
+.blue.btn .badge {
+    color: #3598dc;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-stripe {
+    border-left: 3px solid #3598dc;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue,
+.portlet.blue {
+    background-color: #3598dc;
+}
+
+.portlet.solid.blue > .portlet-title,
+.portlet.solid.blue > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue {
+    border: 1px solid #60aee4;
+    border-top: 0;
+}
+
+.portlet.box.blue > .portlet-title {
+    background-color: #3598dc;
+}
+
+.portlet.box.blue > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #95c9ed;
+    color: #aad4f0;
+}
+
+.portlet.box.blue > .portlet-title > .actions .btn-default > i {
+    color: #b7daf3;
+}
+
+.portlet.box.blue > .portlet-title > .actions .btn-default:hover, .portlet.box.blue > .portlet-title > .actions .btn-default:focus, .portlet.box.blue > .portlet-title > .actions .btn-default:active, .portlet.box.blue > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #c0dff4;
+    color: #d6eaf8;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue {
+    background-color: #3598dc;
+}
+
+.dashboard-stat.blue.dashboard-stat-light:hover {
+    background-color: #258fd7;
+}
+
+.dashboard-stat.blue .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue .more {
+    color: #FFFFFF;
+    background-color: #258fd7;
+}
+
+/* General Element */
+.bg-blue {
+    border-color: #3598dc !important;
+    background-image: none !important;
+    background-color: #3598dc !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue {
+    color: #3598dc !important;
+}
+
+.progress-bar.blue {
+    background: #3598dc !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Madison
+***/
+/* Button */
+.blue-madison.btn {
+    color: #FFFFFF;
+    background-color: #578ebe;
+}
+
+.blue-madison.btn:hover, .blue-madison.btn:focus, .blue-madison.btn:active, .blue-madison.btn.active {
+    color: #FFFFFF;
+    background-color: #437cae;
+}
+
+.open .blue-madison.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #437cae;
+}
+
+.blue-madison.btn:active, .blue-madison.btn.active {
+    background-image: none;
+    background-color: #3c6f9c;
+}
+
+.blue-madison.btn:active:hover, .blue-madison.btn.active:hover {
+    background-color: #3f74a3;
+}
+
+.open .blue-madison.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-madison.btn.disabled, .blue-madison.btn.disabled:hover, .blue-madison.btn.disabled:focus, .blue-madison.btn.disabled:active, .blue-madison.btn.disabled.active, .blue-madison.btn[disabled], .blue-madison.btn[disabled]:hover, .blue-madison.btn[disabled]:focus, .blue-madison.btn[disabled]:active, .blue-madison.btn[disabled].active, fieldset[disabled] .blue-madison.btn, fieldset[disabled] .blue-madison.btn:hover, fieldset[disabled] .blue-madison.btn:focus, fieldset[disabled] .blue-madison.btn:active, fieldset[disabled] .blue-madison.btn.active {
+    background-color: #578ebe;
+}
+
+.blue-madison.btn .badge {
+    color: #578ebe;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-madison-stripe {
+    border-left: 3px solid #578ebe;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-madison,
+.portlet.blue-madison {
+    background-color: #578ebe;
+}
+
+.portlet.solid.blue-madison > .portlet-title,
+.portlet.solid.blue-madison > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-madison > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-madison > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-madison > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-madison > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-madison > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-madison > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-madison > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-madison > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-madison {
+    border: 1px solid #7ca7cc;
+    border-top: 0;
+}
+
+.portlet.box.blue-madison > .portlet-title {
+    background-color: #578ebe;
+}
+
+.portlet.box.blue-madison > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-madison > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-madison > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #a8c4dd;
+    color: #bad1e4;
+}
+
+.portlet.box.blue-madison > .portlet-title > .actions .btn-default > i {
+    color: #c5d8e9;
+}
+
+.portlet.box.blue-madison > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-madison > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-madison > .portlet-title > .actions .btn-default:active, .portlet.box.blue-madison > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #cdddec;
+    color: #dfeaf3;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-madison {
+    background-color: #578ebe;
+}
+
+.dashboard-stat.blue-madison.dashboard-stat-light:hover {
+    background-color: #4884b8;
+}
+
+.dashboard-stat.blue-madison .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-madison .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-madison .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-madison .more {
+    color: #FFFFFF;
+    background-color: #4884b8;
+}
+
+/* General Element */
+.bg-blue-madison {
+    border-color: #578ebe !important;
+    background-image: none !important;
+    background-color: #578ebe !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-madison {
+    color: #578ebe !important;
+}
+
+.progress-bar.blue-madison {
+    background: #578ebe !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Chambray
+***/
+/* Button */
+.blue-chambray.btn {
+    color: #FFFFFF;
+    background-color: #2C3E50;
+}
+
+.blue-chambray.btn:hover, .blue-chambray.btn:focus, .blue-chambray.btn:active, .blue-chambray.btn.active {
+    color: #FFFFFF;
+    background-color: #1f2c39;
+}
+
+.open .blue-chambray.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #1f2c39;
+}
+
+.blue-chambray.btn:active, .blue-chambray.btn.active {
+    background-image: none;
+    background-color: #161f29;
+}
+
+.blue-chambray.btn:active:hover, .blue-chambray.btn.active:hover {
+    background-color: #1a242f;
+}
+
+.open .blue-chambray.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-chambray.btn.disabled, .blue-chambray.btn.disabled:hover, .blue-chambray.btn.disabled:focus, .blue-chambray.btn.disabled:active, .blue-chambray.btn.disabled.active, .blue-chambray.btn[disabled], .blue-chambray.btn[disabled]:hover, .blue-chambray.btn[disabled]:focus, .blue-chambray.btn[disabled]:active, .blue-chambray.btn[disabled].active, fieldset[disabled] .blue-chambray.btn, fieldset[disabled] .blue-chambray.btn:hover, fieldset[disabled] .blue-chambray.btn:focus, fieldset[disabled] .blue-chambray.btn:active, fieldset[disabled] .blue-chambray.btn.active {
+    background-color: #2C3E50;
+}
+
+.blue-chambray.btn .badge {
+    color: #2C3E50;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-chambray-stripe {
+    border-left: 3px solid #2C3E50;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-chambray,
+.portlet.blue-chambray {
+    background-color: #2C3E50;
+}
+
+.portlet.solid.blue-chambray > .portlet-title,
+.portlet.solid.blue-chambray > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-chambray > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-chambray {
+    border: 1px solid #3e5771;
+    border-top: 0;
+}
+
+.portlet.box.blue-chambray > .portlet-title {
+    background-color: #2C3E50;
+}
+
+.portlet.box.blue-chambray > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-chambray > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-chambray > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #547698;
+    color: #5f83a7;
+}
+
+.portlet.box.blue-chambray > .portlet-title > .actions .btn-default > i {
+    color: #698aac;
+}
+
+.portlet.box.blue-chambray > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-chambray > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-chambray > .portlet-title > .actions .btn-default:active, .portlet.box.blue-chambray > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #6f90b0;
+    color: #809cb9;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-chambray {
+    background-color: #2C3E50;
+}
+
+.dashboard-stat.blue-chambray.dashboard-stat-light:hover {
+    background-color: #253443;
+}
+
+.dashboard-stat.blue-chambray .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-chambray .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-chambray .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-chambray .more {
+    color: #FFFFFF;
+    background-color: #253443;
+}
+
+/* General Element */
+.bg-blue-chambray {
+    border-color: #2C3E50 !important;
+    background-image: none !important;
+    background-color: #2C3E50 !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-chambray {
+    color: #2C3E50 !important;
+}
+
+.progress-bar.blue-chambray {
+    background: #2C3E50 !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Ebonyclay
+***/
+/* Button */
+.blue-ebonyclay.btn {
+    color: #FFFFFF;
+    background-color: #22313F;
+}
+
+.blue-ebonyclay.btn:hover, .blue-ebonyclay.btn:focus, .blue-ebonyclay.btn:active, .blue-ebonyclay.btn.active {
+    color: #FFFFFF;
+    background-color: #151f28;
+}
+
+.open .blue-ebonyclay.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #151f28;
+}
+
+.blue-ebonyclay.btn:active, .blue-ebonyclay.btn.active {
+    background-image: none;
+    background-color: #0d1217;
+}
+
+.blue-ebonyclay.btn:active:hover, .blue-ebonyclay.btn.active:hover {
+    background-color: #10171e;
+}
+
+.open .blue-ebonyclay.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-ebonyclay.btn.disabled, .blue-ebonyclay.btn.disabled:hover, .blue-ebonyclay.btn.disabled:focus, .blue-ebonyclay.btn.disabled:active, .blue-ebonyclay.btn.disabled.active, .blue-ebonyclay.btn[disabled], .blue-ebonyclay.btn[disabled]:hover, .blue-ebonyclay.btn[disabled]:focus, .blue-ebonyclay.btn[disabled]:active, .blue-ebonyclay.btn[disabled].active, fieldset[disabled] .blue-ebonyclay.btn, fieldset[disabled] .blue-ebonyclay.btn:hover, fieldset[disabled] .blue-ebonyclay.btn:focus, fieldset[disabled] .blue-ebonyclay.btn:active, fieldset[disabled] .blue-ebonyclay.btn.active {
+    background-color: #22313F;
+}
+
+.blue-ebonyclay.btn .badge {
+    color: #22313F;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-ebonyclay-stripe {
+    border-left: 3px solid #22313F;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-ebonyclay,
+.portlet.blue-ebonyclay {
+    background-color: #22313F;
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title,
+.portlet.solid.blue-ebonyclay > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-ebonyclay > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-ebonyclay {
+    border: 1px solid #344b60;
+    border-top: 0;
+}
+
+.portlet.box.blue-ebonyclay > .portlet-title {
+    background-color: #22313F;
+}
+
+.portlet.box.blue-ebonyclay > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-ebonyclay > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-ebonyclay > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #496a88;
+    color: #527798;
+}
+
+.portlet.box.blue-ebonyclay > .portlet-title > .actions .btn-default > i {
+    color: #587ea2;
+}
+
+.portlet.box.blue-ebonyclay > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-ebonyclay > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-ebonyclay > .portlet-title > .actions .btn-default:active, .portlet.box.blue-ebonyclay > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #5d83a7;
+    color: #6d90b0;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-ebonyclay {
+    background-color: #22313F;
+}
+
+.dashboard-stat.blue-ebonyclay.dashboard-stat-light:hover {
+    background-color: #1b2732;
+}
+
+.dashboard-stat.blue-ebonyclay .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-ebonyclay .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-ebonyclay .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-ebonyclay .more {
+    color: #FFFFFF;
+    background-color: #1b2732;
+}
+
+/* General Element */
+.bg-blue-ebonyclay {
+    border-color: #22313F !important;
+    background-image: none !important;
+    background-color: #22313F !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-ebonyclay {
+    color: #22313F !important;
+}
+
+.progress-bar.blue-ebonyclay {
+    background: #22313F !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Hoki
+***/
+/* Button */
+.blue-hoki.btn {
+    color: #FFFFFF;
+    background-color: #67809F;
+}
+
+.blue-hoki.btn:hover, .blue-hoki.btn:focus, .blue-hoki.btn:active, .blue-hoki.btn.active {
+    color: #FFFFFF;
+    background-color: #586e8b;
+}
+
+.open .blue-hoki.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #586e8b;
+}
+
+.blue-hoki.btn:active, .blue-hoki.btn.active {
+    background-image: none;
+    background-color: #4e627b;
+}
+
+.blue-hoki.btn:active:hover, .blue-hoki.btn.active:hover {
+    background-color: #526781;
+}
+
+.open .blue-hoki.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-hoki.btn.disabled, .blue-hoki.btn.disabled:hover, .blue-hoki.btn.disabled:focus, .blue-hoki.btn.disabled:active, .blue-hoki.btn.disabled.active, .blue-hoki.btn[disabled], .blue-hoki.btn[disabled]:hover, .blue-hoki.btn[disabled]:focus, .blue-hoki.btn[disabled]:active, .blue-hoki.btn[disabled].active, fieldset[disabled] .blue-hoki.btn, fieldset[disabled] .blue-hoki.btn:hover, fieldset[disabled] .blue-hoki.btn:focus, fieldset[disabled] .blue-hoki.btn:active, fieldset[disabled] .blue-hoki.btn.active {
+    background-color: #67809F;
+}
+
+.blue-hoki.btn .badge {
+    color: #67809F;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-hoki-stripe {
+    border-left: 3px solid #67809F;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-hoki,
+.portlet.blue-hoki {
+    background-color: #67809F;
+}
+
+.portlet.solid.blue-hoki > .portlet-title,
+.portlet.solid.blue-hoki > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-hoki > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-hoki {
+    border: 1px solid #869ab3;
+    border-top: 0;
+}
+
+.portlet.box.blue-hoki > .portlet-title {
+    background-color: #67809F;
+}
+
+.portlet.box.blue-hoki > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-hoki > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-hoki > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #acb9ca;
+    color: #bbc7d4;
+}
+
+.portlet.box.blue-hoki > .portlet-title > .actions .btn-default > i {
+    color: #c5ceda;
+}
+
+.portlet.box.blue-hoki > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-hoki > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-hoki > .portlet-title > .actions .btn-default:active, .portlet.box.blue-hoki > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #cbd4de;
+    color: #dbe1e8;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-hoki {
+    background-color: #67809F;
+}
+
+.dashboard-stat.blue-hoki.dashboard-stat-light:hover {
+    background-color: #5e7694;
+}
+
+.dashboard-stat.blue-hoki .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-hoki .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-hoki .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-hoki .more {
+    color: #FFFFFF;
+    background-color: #5e7694;
+}
+
+/* General Element */
+.bg-blue-hoki {
+    border-color: #67809F !important;
+    background-image: none !important;
+    background-color: #67809F !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-hoki {
+    color: #67809F !important;
+}
+
+.progress-bar.blue-hoki {
+    background: #67809F !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Stell
+***/
+/* Button */
+.blue-steel.btn {
+    color: #FFFFFF;
+    background-color: #4B77BE;
+}
+
+.blue-steel.btn:hover, .blue-steel.btn:focus, .blue-steel.btn:active, .blue-steel.btn.active {
+    color: #FFFFFF;
+    background-color: #3d66a8;
+}
+
+.open .blue-steel.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #3d66a8;
+}
+
+.blue-steel.btn:active, .blue-steel.btn.active {
+    background-image: none;
+    background-color: #365b96;
+}
+
+.blue-steel.btn:active:hover, .blue-steel.btn.active:hover {
+    background-color: #395f9d;
+}
+
+.open .blue-steel.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-steel.btn.disabled, .blue-steel.btn.disabled:hover, .blue-steel.btn.disabled:focus, .blue-steel.btn.disabled:active, .blue-steel.btn.disabled.active, .blue-steel.btn[disabled], .blue-steel.btn[disabled]:hover, .blue-steel.btn[disabled]:focus, .blue-steel.btn[disabled]:active, .blue-steel.btn[disabled].active, fieldset[disabled] .blue-steel.btn, fieldset[disabled] .blue-steel.btn:hover, fieldset[disabled] .blue-steel.btn:focus, fieldset[disabled] .blue-steel.btn:active, fieldset[disabled] .blue-steel.btn.active {
+    background-color: #4B77BE;
+}
+
+.blue-steel.btn .badge {
+    color: #4B77BE;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-steel-stripe {
+    border-left: 3px solid #4B77BE;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-steel,
+.portlet.blue-steel {
+    background-color: #4B77BE;
+}
+
+.portlet.solid.blue-steel > .portlet-title,
+.portlet.solid.blue-steel > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-steel > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-steel > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-steel > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-steel > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-steel > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-steel > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-steel > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-steel > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-steel {
+    border: 1px solid #7093cc;
+    border-top: 0;
+}
+
+.portlet.box.blue-steel > .portlet-title {
+    background-color: #4B77BE;
+}
+
+.portlet.box.blue-steel > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-steel > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-steel > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #9db5dc;
+    color: #b0c3e3;
+}
+
+.portlet.box.blue-steel > .portlet-title > .actions .btn-default > i {
+    color: #bbcce7;
+}
+
+.portlet.box.blue-steel > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-steel > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-steel > .portlet-title > .actions .btn-default:active, .portlet.box.blue-steel > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #c3d2e9;
+    color: #d6e0f0;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-steel {
+    background-color: #4B77BE;
+}
+
+.dashboard-stat.blue-steel.dashboard-stat-light:hover {
+    background-color: #416db4;
+}
+
+.dashboard-stat.blue-steel .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-steel .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-steel .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-steel .more {
+    color: #FFFFFF;
+    background-color: #416db4;
+}
+
+/* General Element */
+.bg-blue-steel {
+    border-color: #4B77BE !important;
+    background-image: none !important;
+    background-color: #4B77BE !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-steel {
+    color: #4B77BE !important;
+}
+
+.progress-bar.blue-steel {
+    background: #4B77BE !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Soft
+***/
+/* Button */
+.blue-soft.btn {
+    color: #FFFFFF;
+    background-color: #4c87b9;
+}
+
+.blue-soft.btn:hover, .blue-soft.btn:focus, .blue-soft.btn:active, .blue-soft.btn.active {
+    color: #FFFFFF;
+    background-color: #3f75a2;
+}
+
+.open .blue-soft.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #3f75a2;
+}
+
+.blue-soft.btn:active, .blue-soft.btn.active {
+    background-image: none;
+    background-color: #386890;
+}
+
+.blue-soft.btn:active:hover, .blue-soft.btn.active:hover {
+    background-color: #3b6d97;
+}
+
+.open .blue-soft.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-soft.btn.disabled, .blue-soft.btn.disabled:hover, .blue-soft.btn.disabled:focus, .blue-soft.btn.disabled:active, .blue-soft.btn.disabled.active, .blue-soft.btn[disabled], .blue-soft.btn[disabled]:hover, .blue-soft.btn[disabled]:focus, .blue-soft.btn[disabled]:active, .blue-soft.btn[disabled].active, fieldset[disabled] .blue-soft.btn, fieldset[disabled] .blue-soft.btn:hover, fieldset[disabled] .blue-soft.btn:focus, fieldset[disabled] .blue-soft.btn:active, fieldset[disabled] .blue-soft.btn.active {
+    background-color: #4c87b9;
+}
+
+.blue-soft.btn .badge {
+    color: #4c87b9;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-soft-stripe {
+    border-left: 3px solid #4c87b9;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-soft,
+.portlet.blue-soft {
+    background-color: #4c87b9;
+}
+
+.portlet.solid.blue-soft > .portlet-title,
+.portlet.solid.blue-soft > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-soft > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-soft > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-soft > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-soft > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-soft > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-soft > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-soft > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-soft > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-soft {
+    border: 1px solid #71a0c7;
+    border-top: 0;
+}
+
+.portlet.box.blue-soft > .portlet-title {
+    background-color: #4c87b9;
+}
+
+.portlet.box.blue-soft > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-soft > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-soft > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #9dbdd9;
+    color: #afc9e0;
+}
+
+.portlet.box.blue-soft > .portlet-title > .actions .btn-default > i {
+    color: #bad1e4;
+}
+
+.portlet.box.blue-soft > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-soft > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-soft > .portlet-title > .actions .btn-default:active, .portlet.box.blue-soft > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #c1d6e7;
+    color: #d4e2ee;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-soft {
+    background-color: #4c87b9;
+}
+
+.dashboard-stat.blue-soft.dashboard-stat-light:hover {
+    background-color: #447dad;
+}
+
+.dashboard-stat.blue-soft .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-soft .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-soft .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-soft .more {
+    color: #FFFFFF;
+    background-color: #447dad;
+}
+
+/* General Element */
+.bg-blue-soft {
+    border-color: #4c87b9 !important;
+    background-image: none !important;
+    background-color: #4c87b9 !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-soft {
+    color: #4c87b9 !important;
+}
+
+.progress-bar.blue-soft {
+    background: #4c87b9 !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Dark
+***/
+/* Button */
+.blue-dark.btn {
+    color: #FFFFFF;
+    background-color: #5e738b;
+}
+
+.blue-dark.btn:hover, .blue-dark.btn:focus, .blue-dark.btn:active, .blue-dark.btn.active {
+    color: #FFFFFF;
+    background-color: #506176;
+}
+
+.open .blue-dark.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #506176;
+}
+
+.blue-dark.btn:active, .blue-dark.btn.active {
+    background-image: none;
+    background-color: #455566;
+}
+
+.blue-dark.btn:active:hover, .blue-dark.btn.active:hover {
+    background-color: #495a6d;
+}
+
+.open .blue-dark.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-dark.btn.disabled, .blue-dark.btn.disabled:hover, .blue-dark.btn.disabled:focus, .blue-dark.btn.disabled:active, .blue-dark.btn.disabled.active, .blue-dark.btn[disabled], .blue-dark.btn[disabled]:hover, .blue-dark.btn[disabled]:focus, .blue-dark.btn[disabled]:active, .blue-dark.btn[disabled].active, fieldset[disabled] .blue-dark.btn, fieldset[disabled] .blue-dark.btn:hover, fieldset[disabled] .blue-dark.btn:focus, fieldset[disabled] .blue-dark.btn:active, fieldset[disabled] .blue-dark.btn.active {
+    background-color: #5e738b;
+}
+
+.blue-dark.btn .badge {
+    color: #5e738b;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-dark-stripe {
+    border-left: 3px solid #5e738b;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-dark,
+.portlet.blue-dark {
+    background-color: #5e738b;
+}
+
+.portlet.solid.blue-dark > .portlet-title,
+.portlet.solid.blue-dark > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-dark > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-dark > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-dark > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-dark > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-dark > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-dark > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-dark > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-dark > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-dark {
+    border: 1px solid #788da4;
+    border-top: 0;
+}
+
+.portlet.box.blue-dark > .portlet-title {
+    background-color: #5e738b;
+}
+
+.portlet.box.blue-dark > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-dark > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-dark > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #9dacbd;
+    color: #acb8c7;
+}
+
+.portlet.box.blue-dark > .portlet-title > .actions .btn-default > i {
+    color: #b5c0cd;
+}
+
+.portlet.box.blue-dark > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-dark > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-dark > .portlet-title > .actions .btn-default:active, .portlet.box.blue-dark > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #bbc5d1;
+    color: #cad2db;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-dark {
+    background-color: #5e738b;
+}
+
+.dashboard-stat.blue-dark.dashboard-stat-light:hover {
+    background-color: #56697f;
+}
+
+.dashboard-stat.blue-dark .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-dark .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-dark .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-dark .more {
+    color: #FFFFFF;
+    background-color: #56697f;
+}
+
+/* General Element */
+.bg-blue-dark {
+    border-color: #5e738b !important;
+    background-image: none !important;
+    background-color: #5e738b !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-dark {
+    color: #5e738b !important;
+}
+
+.progress-bar.blue-dark {
+    background: #5e738b !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Blue Sharp
+***/
+/* Button */
+.blue-sharp.btn {
+    color: #FFFFFF;
+    background-color: #5C9BD1;
+}
+
+.blue-sharp.btn:hover, .blue-sharp.btn:focus, .blue-sharp.btn:active, .blue-sharp.btn.active {
+    color: #FFFFFF;
+    background-color: #408ac9;
+}
+
+.open .blue-sharp.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #408ac9;
+}
+
+.blue-sharp.btn:active, .blue-sharp.btn.active {
+    background-image: none;
+    background-color: #357dbb;
+}
+
+.blue-sharp.btn:active:hover, .blue-sharp.btn.active:hover {
+    background-color: #3782c3;
+}
+
+.open .blue-sharp.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.blue-sharp.btn.disabled, .blue-sharp.btn.disabled:hover, .blue-sharp.btn.disabled:focus, .blue-sharp.btn.disabled:active, .blue-sharp.btn.disabled.active, .blue-sharp.btn[disabled], .blue-sharp.btn[disabled]:hover, .blue-sharp.btn[disabled]:focus, .blue-sharp.btn[disabled]:active, .blue-sharp.btn[disabled].active, fieldset[disabled] .blue-sharp.btn, fieldset[disabled] .blue-sharp.btn:hover, fieldset[disabled] .blue-sharp.btn:focus, fieldset[disabled] .blue-sharp.btn:active, fieldset[disabled] .blue-sharp.btn.active {
+    background-color: #5C9BD1;
+}
+
+.blue-sharp.btn .badge {
+    color: #5C9BD1;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.blue-sharp-stripe {
+    border-left: 3px solid #5C9BD1;
+}
+
+/* Portlet */
+.portlet > .portlet-body.blue-sharp,
+.portlet.blue-sharp {
+    background-color: #5C9BD1;
+}
+
+.portlet.solid.blue-sharp > .portlet-title,
+.portlet.solid.blue-sharp > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.blue-sharp > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.blue-sharp {
+    border: 1px solid #84b3dc;
+    border-top: 0;
+}
+
+.portlet.box.blue-sharp > .portlet-title {
+    background-color: #5C9BD1;
+}
+
+.portlet.box.blue-sharp > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-sharp > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.blue-sharp > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #b4d1ea;
+    color: #c7ddef;
+}
+
+.portlet.box.blue-sharp > .portlet-title > .actions .btn-default > i {
+    color: #d3e4f3;
+}
+
+.portlet.box.blue-sharp > .portlet-title > .actions .btn-default:hover, .portlet.box.blue-sharp > .portlet-title > .actions .btn-default:focus, .portlet.box.blue-sharp > .portlet-title > .actions .btn-default:active, .portlet.box.blue-sharp > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #dbe9f5;
+    color: #eff5fb;
+}
+
+/* Statistic Block */
+.dashboard-stat.blue-sharp {
+    background-color: #5C9BD1;
+}
+
+.dashboard-stat.blue-sharp.dashboard-stat-light:hover {
+    background-color: #4c91cd;
+}
+
+.dashboard-stat.blue-sharp .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.blue-sharp .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.blue-sharp .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.blue-sharp .more {
+    color: #FFFFFF;
+    background-color: #4c91cd;
+}
+
+/* General Element */
+.bg-blue-sharp {
+    border-color: #5C9BD1 !important;
+    background-image: none !important;
+    background-color: #5C9BD1 !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-blue-sharp {
+    color: #5C9BD1 !important;
+}
+
+.progress-bar.blue-sharp {
+    background: #5C9BD1 !important;
+    color: #FFFFFF !important;
+}
+
+/***********
+Green Colors
+************/
+/***
+Green Default
+***/
+/* Button */
+.green.btn {
+    color: #FFFFFF;
+    background-color: #26a69a;
+}
+
+.green.btn:hover, .green.btn:focus, .green.btn:active, .green.btn.active {
+    color: #FFFFFF;
+    background-color: #1f897f;
+}
+
+.open .green.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #1f897f;
+}
+
+.green.btn:active, .green.btn.active {
+    background-image: none;
+    background-color: #1b746c;
+}
+
+.green.btn:active:hover, .green.btn.active:hover {
+    background-color: #1c7d74;
+}
+
+.open .green.btn.dropdown-toggle {
+    background-image: none;
+}
+
+.green.btn.disabled, .green.btn.disabled:hover, .green.btn.disabled:focus, .green.btn.disabled:active, .green.btn.disabled.active, .green.btn[disabled], .green.btn[disabled]:hover, .green.btn[disabled]:focus, .green.btn[disabled]:active, .green.btn[disabled].active, fieldset[disabled] .green.btn, fieldset[disabled] .green.btn:hover, fieldset[disabled] .green.btn:focus, fieldset[disabled] .green.btn:active, fieldset[disabled] .green.btn.active {
+    background-color: #26a69a;
+}
+
+.green.btn .badge {
+    color: #26a69a;
+    background-color: #FFFFFF;
+}
+
+/* Button Strip */
+.btn.green-stripe {
+    border-left: 3px solid #26a69a;
+}
+
+/* Portlet */
+.portlet > .portlet-body.green,
+.portlet.green {
+    background-color: #26a69a;
+}
+
+.portlet.solid.green > .portlet-title,
+.portlet.solid.green > .portlet-body {
+    border: 0;
+    color: #FFFFFF;
+}
+
+.portlet.solid.green > .portlet-title > .caption {
+    font-weight: 400;
+}
+
+.portlet.solid.green > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.solid.green > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png);
+}
+
+.portlet.solid.green > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png);
+}
+
+.portlet.solid.green > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png);
+}
+
+.portlet.solid.green > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png);
+}
+
+.portlet.solid.green > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png);
+}
+
+.portlet.solid.green > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd;
+}
+
+.portlet.box.green {
+    border: 1px solid #30d0c1;
+    border-top: 0;
+}
+
+.portlet.box.green > .portlet-title {
+    background-color: #26a69a;
+}
+
+.portlet.box.green > .portlet-title > .caption {
+    color: #FFFFFF;
+}
+
+.portlet.box.green > .portlet-title > .caption > i {
+    color: #FFFFFF;
+}
+
+.portlet.box.green > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #61dbd0;
+    color: #76e0d6;
+}
+
+.portlet.box.green > .portlet-title > .actions .btn-default > i {
+    color: #83e3da;
+}
+
+.portlet.box.green > .portlet-title > .actions .btn-default:hover, .portlet.box.green > .portlet-title > .actions .btn-default:focus, .portlet.box.green > .portlet-title > .actions .btn-default:active, .portlet.box.green > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #8be4dc;
+    color: #a0e9e2;
+}
+
+/* Statistic Block */
+.dashboard-stat.green {
+    background-color: #26a69a;
+}
+
+.dashboard-stat.green.dashboard-stat-light:hover {
+    background-color: #22958b;
+}
+
+.dashboard-stat.green .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+
+.dashboard-stat.green .details .number {
+    color: #FFFFFF;
+}
+
+.dashboard-stat.green .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.dashboard-stat.green .more {
+    color: #FFFFFF;
+    background-color: #22958b;
+}
+
+/* General Element */
+.bg-green {
+    border-color: #26a69a !important;
+    background-image: none !important;
+    background-color: #26a69a !important;
+    color: #FFFFFF !important;
+}
+
+/* General Text & Icon Font Colors */
+.font-green {
+    color: #26a69a !important;
+}
+
+.progress-bar.green {
+    background: #26a69a !important;
+    color: #FFFFFF !important;
+}
+
+/***
+Input icons
+***/
+.input-icon {
+    position: relative;
+}
+
+.input-icon > .form-control {
+    padding-left: 33px;
+}
+
+.input-icon > i {
+    color: #ccc;
+    display: block;
+    position: absolute;
+    margin: 11px 2px 4px 10px;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.modal .input-icon > i {
+    z-index: 10055;
+}
+
+.has-success .input-icon > i {
+    color: #45b6af;
+}
+
+.has-warning .input-icon > i {
+    color: #ecbc29;
+}
+
+.has-info .input-icon > i {
+    color: #89c4f4;
+}
+
+.has-error .input-icon > i {
+    color: #f3565d;
+}
+
+.input-icon.right > .form-control {
+    padding-right: 33px;
+    padding-left: 12px;
+}
+
+.input-icon.right > i {
+    right: 8px;
+    float: right;
+}
+
+/***
+Customized Bootstrap Labels
+***/
+.label {
+    text-shadow: none !important;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 3px 6px 3px 6px;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+}
+
+.label.label-sm {
+    font-size: 12px;
+    padding: 1px 4px 1px 4px;
+}
+
+h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
+    font-size: 75%;
+}
+
+/* Labels variants */
+.label-default {
+    background-color: #c6c6c6;
+}
+
+.label-default[href]:hover, .label-default[href]:focus {
+    background-color: #adadad;
+}
+
+.label-primary {
+    background-color: #428bca;
+}
+
+.label-primary[href]:hover, .label-primary[href]:focus {
+    background-color: #3071a9;
+}
+
+.label-success {
+    background-color: #45b6af;
+}
+
+.label-success[href]:hover, .label-success[href]:focus {
+    background-color: #37918b;
+}
+
+.label-info {
+    background-color: #89c4f4;
+}
+
+.label-info[href]:hover, .label-info[href]:focus {
+    background-color: #5aadf0;
+}
+
+.label-warning {
+    background-color: #ecbc29;
+}
+
+.label-warning[href]:hover, .label-warning[href]:focus {
+    background-color: #d0a112;
+}
+
+.label-danger {
+    background-color: #f3565d;
+}
+
+.label-danger[href]:hover, .label-danger[href]:focus {
+    background-color: #f0262f;
+}
+
+.control-label {
+    margin-top: 2px;
+}
+
+.control-label .required {
+    color: #e02222;
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.form {
+    padding: 0 !important;
+}
+
+.form .form-body {
+    padding: 10px;
+}
+
+.form .form-actions {
+    padding: 20px 10px;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e5e5e5;
+    *zoom: 1;
+}
+
+.form .form-actions:before, .form .form-actions:after {
+    content: " ";
+    display: table;
+}
+
+.form .form-actions:after {
+    clear: both;
+}
+
+.form .form-actions.right {
+    padding-left: 0;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.form .form-actions.left {
+    padding-left: 10px;
+    padding-right: 0;
+    text-align: left;
+}
+
+.form .form-actions.nobg {
+    background-color: transparent;
+}
+
+.form .form-actions.top {
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-top: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.form .form-actions.fluid {
+    padding: 20px 0;
+}
+
+.form .form-actions.fluid > [class^="col-"] {
+    padding-left: 13px;
+}
+
+.form .form-actions .btn-set {
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .form .form-actions {
+        /* 767px */
+    }
+
+    .form .form-actions .btn-set {
+        margin-bottom: 3px;
+        margin-top: 3px;
+        float: left !important;
+    }
+}
+
+.form .form-section {
+    margin: 30px 0px 25px 0px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.form .form-section:first-child {
+    margin-top: 5px;
+}
+
+@media (max-width: 767px) {
+    /* 767px */
+    /* Portlet form action */
+    .portlet-body.form .form-actions {
+        padding-left: 15px;
+    }
+
+    .form-horizontal .form-actions {
+        padding-left: 180px;
+    }
+
+    .portlet .form-horizontal .form-actions {
+        padding-left: 190px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portlet .form-horizontal .form-actions {
+        padding-left: 10px;
+    }
+}
+
+/* Checkboxes */
+.checkbox {
+    padding-left: 0;
+}
+
+.checkbox-list > label {
+    display: block;
+}
+
+.checkbox-list > label.checkbox-inline {
+    display: inline-block;
+}
+
+.checkbox-list > label.checkbox-inline:first-child {
+    padding-left: 0;
+}
+
+/* Radio buttons */
+.radio-list > label {
+    display: block;
+}
+
+.radio-list > label.radio-inline {
+    display: inline-block;
+}
+
+.radio-list > label.radio-inline:first-child {
+    padding-left: 0;
+}
+
+/* Radio buttons in horizontal forms */
+.form-horizontal .radio-list .radio {
+    padding-top: 1px;
+}
+
+.form-horizontal .radio-list > label {
+    margin-bottom: 0;
+}
+
+.form-horizontal .radio > span {
+    margin-top: 2px;
+}
+
+/* Rows seperated form layout */
+.form-row-seperated .form-group {
+    margin: 0;
+    border-bottom: 1px solid #efefef;
+    padding: 10px 0px 10px 0px;
+}
+
+.form-row-seperated .form-group.last {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+.form-row-seperated .form-group .help-block {
+    margin-bottom: 0;
+}
+
+.form-row-seperated .form-body {
+    padding: 0;
+    margin-top: 0;
+}
+
+.form-row-seperated .form-actions {
+    margin-top: 0;
+}
+
+/* Form bordered */
+.form-bordered .form-group {
+    margin: 0;
+    border-bottom: 1px solid #efefef;
+}
+
+.form-bordered .form-group > div {
+    padding: 10px;
+    border-left: 1px solid #efefef;
+}
+
+.form-bordered .form-group.last {
+    border-bottom: 0;
+}
+
+.form-bordered .form-group .control-label {
+    padding-top: 16px;
+}
+
+.form-bordered .form-group .help-block {
+    margin-bottom: 0;
+}
+
+.form-bordered .form-group .form-control {
+    margin: 0;
+}
+
+.form-bordered .form-body {
+    margin: 0;
+    padding: 0;
+}
+
+.form-bordered .form-actions {
+    margin-top: 0;
+}
+
+.form-bordered .form-actions.fluid > .row > div {
+    padding-left: 10px;
+}
+
+/* Horizontal bordered form */
+.form-horizontal.form-bordered.form-row-stripped .form-group:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.form-horizontal.form-bordered.form-row-stripped .form-control {
+    background: #fff !important;
+}
+
+.form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even) > div {
+    background-color: #ffffff;
+}
+
+.form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+/* Form inputs */
+.form-control {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+    border-color: #999999;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    cursor: not-allowed;
+    background-color: #eeeeee;
+}
+
+.form-control.height-auto {
+    height: auto;
+}
+
+.profile ul.profile-nav {
+    margin-bottom: 30px;
+}
+
+.profile ul.profile-nav li {
+    position: relative;
+}
+
+.profile ul.profile-nav li a {
+    color: #557386;
+    display: block;
+    font-size: 14px;
+    padding: 8px 10px;
+    margin-bottom: 1px;
+    background: #f0f6fa;
+    border-left: solid 2px #c4d5df;
+}
+
+.profile ul.profile-nav li a:hover {
+    color: #169ef4;
+    background: #ecf5fb;
+    text-decoration: none;
+    border-left: solid 2px #169ef4;
+}
+
+.profile ul.profile-nav li a.profile-edit {
+    top: 0;
+    right: 0;
+    margin: 0;
+    color: #fff;
+    opacity: 0.6;
+    border: none;
+    padding: 3px 9px;
+    font-size: 12px;
+    background: #000;
+    position: absolute;
+    filter: alpha(opacity=60);
+    /*for ie*/
+}
+
+.profile ul.profile-nav li a.profile-edit:hover {
+    text-decoration: underline;
+}
+
+.profile ul.profile-nav a span {
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 13px;
+    position: absolute;
+    background: #169ef4;
+}
+
+.profile ul.profile-nav a:hover span {
+    background: #0b94ea;
+}
+
+.align-center, .center {
+    text-align: center !important;
+}
+
+.align-left {
+    text-align: left !important;
+}
+
+.align-right {
+    text-align: right !important;
+}
+
+.expired {
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url(../images/expired.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.real-estate {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.post-meta-action {
+    border-top: 1px solid #DDD;
+    padding: 10px 15px;
+}
+
+.course-title {
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 18px;
+    margin: 0 0 14px 0;
+    text-transform: uppercase;
+}
+
+.product-item.col-md-4:nth-child(3n+1) {
+    clear: both;
+}
+
+.product-item.col-md-3:nth-child(4n+1) {
+    clear: both;
+}
+
+.home-intro {
+    margin-bottom: 0px;
+}
+
+.search_box_wrapper {
+    background: #2196F3 !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+.figType {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #fff;
+    padding: 4px 6px;
+    position: absolute;
+   /* left: 0px;
+    top: 10px;*/
+    right: 0px;
+    bottom: 10px;
+    text-transform: uppercase;
+    z-index: 3;
+    background-color: #09f;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.figPrice {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #fff;
+    padding: 4px 6px;
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    text-transform: uppercase;
+    z-index: 3;
+    background-color: #f00;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.figType a {
+    color: white;
+}
+
+.product-price {
+    color: red;
+}
+.cf_teacher {
+    text-align: left;
+    font-size: 12px;
+    padding: 8px 5px;
+    margin: 0;
+    height: auto;
+}
+.cf_teacher .cf_t_n {
+    color: #555;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.cf_ava { float: left; margin-right: 10px;}
+.cf_ava>span {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background-size: 32px 32px;
+}
+
+.f_right{
+    float: right;
+}
+
+table, table td {
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+}
+
+.nav-tabs li a, .nav-tabs li a:hover {
+    background: none;
+    border: none;
+
+    color: #666!important;
+}
+#left_column .left-module:last-child {
+    margin-bottom: 0;
+}
+#left_column .block {
+    border: 1px solid #eaeaea;
+}
+#left_column .left-module {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+#left_column .block .title_block {
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #eaeaea;
+    padding-left: 28px;
+    text-transform: uppercase;
+    padding-top: 11px;
+    padding-bottom: 12px;
+}
+#left_column .block .block_content {
+    padding: 15px 20px;
+}
+.layered .layered-content:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var {
+    background: transparent;
+    border: 0 none;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+   /* vertical-align: top;*/
+}
+ul, ol {
+    list-style: none;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}

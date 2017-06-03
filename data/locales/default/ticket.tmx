@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='ticket_code_invalid'>
+		<tuv xml:lang="vi">
+			<seg><![CDATA[Mã vé xe không hợp lệ]]></seg>
+		</tuv>
+		<tuv xml:lang="en">
+			<seg><![CDATA[aaa]]></seg>
+		</tuv>
+	</tu>
+	<tu tuid='ticket_phone_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Số điện thoại không hợp lệ. Vui lòng sử dụng số điện thoại mà bạn đã dùng đặt vé.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_code'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Mã vé]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_phone'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Điện thoại]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_captcha'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Nhập mã]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_tip'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vui lòng nhập  mã vé và số điện thoại quý khách dùng để mua vé]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_submit_button'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Kiểm tra]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_refund_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Không tìm thấy mã vé / số điện thoại đặt vé.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_refund_not_promotion'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Hiện Pasoto chỉ chấp nhận hoàn trả các loại vé khuyến mãi. Mong quý khách thông cảm.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_refund_refunded'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Vé không còn giá trị hoàn trả. Mong quý khách thông cảm.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_refund_over_sell_date'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Chuyến xe đã hết thời hạn đổi trả vé. Mong quý khách thông cảm.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='ticket_change_payment_type_invalid'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Không tìm thấy mã vé.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+    <tu tuid='ticket_change_payment_type_not_change'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Thay đổi hình thức thanh toán không áp dụng cho vé này. Mong quý khách thông cảm.]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='ticket_'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+</body>

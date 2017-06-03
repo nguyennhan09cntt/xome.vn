@@ -1,0 +1,21 @@
+.product-sub-category > li > a:hover, .product-sub-category > li > a:focus{
+    text-decoration: none;
+    background-color: #eeeeee;
+    color: #2a8fbd;
+}
+.product-sub-category > li.active > a{
+    text-decoration: none;
+    background-color: #eeeeee;
+    color: #2a8fbd !important;
+}
+
+.nav-coupon-component-left{
+    border:1px solid #e6e6e6
+}
+
+.nav-coupon-component-left > li >a{
+    cursor: default;
+    color: #fff!important;
+    background: #2a8fbd !important;
+    border-color: #2681aa !important;
+}

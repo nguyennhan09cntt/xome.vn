@@ -1,0 +1,114 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Website - Danh sách Page content
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Danh sách Page content</a>
+            </li>
+
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn hành động...</option>
+                            <option value="activate">Active</option>
+                            <option value="inactivate">Inactive</option>>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+
+                    <div class="pull-right margin-bottom-15">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formText('n', $this->name, array('size' => 40, 'placeholder' => 'Tên page', 'class' =>'input-inline form-control')); ?>
+                                <?php echo $this->formSelect(
+                                    'a',
+                                    $this->active,
+                                    array('class' =>'input-inline form-control'),
+                                    array('-1' => 'Tình trạng') + $this->activeValue()
+                                ); ?>
+
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_site_content">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_site_content .checkboxes"/>
+                        </th>
+                        <th>Tên</th>
+                        <th>Định danh</th>
+                        <th>Tình trạng</th>
+                        <th>Ngày tạo</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Site_Content::COL_SITE_CONTENT_ID},
+                                    array('class' => 'checkboxes')
+                                ); ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Site_Content::COL_SITE_CONTENT_NAME}; ?></td>
+
+                            <td><?php echo $data->{DbTable_Site_Content::COL_SITE_CONTENT_IDENTIFY}; ?></td>
+
+                            <td><?php echo $this->activeLabel($data->{DbTable_Site_Content::COL_FK_CONFIG_ACTIVE}); ?></td>
+                            <td><?php echo $data->{DbTable_Site_Content::COL_SITE_CONTENT_CREATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('site-content/edit/'); ?>?i=<?php echo $data->{DbTable_Site_Content::COL_SITE_CONTENT_ID}; ?>">Cập nhật</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

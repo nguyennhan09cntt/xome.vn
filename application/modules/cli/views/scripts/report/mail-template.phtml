@@ -1,0 +1,25 @@
+<p><strong>Kính gửi quản trị viên.</strong></p>
+<p>Nội dung báo cáo theo yêu cầu của bạn được đính kèm theo tập tin bên dưới. Anh/ chị có thể nhấn trực tiếp vào link để tải báo cáo về máy mình.</p>
+<a href="<?php echo $this->link; ?>">Link ( nhấn vào để tải file )</a>
+<p><em>(*)Ghi chú: đường link báo báo chỉ tồn tại trong 2 tuần lễ kể từ ngày email được gửi ra.</em></p>
+<p>Email được gửi tự động từ hệ thống, vui lòng không trả lời email này.</p>
+<p style="font-style: italic;">Anh/chị có thể xem trực tiếp nội dung bên dưới hoặc tải về theo đường link phía trên.</p>
+
+<table width="100%" style="border-top: 1px solid #ccc; border-right: 1px solid #ccc;">
+    <?php
+    $dataReport = $this->report;
+    $headings = $dataReport[0];
+    echo '<tr>';
+    foreach ($headings as $heading => $value) {
+        echo '<th style="border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; font-weight: bold;">' . $heading . '</th>';
+    }
+    echo '</tr>';
+    foreach($dataReport as $row){
+        echo '<tr>';
+        foreach($row as $cell){
+            echo '<td style="border-left: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . $cell . '</td>';
+        }
+        echo '</tr>';
+    }
+    ?>
+</table>

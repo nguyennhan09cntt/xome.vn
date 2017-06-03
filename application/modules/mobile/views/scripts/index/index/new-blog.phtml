@@ -1,0 +1,20 @@
+<div class="row">
+    <?php if($this->blogNewHomeData){?>
+    <div class="col-md-12">
+        <?php foreach($this->blogNewHomeData as $blog) {?>
+            <div class="blog-thumb-horizontal blog-thumb-home" style="margin-bottom: 20px;">
+                <header class="blog-header" style="background-image: url(<?php echo $blog[DbTable_Blog::COL_BLOG_IMPORT_FLAG] ? $blog[DbTable_Blog::COL_BLOG_THUMB_IMAGE] :'/upload/'.$blog[DbTable_Blog::COL_BLOG_THUMB_IMAGE]; ?>);height: 155px">
+
+                </header>
+                <div class="blog-inner">
+                    <h5 class="blog-title"><a href="/goc-thoi-trang/<?php echo $this->blogCategoryIdentify($blog[DbTable_Blog::COL_FK_BLOG_CATEGORY])?>/<?php echo $blog[DbTable_Blog::COL_BLOG_IDENTIFY]?>.html"><?php echo $blog[DbTable_Blog::COL_BLOG_NAME] ?></a></h5>
+                    <div class="blog-desciption"><?php echo $blog[DbTable_Blog::COL_BLOG_DESCRIPTION] ?></div>
+
+                </div>
+            </div>
+        <?php }?>
+
+
+    </div>
+<?php }?>
+</div>

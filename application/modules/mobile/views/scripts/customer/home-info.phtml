@@ -1,0 +1,101 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active">Tài khoản của tôi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Các tin đã đăng</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+
+
+    <div class="row profile">
+        <div class="col-md-12">
+            <div clbreadcrumbass="featured-boxes">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <?php echo $this->render('customer/widgets/sidebar.phtml');?>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="featured-box featured-box-primary align-left mt-xlg">
+                            <div class="box-content">
+                                <a href="/dang-tin-cho-thue.html" class="btn btn-primary mb-sm">ĐĂNG TIN CHO THUÊ</a>
+                                <h4 class="heading-primary text-uppercase mb-md">Các tin đã đăng</h4>
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            #
+                                        </th>
+                                        <th>
+                                            Tiêu đề
+                                        </th>
+                                        <th>
+                                           Mô tả
+                                        </th>
+
+                                        <th>
+                                            Tình trạng
+                                        </th>
+
+                                        <th>
+                                            Ngày đăng ký
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($this->productData as $index => $data) { ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $index + 1; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $data[DbTable_Product::COL_PRODUCT_NAME]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $data[DbTable_Product::COL_PRODUCT_ADDRESS]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $this->productStatusLabel($data[DbTable_Product::COL_FK_CONFIG_STATUS]); ?>
+                                            </td>
+
+                                            <td>
+                                                <?php echo $this->formatTime($data[DbTable_Product::COL_PRODUCT_CREATED_AT]); ?>
+                                            </td>
+                                            <td>
+                                                <?php if($data[DbTable_Product::COL_FK_CONFIG_STATUS] != Application_Constant_Db_Config_Active::PENDING){ ?>
+                                                <a href="/<?php echo $this->productCategoryIdentify($data[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/'. $this->districtIdentify($data[DbTable_Product::COL_FK_DISTRICT]) . '/' . $data[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' .$this->productEncode($data[DbTable_Product::COL_PRODUCT_ID]); ?>"
+                                                   class="btn btn-xs btn-primary">Chi tiết</a>
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        districtJson = <?php echo json_encode(Model_District::getInstance()->getAll());?>;
+    </script>
+
+</div>

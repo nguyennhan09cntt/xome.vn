@@ -1,0 +1,63 @@
+<aside id="advertising" class="block page-content">
+    <div class="container">
+        <a href="#form-contact" class="fancybox">
+            <div class="banner">
+                <div class="wrapper">
+                    <span class="title">Nếu không tìm được nhà trọ phù hợp, bạn vui lòng để lại thông tin để bộ phận chăm sóc khách hàng hỗ trợ bạn tìm phòng ?</span>
+                    <span class="submit">Gửi thông tin! <i class="fa fa-plus-square"></i></span>
+                </div>
+            </div><!-- /.banner-->
+        </a>
+    </div>
+</aside>
+
+<div class="container ">
+    <div class="col-md-12">
+        <div class="row ">
+            <div class="col-md-9">
+                <div class="home-header" style="margin-top: 0px;">
+                    <h2 class="">
+                        Cần thuê nhà trọ tại Hồ Chí Minh
+                    </h2>
+                </div>
+                <div class="gap gap-small"></div>
+
+                <?php foreach ($this->contactData as $contact) { ?>
+                <div class="row row-wrap">
+                    <div class="col-md-4" >
+                        <span class="img-thumbnail">
+                            <img class="img-responsive" src="/upload/backgrounds/no-image-box.png" alt="<?php echo $contact[DbTable_Contact::COL_CONTACT_ADDRESS];?>" title="<?php echo $contact[DbTable_Contact::COL_CONTACT_ADDRESS];?>">
+                        </span>
+
+                    </div>
+
+                    <div class="col-md-8" >
+                        <h4 style="color: #073855;font-weight:bold;">Cần thuê phòng trọ gần <?php echo $contact[DbTable_Contact::COL_CONTACT_ADDRESS];?></h4>
+                        <div>
+                            <?php echo $contact[DbTable_Contact::COL_CONTACT_MESSAGE];?>
+                            <p>
+                                Giá: Thỏa thuận   Diện tích: Không xác định
+
+                            </p>
+                            <p>
+                                Liên hệ: <?php echo $contact[DbTable_Contact::COL_CONTACT_PHONE];?>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
+
+                <div class="row">
+
+                    <div id="pagination_container" style="text-align: center;">
+                        <?php echo $this->pagination; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <?php echo $this->render('widgets/sidebar-right.phtml'); ?>
+            </div>
+        </div>
+    </div>
+</div>

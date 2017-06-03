@@ -1,0 +1,81 @@
+<div id="page-content" class="page-content">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="micro-main-menu mt-md">
+                <div class="foody-toolbar fd-clearbox mic-navigation" ng-class="{'loading':IsLoading}">
+                    <div class="fd-clearbox" style="top: 824px;">
+                        <ul class="list-tool">
+                            <li data-item-id="0" class="list-group-item" style="line-height:18px;">
+                                <a data-item-type="home" itemprop="url" href="/<?php echo $this->productCategoryIdentify($this->dataInfo[DbTable_Product::COL_PRODUCT_CATEGORY_ID]) . '/ho-chi-minh/' . $this->districtIdentify($this->dataInfo[DbTable_Product::COL_FK_DISTRICT]) . '/' . $this->dataInfo[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]); ?>">
+                                    Thông tin chi tiết <span class="fa fa-angle-right"
+                                                    style="float: right; font-size: 14px;"></span>
+                                </a>
+                            </li>
+                            <?php if ($this->dataInfo[DbTable_Product::COL_FK_PRODUCT_OWNER]) { ?>
+                                <li class="list-group-item" style="line-height:18px;">
+                                    <a href="/thong-tin-nguoi-dang/<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_PHONE] . '-' . $this->productOwnerEncode($this->dataInfo[DbTable_Product::COL_FK_PRODUCT_OWNER]) . '.html'; ?>">
+                                        Thông tin người đăng<span class="fa fa-angle-right"
+                                                                  style="float: right; font-size: 14px;"></span>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                            <li data-item-id="5" data-item-name="album" class="active list-group-item" style="line-height:18px;">
+                                <a href="/phong-cho-thue/xung-quanh-<?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_IDENTIFY] . '-' . $this->productEncode($this->dataInfo[DbTable_Product::COL_PRODUCT_ID]) . '.html'; ?>">
+                                    Phòng trọ quanh đây
+                                    <span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="micro-right1000 mt-md">
+                
+                <div class="main-info-title" style="background-color: white;">
+                    <h2 itemprop="name">Phòng Trọ Xung Quanh <?php echo $this->dataInfo[DbTable_Product::COL_PRODUCT_ADDRESS]; ?></h2>
+                </div>
+                
+                <div id="map" class="google-map mt-none mb-none" style="height: 80vh;border:1px solid #ddd;"></div>
+            </div>
+            <?php echo $this->formHidden(
+                'title',
+                $this->dataInfo ? $this->dataInfo[DbTable_Product::COL_PRODUCT_NAME] : null
+            ); ?>
+            <?php echo $this->formHidden(
+                'price',
+                $this->dataInfo && $this->dataInfo[DbTable_Product::COL_PRODUCT_PAID_PRICE]/1000000 >= 1 ?  ($this->dataInfo[DbTable_Product::COL_PRODUCT_PAID_PRICE]/1000000 .'tr' ): ($this->dataInfo[DbTable_Product::COL_PRODUCT_PAID_PRICE]/1000 .'k')
+            ); ?>
+
+            <?php echo $this->formHidden(
+                'address',
+                $this->dataInfo ? $this->dataInfo[DbTable_Product::COL_PRODUCT_ADDRESS] : null
+            ); ?>
+            <?php echo $this->formHidden(
+                'lat',
+                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LAT} : null
+            ); ?>
+            <?php echo $this->formHidden(
+                'lng',
+                $this->dataInfo ? $this->dataInfo->{DbTable_Product::COL_PRODUCT_LONG} : null
+            ); ?>
+
+
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /.container -->
+</div>
+
+<script>
+    var markers = <?php echo $this->productMapJson($this->productSearchData); ?>;
+    var flagBound = true;
+
+
+</script>
+

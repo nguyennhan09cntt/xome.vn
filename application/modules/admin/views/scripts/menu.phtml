@@ -1,0 +1,47 @@
+<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200" id="menu">
+    <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+    <li class="sidebar-toggler-wrapper">
+        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        <div class="sidebar-toggler">
+        </div>
+        <!-- END SIDEBAR TOGGLER BUTTON -->
+    </li>
+    <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+
+    <li class="module start active ">
+        <a href="/">
+            <i class="icon-home"></i>
+            <span class="title">Dashboard</span>
+            <span class="selected"></span>
+        </a>
+    </li>
+
+    <?php foreach ($this->menuData as $module => $resourceData) { ?>
+    <li class="module">
+        <a href="javascript:;">
+            <i class="icon-folder"></i>
+            <span class="title"><?php echo $module; ?></span>
+            <span class="arrow"></span>
+        </a>
+        <ul class="sub-menu">
+            <?php foreach ($resourceData as $resource => $privilegeData) { ?>
+            <li class="resource">
+                <a href="javascript:;">
+                    <i class="icon-settings"></i> <?php echo $resource; ?><span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <?php foreach ($privilegeData as $privilege) {
+                    $class = $this->urlPath == $privilege[Application_Constant_Module_Admin::PREFIX_MENU_URL] ? 'current' : null;
+                    ?>
+                        <li class="<?php echo $class ? 'active' : '';?>">
+                            <a href="/<?php echo $privilege[Application_Constant_Module_Admin::PREFIX_MENU_URL];?>" class="<?php echo $class;?>">
+                                <?php echo $privilege[Application_Constant_Module_Admin::PREFIX_MENU_NAME] ?></a>
+                        </li>
+                    <?php }?>
+                </ul>
+            </li>
+            <?php }?>
+        </ul>
+    </li>
+    <?php }?>
+</ul>

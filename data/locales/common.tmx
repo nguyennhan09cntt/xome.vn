@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+   <tu tuid='common_title'>
+   		<tuv xml:lang="vi">
+   			<seg><![CDATA[Phòng cho thuê | Xome]]></seg>
+   		</tuv>
+   		<tuv xml:lang="en">
+   			<seg><![CDATA[aaa]]></seg>
+   		</tuv>
+   	</tu>
+   	<tu tuid='common_description'>
+           <tuv xml:lang="vi">
+               <seg><![CDATA[Xome là website nhà trọ cập nhật liên tục và nhanh nhất các tin tức phòng trọ do các thành viên đóng góp, có nhiều phòng trọ tiện nghi và nổi bật.]]></seg>
+           </tuv>
+           <tuv xml:lang="en">
+               <seg><![CDATA[aaa]]></seg>
+           </tuv>
+       </tu>
+       <tu tuid='common_keywords'>
+           <tuv xml:lang="vi">
+               <seg><![CDATA[nhà trọ, nha tro, thue tro, phong tro, phòng trọ, xome]]></seg>
+           </tuv>
+           <tuv xml:lang="en">
+               <seg><![CDATA[aaa]]></seg>
+           </tuv>
+       </tu>
+
+   	<tu tuid='common_'>
+   		<tuv xml:lang="vi">
+   			<seg><![CDATA[aaaa]]></seg>
+   		</tuv>
+   		<tuv xml:lang="en">
+   			<seg><![CDATA[aaa]]></seg>
+   		</tuv>
+   	</tu>
+</body>

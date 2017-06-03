@@ -1,0 +1,12 @@
+*/15 * * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c ticket -a release-holding
+2,32 * * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c ticket -a remind-start-time
+35 23 * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c ticket -a clean-up-cancellation
+45 23 * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c company-trip -a clean-up-over
+55 23 * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c company-trip -a disable-over
+00 12 * * 5  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c company-trip -a disable-weekend
+00 12 * * 6  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c company-trip -a disable-saturday
+10 00 * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c report -a report
+*/5 * * * *  /build/phpfpm/bin/php /home/www/pasoto.com/httpdocs/staging/public/cli.php -c report-queue -a exec
+
+
+

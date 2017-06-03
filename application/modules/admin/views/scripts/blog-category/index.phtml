@@ -1,0 +1,115 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý bài viết - Danh sách danh mục
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Danh sách danh mục
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn hành động...</option>
+                            <option value="activate">Active</option>
+                            <option value="inactivate">Inactive</option>>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <button id="btn_add_new" class="btn green">
+                            Thêm mới <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="pull-right margin-bottom-15">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formText('n', $this->name, array('size' => 40, 'placeholder' => 'Tên danh mục', 'class' => 'input-inline form-control')); ?>
+                                <?php echo $this->formSelect(
+                                    'a',
+                                    $this->active,
+                                    array('class' => 'input-inline form-control'),
+                                    array('-1' => 'Tình trạng') + $this->activeValue()
+                                ); ?>
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_blog_category">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_blog_category .checkboxes"/>
+                        </th>
+                        <th>Tên</th>
+                        <th>Danh mục cha</th>
+                        <th>Identify</th>
+                        <th>Tình trạng</th>
+                        <th>Ngày tạo</th>
+                        <th width="90"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Blog_Category::COL_BLOG_CATEGORY_ID},
+                                    array('class' => 'checkboxes')
+                                ); ?>
+                            </td>
+                            <td><?php echo $data->{DbTable_Blog_Category::COL_BLOG_CATEGORY_NAME}; ?></td>
+                            <td><?php echo $this->blogCategoryLabel($data->{DbTable_Blog_Category::COL_BLOG_CATEGORY_PARENT_ID}); ?></td>
+                            <td><?php echo $data->{DbTable_Blog_Category::COL_BLOG_CATEGORY_IDENTIFY}; ?></td>
+                            <td><?php echo $this->activeLabel($data->{DbTable_Blog_Category::COL_FK_CONFIG_STATUS}); ?></td>
+                            <td><?php echo $data->{DbTable_Blog_Category::COL_BLOG_CATEGORY_CREATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('blog-category/edit/'); ?>?i=<?php echo $data->{DbTable_Blog_Category::COL_BLOG_CATEGORY_ID}; ?>">Cập nhật</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

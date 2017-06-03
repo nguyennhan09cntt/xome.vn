@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+<header creationtoolversion="1.0.0" datatype="winres" segtype="sentence" adminlang="en-us" srclang="de-at" o-tmf="abc" creationtool="XYZTool" >
+</header>
+<body>
+    <tu tuid='mobile_index_province_from'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Chọn điểm khời hành]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='mobile_index_province_to'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Chọn điểm đến]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='mobile_index_search_ticket'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[TÌM VÉ]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='mobile_index_selected_date'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Ngày khởi hành]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='mobile_index_comeback_date'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[Ngày về]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+	<tu tuid='mobile_index_'>
+        <tuv xml:lang="vi">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+        <tuv xml:lang="en">
+            <seg><![CDATA[aaa]]></seg>
+        </tuv>
+    </tu>
+</body>

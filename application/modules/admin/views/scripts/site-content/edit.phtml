@@ -1,0 +1,76 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Website - Cập nhật nội dung page
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Cập nhật nội dung page</a>
+            </li>
+
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box blue ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Thông tin Page content
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" id="validate" enctype="multipart/form-data" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('site-content/submit-edit'); ?>">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <!--<label class="col-md-2 control-label">Tên Page<span class="required" aria-required="true"> * </span>:</label>-->
+                            <div class="col-md-6">
+                                <?php echo $this->formText(
+                                    'name',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_NAME} : null,
+                                    array('class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!--<label class="col-md-3 control-label">Thứ tự hiển thị<span class="required" aria-required="true"> * </span>:</label>-->
+                            <div class="col-md-12">
+                                <?php echo $this->formTextarea(
+                                    'content',
+                                    $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_CONTENT} : null,
+                                    array('rows' => 10, 'class' => 'form-control validate[required]')
+                                ); ?>
+                            </div>
+                        </div>
+
+                        <div class="form-actions right">
+                            <?php echo $this->formHidden(
+                                'id',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_ID} : null
+                            ); ?>
+                            <?php echo $this->formHidden(
+                                'identify',
+                                $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_IDENTIFY} : null
+                            ); ?>
+                            <button type="submit" class="btn green">Cập nhật</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

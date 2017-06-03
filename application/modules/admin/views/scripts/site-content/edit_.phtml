@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <h2>Quản lý Website - Thêm mới/Cập nhật Nội dung </h2>
+</div>
+
+<div class="wrapper">
+    <form id="validate" class="form" enctype="multipart/form-data" method="post" target="ifrmEdit" action="<?php echo $this->adminUrl('site-content/submit-edit'); ?>">
+        <fieldset>
+            <div class="widget">
+                <div class="title"><img src="images/icons/dark/alert.png" alt="" class="titleIcon" /><h6>Thông tin Web content</h6></div>
+                <div class="formRow">
+	            	<label>Tên:</label>
+	                <div class="formRight">
+	                        <?php echo $this->formText(
+	                            'name',
+	                            $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_NAME} : null,
+	                            array()
+	                        ); ?>
+	                </div>
+	                <div class="clear"></div>
+	            </div>
+
+                <div class="formRow">
+                    <label>Nội dung:<span class="req">*</span></label>
+                    <div class="formRight">
+                        <?php echo $this->formTextarea(
+                            'content',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_CONTENT} : null,
+                            array('rows' => 3, 'class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+				
+            </div>            
+
+            <div class="formSubmit">
+                <?php echo $this->formHidden(
+                    'id',
+                    $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_ID} : null
+                ); ?>
+                <?php echo $this->formHidden(
+                    'identify',
+                    $this->dataInfo ? $this->dataInfo->{DbTable_Site_Content::COL_SITE_CONTENT_IDENTIFY} : null
+                ); ?>
+                 
+                <input type="submit" value="Cập nhật" class="redB" />
+            </div>
+        </fieldset>
+    </form>
+    <iframe name="ifrmEdit" id="ifrmEdit" style="display: none"></iframe>
+</div>

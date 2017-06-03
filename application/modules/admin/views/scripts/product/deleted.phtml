@@ -1,0 +1,127 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            Quản lý Nhà trọ - Danh sách nhà trọ
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                Danh sách nhà trọ
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i><?php echo $this->pagination->getTotalItemCount(); ?> dòng(s)
+                </div>
+                <div class="actions">
+                    <div class="item-actions">
+                        <label>Cập nhật hàng loạt:</label>
+                        <select id="manualUpdateElement">
+                            <option value="">Chọn hành động...</option>
+                            <option value="activate">Active</option>
+                            <option value="inactivate">Inactive</option>
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <button id="btn_add_new" class="btn green">
+                            Thêm mới <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="pull-right margin-bottom-15">
+                        <form method="get" action="">
+                            <fieldset class="filter">
+                                <?php echo $this->formText('n', $this->name, array('size' => 30, 'placeholder' => 'Tên Nhà trọ', 'class'=>'input-inline form-control')); ?>
+                                <?php echo $this->formText('e', $this->code, array('size' => 30, 'placeholder' => 'Mã Nhà trọ', 'class'=>'input-inline form-control')); ?>
+
+                                <input type="submit" value="Tìm kiếm" class="btn blue" />
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover" id="table_product">
+                    <thead>
+                    <tr>
+                        <th class="table-checkbox">
+                            <input type="checkbox" class="group-checkable" data-set="#table_product .checkboxes"/>
+                        </th>
+                        <th>Mã SP</th>
+                        <th>Hình ảnh</th>
+                        <th>Tiêu đề</th>
+                        <th>Địa chỉ</th>
+                        <th>Quận/Huyện</th>
+                        <!--<th width="90">Hiển thị ưu tiên</th>-->
+                        <th width="90">Chủ nhà trọ</th>
+                        <th>Tình trạng</th>
+                        <th>Ngày tạo</th>
+                        <th width="90"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php foreach ($this->pagination as $data) {?>
+                        <tr>
+                            <td>
+                                <?php echo $this->formCheckbox(
+                                    null,
+                                    $data->{DbTable_Product::COL_PRODUCT_ID},
+                                    array('class' => 'checkboxes',)
+                                ); ?>
+                            </td>
+                            <td><?php echo $this->productEncode($data->{DbTable_Product::COL_PRODUCT_ID}); ?></td>
+
+                            <td align="center"><?php echo $this->showImage($data->{DbTable_Product::COL_PRODUCT_THUMB_NAIL}, 150, !$data->{DbTable_Product::COL_PRODUCT_FLAG_UPLOAD_IMAGE}); ?></td>
+                            <td><?php echo $data->{DbTable_Product::COL_PRODUCT_NAME}; ?></td>
+                            <td><?php echo $data->{DbTable_Product::COL_PRODUCT_ADDRESS}; ?></td>
+                            <td><?php echo $this->productCategoryLabel($data->{DbTable_Product::COL_PRODUCT_CATEGORY_ID}); ?></td>
+                           <!-- <td align="center" width="90"><?php echo $data->{DbTable_Product::COL_PRODUCT_PRIORITY} ? ' <i class="fa fa-check font-green"></i>' : ''; ?></td>-->
+                            <td><?php echo $data->{DbTable_Product::COL_PRODUCT_OWN}; ?> - <?php echo $data->{DbTable_Product::COL_PRODUCT_PHONE}; ?></td>
+                            <td><?php echo $this->activeLabel($data->{DbTable_Product::COL_FK_CONFIG_STATUS}); ?></td>
+                            <td><?php echo $data->{DbTable_Product::COL_PRODUCT_CREATED_AT}; ?></td>
+                            <td>
+                                <a href="<?php echo $this->adminUrl('product/edit/'); ?>?i=<?php echo $data->{DbTable_Product::COL_PRODUCT_ID}; ?>" target="_blank">Cập nhật</a>
+                                <br>
+                                <a href="<?php echo $this->adminUrl('product-image/'); ?>?p=<?php echo $data->{DbTable_Product::COL_PRODUCT_ID}; ?>" target="_blank">Hình ảnh</a>
+                                <br>
+                                <?php if($data->{DbTable_Product::COL_PRODUCT_REFER_LINK}){ ?>
+                                <a href="<?php echo $data->{DbTable_Product::COL_PRODUCT_REFER_LINK};?>" target="_blank">Nguồn</a>
+                                <?php }?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="99">
+                            <?php echo $this->pagination; ?>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

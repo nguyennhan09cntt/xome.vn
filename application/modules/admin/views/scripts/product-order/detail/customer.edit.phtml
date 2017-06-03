@@ -1,0 +1,64 @@
+<div class="portlet box grey-cascade">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>Thông tin khách hàng
+        </div>
+    </div>
+    <div class="portlet-body">
+
+        <form id="validate" class="form" action="/product-order/update-customer-info">
+            <fieldset>
+                <div class="widget">
+                    <div class="formRow">
+                        <label>Họ và Tên:</label>
+                        <div class="formRight">
+                            <?php echo $this->formText(
+                                'cusName',
+                                $this->orderData->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_NAME},
+                                array('class' => 'form-control validate[required]')
+                            ); ?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="formRow">
+                        <label>Điện thoại:</label>
+                        <div class="formRight">
+                            <?php echo $this->formText(
+                                'cusPhone',
+                                $this->orderData->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_PHONE},
+                                array('class' => 'form-control validate[required,custom[onlyNumberSp]]')
+                            ); ?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="formRow">
+                        <label>Email:</label>
+                        <div class="formRight">
+                            <?php echo $this->formText(
+                                'cusEmail',
+                                $this->orderData->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_MAIL},
+                                array('class' => 'form-control validate[required,custom[email]]')
+                            ); ?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="formRow">
+                        <label>Đ/c liên hệ:</label>
+                        <div class="formRight">
+                            <?php echo $this->formText(
+                                'cusAddress',
+                                $this->orderData->{DbTable_Product_Order::COL_PRODUCT_ORDER_CUSTOMER_ADDRESS},
+                                array('class' => 'form-control validate[required]')
+                            ); ?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="formSubmit">
+                        <?php echo $this->formHidden('id', $this->orderData->{DbTable_Product_Order::COL_PRODUCT_ORDER_ID});?>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</div>

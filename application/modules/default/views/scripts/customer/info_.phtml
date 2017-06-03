@@ -1,0 +1,401 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active">Tài khoản của tôi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Thông tin tài khoản</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+
+
+    <div class="row profile">
+        <div class="col-md-12">
+            <div clbreadcrumbass="featured-boxes">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <?php echo $this->render('customer/widgets/sidebar.phtml'); ?>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="featured-box featured-box-primary align-left mt-xlg">
+                            <div class="box-content">
+                                <h4 class="heading-primary text-uppercase mb-md">Thông tin cơ bản</h4>
+
+                                <form action="/customer/submit-profile" id="frmProfile" method="post"
+                                      class="form-horizontal">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>E-mail:</label>
+                                                <input type="text"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_EMAIL} ?>"
+                                                       class="form-control input-lg" name="email" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Số điện thoại</label>
+                                                <input type="text"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_PHONE} ?>"
+                                                       class="form-control input-lg phoneNumber" name="phone"
+                                                       maxlength="64">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label>Họ</label>
+                                                <input type="text"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_LAST_NAME} ?>"
+                                                       class="form-control input-lg" name="last-name">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Tên</label>
+                                                <input type="text"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_FIST_NAME} ?>"
+                                                       class="form-control input-lg" name="first-name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Địa chỉ</label>
+                                                <input type="text"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_ADDRESS} ?>"
+                                                       class="form-control input-lg" name="address">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label>Tỉnh/thành</label>
+                                                <?php echo $this->formSelect(
+                                                    'province',
+                                                    $this->customerInfo->{DbTable_Customer::COL_FK_PROVINCE},
+                                                    array(
+                                                        'class' => 'form-control province',
+                                                        'onchange' => 'CustomerInfo.showDistrictOptions(this.value);'
+                                                    ),
+                                                    $this->provinceData
+                                                ); ?>
+
+                                                <input type="hidden"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_FK_PROVINCE} ?>"
+                                                       class="form-control" name="hidden-province">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Quận/Huyện</label>
+                                                <?php echo $this->formSelect(
+                                                    'district',
+                                                    $this->customerInfo->{DbTable_Customer::COL_FK_DISTRICT},
+                                                    array('class' => 'form-control district'),
+                                                    $this->districtData
+                                                ); ?>
+                                                <input type="hidden"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_FK_DISTRICT} ?>"
+                                                       class="form-control" name="hidden-district">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="/captcha.jpg" id="captcha-image">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" value="" class="form-control input-lg" name="captcha"
+                                                   id="captcha" title="Nhập mã xác nhận" placeholder="Mã xác nhận">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p class="d_block">Mã xác nhận không rõ vui lòng nhấn vào <a
+                                                    href="javascript:void(0)" id="refreshCaptcha" class="f_bold">đây</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="hidden"
+                                                   value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_ID} ?>"
+                                                   class="form-control" name="id">
+                                            <?php echo $this->formHidden('backUrl', $this->backUrl ? $this->backUrl : $this->backUrl); ?>
+                                            <input type="submit" value="Cập nhật"
+                                                   class="btn btn-primary pull-right mb-xl"
+                                                   data-loading-text="Loading...">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> THÔNG TIN CƠ BẢN
+                                </div>
+                                <div class="tools">
+                                    <a href="" class="collapse">
+                                    </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config">
+                                    </a>
+                                    <a href="" class="reload">
+                                    </a>
+                                    <a href="" class="remove">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <form role="form" action="/customer/submit-profile" id="frmProfile" method="post">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" class="form-control" placeholder="Email Address"
+                                                   value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_EMAIL} ?>"
+                                                   readonly>
+
+                                        </div>
+                                        <!-- <div class="form-group">
+                                             <label for="exampleInputPassword1">Password</label>
+                                             <div class="input-group">
+                                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                             <span class="input-group-addon">
+                                             <i class="fa fa-user"></i>
+                                             </span>
+                                             </div>
+                                         </div>-->
+                                        <div class="form-group">
+                                            <label>Số điện thoại</label>
+
+                                            <div class="input-icon">
+                                                <i class="fa fa-bell-o"></i>
+                                                <input type="text" class="form-control" placeholder="Số điện thoại"
+                                                       value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_PHONE} ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Họ</label>
+                                                    <input type="text"
+                                                           value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_LAST_NAME} ?>"
+                                                           class="form-control" name="last-name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Tên</label>
+                                                    <input type="text"
+                                                           value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_FIST_NAME} ?>"
+                                                           class="form-control" name="first-name">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Địa chỉ</label>
+                                                    <input type="text"
+                                                           value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_ADDRESS} ?>"
+                                                           class="form-control" name="address">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Tỉnh/thành</label>
+                                                    <?php echo $this->formSelect(
+                                                        'province',
+                                                        $this->customerInfo->{DbTable_Customer::COL_FK_PROVINCE},
+                                                        array(
+                                                            'class' => 'form-control province',
+                                                            'onchange' => 'CustomerInfo.showDistrictOptions(this.value);'
+                                                        ),
+                                                        $this->provinceData
+                                                    ); ?>
+
+                                                    <input type="hidden"
+                                                           value="<?php echo $this->customerInfo->{DbTable_Customer::COL_FK_PROVINCE} ?>"
+                                                           class="form-control" name="hidden-province">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Quận/Huyện</label>
+                                                    <?php echo $this->formSelect(
+                                                        'district',
+                                                        $this->customerInfo->{DbTable_Customer::COL_FK_DISTRICT},
+                                                        array('class' => 'form-control district'),
+                                                        $this->districtData
+                                                    ); ?>
+                                                    <input type="hidden"
+                                                           value="<?php echo $this->customerInfo->{DbTable_Customer::COL_FK_DISTRICT} ?>"
+                                                           class="form-control" name="hidden-district">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                <img src="/captcha.jpg" id="captcha-image">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                <input type="text" value="" class="form-control" name="captcha"
+                                                       id="captcha" title="Nhập mã xác nhận" placeholder="Mã xác nhận">
+                                                 </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p class="d_block">Mã xác nhận không rõ vui lòng nhấn vào <a
+                                                        href="javascript:void(0)" id="refreshCaptcha"
+                                                        class="f_bold">đây</a></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Disabled</label>
+                                            <input type="text" class="form-control" placeholder="Disabled" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Readonly</label>
+                                            <input type="text" class="form-control" placeholder="Readonly" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Dropdown</label>
+                                            <select class="form-control">
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Multiple Select</label>
+                                            <select multiple class="form-control">
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Textarea</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile1">File input</label>
+                                            <input type="file" id="exampleInputFile1">
+
+                                            <p class="help-block">
+                                                some help text here.
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Checkboxes</label>
+
+                                            <div class="checkbox-list">
+                                                <label>
+                                                    <input type="checkbox"> Checkbox 1 </label>
+                                                <label>
+                                                    <input type="checkbox"> Checkbox 2 </label>
+                                                <label>
+                                                    <input type="checkbox" disabled> Disabled </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Inline Checkboxes</label>
+
+                                            <div class="checkbox-list">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                                    Checkbox 1 </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox2" value="option2">
+                                                    Checkbox 2 </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox3" value="option3"
+                                                           disabled> Disabled </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Radio</label>
+
+                                            <div class="radio-list">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1"
+                                                           value="option1" checked> Option 1</label>
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2"
+                                                           value="option2"> Option 2 </label>
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3"
+                                                           value="option3" disabled> Disabled </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Inline Radio</label>
+
+                                            <div class="radio-list">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios4"
+                                                           value="option1" checked> Option 1 </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios5"
+                                                           value="option2"> Option 2 </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios6"
+                                                           value="option3" disabled> Disabled </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <input type="hidden"
+                                               value="<?php echo $this->customerInfo->{DbTable_Customer::COL_CUSTOMER_ID} ?>"
+                                               class="form-control" name="id">
+                                        <?php echo $this->formHidden('backUrl', $this->backUrl ? $this->backUrl : $this->backUrl); ?>
+                                        <button type="submit" class="btn blue">Submit</button>
+                                        <button type="button" class="btn default">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        districtJson = <?php echo json_encode(Model_District::getInstance()->getAll());?>;
+    </script>
+
+</div>

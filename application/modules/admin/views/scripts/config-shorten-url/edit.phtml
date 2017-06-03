@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <h2>Thêm mới/ cập nhật shorten url</h2>
+</div>
+<div class="wrapper">
+    <form id="validate" class="form" enctype="multipart/form-data" method="post" action="<?php echo $this->adminUrl('config-shorten-url/submit-edit'); ?>">
+        <fieldset>
+            <div class="widget">
+
+                <div class="formRow">
+                    <label>Short url:<span class="req">*</span></label>
+                    <label class="labelShortUrl">https://pasoto.com/r/</label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'short_url',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_SHORT_URL} : null,
+                            array('class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="formRow">
+                    <label>Full url:<span class="req">*</span></label>
+                    <label class="labelFullUrl">https://pasoto.com/</label>
+                    <div class="formRight">
+                        <?php echo $this->formText(
+                            'full_url',
+                            $this->dataInfo ? $this->dataInfo->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_FULL_URL} : null,
+                            array('class' => 'validate[required]')
+                        ); ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="formSubmit">
+                    <?php echo $this->formHidden(
+                        'id',
+                        $this->dataInfo ? $this->dataInfo->{DbTable_Config_Shorten_Url::COL_CONFIG_SHORTEN_URL_ID} : null
+                    ); ?>
+                    <input type="submit" value="Cập nhật" class="redB" />
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+</div>

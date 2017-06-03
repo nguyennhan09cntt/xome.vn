@@ -1,0 +1,75 @@
+<div class="wrapper">
+    <h2>Tải dữ liệu chuyến xe - Thuận Thảo</h2>
+    <form method="get" action="/tool/craw-thuanthao" id="validate">
+        <fieldset class="filter">
+            <?php echo $this->formText(
+                'vehicleName',
+                null,
+                array(
+                    'placeholder' => 'Biển số xe',
+                    'class' => 'validate[required]'
+                )
+            );?>
+            <?php echo $this->formText(
+                'driverIdentify',
+                null,
+                array(
+                    'placeholder' => 'CMND Tài xế',
+                    'class' => 'validate[required]'
+                )
+            );?>
+            <?php echo $this->formText(
+                'routeEncode',
+                null,
+                array(
+                    'placeholder' => 'Mã hành trình',
+                    'class' => 'validate[required]'
+                )
+            );?>
+            <?php echo $this->formText(
+                'estimationTime',
+                null,
+                array(
+                    'placeholder' => 'Thời gian chạy',
+                    'class' => 'validate[required]'
+                )
+            );?>
+            <?php echo $this->formSelect(
+                'routeInfo',
+                null,
+                array(
+                    'class' => 'validate[required]'
+                ),
+                array(
+                    '' => ' + Chọn chuyến đi',
+                    '23|TP.HCM - Tuy Hòa' => 'TP.HCM - Tuy Hòa',
+                    '30|TP.HCM - Quy Nhơn' => 'TP.HCM - Quy Nhơn',
+                    '24|TP.HCM - Huế' => 'TP.HCM - Huế',
+                    '26|TP.HCM - Đà Nẵng' => 'TP.HCM - Đà Nẵng',
+                    '5|TP.HCM - Vinh' => 'TP.HCM - Vinh'
+                )
+            );?>
+
+            &nbsp;|&nbsp;
+            <strong>Chuyến đi từ</strong>
+            <?php echo $this->formText(
+                'dateFrom',
+                null,
+                array(
+                    'class' => 'datepicker validate[required]'
+                )
+            );?>
+            <strong>đến</strong>
+            <?php echo $this->formText(
+                'dateTo',
+                null,
+                array(
+                    'class' => 'datepicker validate[required]'
+                )
+            );?>
+
+            <div class="cpanel"> <input type="submit" value="Tải dữ liệu" class="button greenB" /></div>
+        </fieldset>
+
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div id="map" class="google-map mt-none mb-none" style="height: 86vh;"></div>
+<?php echo $this->render('search/widgets/search-box.phtml'); ?>
+<div id="demopanel">
+
+
+
+    <div class="panel_button" style=""><img src="<?php echo HOST_STATIC_DEFAULT;?>img/search_plus_green.png" alt="Tim kiem" width="40" height="40"></div>
+
+</div>
+<script>
+    var markers = <?php echo $this->productMapJson($this->productSearchData); ?>;
+    var flagBound = <?php echo (isset($this->district) && $this->district) ? 'true' : 'false'; ?>;
+
+
+</script>

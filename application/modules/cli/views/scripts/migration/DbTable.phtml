@@ -1,0 +1,58 @@
+<?php echo '<?php'; ?>
+
+/**
+* This class is generated automatically by schema_update. !!! Do not touch or modify
+* Last modified : <?php echo $this->timeStamp; ?>
+
+* Class <?php echo $this->type;?>_<?php echo $this->className; ?>
+
+*/
+
+class <?php echo $this->type;?>_<? echo $this->className; ?> extends Application_Db_<?php echo $this->type;?>
+
+{
+    /**
+    * @type <string>
+    */
+    const _tableName = '<? echo $this->tableName; ?>';
+
+    <? foreach($this->arrColumn as $column) { ?>
+
+    /**
+    * @type <<? echo $column['Type']; ?>>
+    * @null <<? echo $column['Null']; ?>>
+    * @default <<? echo $column['Default']; ?>>
+    * @extra <<? echo $column['Extra']; ?>>
+    */
+    const COL_<? echo strtoupper($column['Field']); ?> = '<? echo $column['Field']; ?>';
+    <? } ?>
+
+    /**
+    * @var <?php echo $this->type;?>_<? echo $this->className; ?>
+
+    */
+    public static $_instance;
+
+    public function __construct(){
+        $this->_name = self::_tableName;
+        <?php if ($this->type == 'DbTable') { ?>
+            $this->_primary = $this->_name.'_id';
+        <? } else { ?>
+            $this->_primary = '<?php echo $this->arrColumn[0]['Field'];?>';
+        <? } ?>
+
+        parent::__construct();
+    }
+
+    /**
+    * @return <?php echo $this->type;?>_<? echo $this->className; ?>
+
+    */
+    public static function getInstance(){
+        if(is_null(self::$_instance)){
+            self::$_instance = new <?php echo $this->type;?>_<? echo $this->className; ?>();
+        }
+        return self::$_instance;
+    }
+
+}
